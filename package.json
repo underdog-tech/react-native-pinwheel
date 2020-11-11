@@ -1,0 +1,25 @@
+{
+  "name": "@pinwheel/react-native-pinwheel",
+  "version": "0.0.1",
+  "description": "Pinwheel React Native SDK",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Pinwheel",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": "^0.61.3",
+    "react-native-webview": "^10.9.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "@types/react-native": "^0.63.29",
+    "react-native-webview": "^10.9.2"
+  }
+}
