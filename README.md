@@ -62,7 +62,7 @@ Callback whenever a user completes a modal flow successfully. Note: This is simp
 
 ### `onExit`
 
-Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.getpinwheel.com/link/index.html#errors).
+Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.getpinwheel.com/link/index.html#errors-1).
 
 | Type     | Required |
 | -------- | -------- |
