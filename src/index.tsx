@@ -1,6 +1,6 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {Platform, SafeAreaView, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -57,6 +57,7 @@ export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
 
     }
   }
+  const now = Date.now();
   const runFirst = `
       const uuidKey = 'pinwheel-uuid';
       const localStorage = window.localStorage;
@@ -76,9 +77,12 @@ export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
           { 
             type: 'PINWHEEL_INIT', 
             payload: { 
+              platform: "${Platform.OS}",
+              sdk: 'react native',
               fullScreen: true, 
               linkToken: '${linkToken}', 
-              uniqueUserId: uuid
+              uniqueUserId: uuid,
+              initializationTimestamp: ${now}
             } 
           }
         );
