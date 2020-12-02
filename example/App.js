@@ -1,6 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Pinwheel Demo React Native App
  *
  * @format
  * @flow strict-local
@@ -19,9 +18,13 @@ import {
   Text,
   TextInput,
   TouchableHighlight,
+  useWindowDimensions,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
 
-import PinwheelLink from 'react-native-pinwheel';
+import PinwheelLink from '@pinwheel/react-native-pinwheel';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 // Use your API secret here to see the demo work
@@ -54,14 +57,17 @@ const useFetch = (url, options) => {
 };
 
 const FieldView = ({ label, value, onChange}) => {
+  const windowWidth = useWindowDimensions().width;
   return (
-    <View style={{marginBottom: 10}}>
-      <Text>{label}</Text>
-      <TextInput
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-        onChangeText={text => onChange(text)}
-        value={value}
-      />
+    <View marginBottom={12}  width={windowWidth} paddingHorizontal={20}>
+      <Text style={{color:"#444", fontWeight: "bold"}}>{label}</Text>
+      <View borderBottomWidth={2}>
+        <TextInput
+          style={{ height: 24, borderColor: 'gray', borderWidth: 0}}
+          onChangeText={text => onChange(text)}
+          value={value}
+        />
+      </View>
     </View>);
 }
 
@@ -77,26 +83,31 @@ const TokenParamsView = ({ onSubmit }) => {
 
   return (
     <SafeAreaView>
-      <FieldView label={"account_view"} value={account_number} onChange={setAccountNumber}/>
-      <FieldView label={"account_type"} value={account_type} onChange={setAccountType}/>
-      <FieldView label={"job"} value={job} onChange={setJob}/>
-      <FieldView label={"mode"} value={mode} onChange={setMode}/>
-      <FieldView label={"org_name"} value={org_name} onChange={setOrgName}/>
-      <FieldView label={"routing_number"} value={routing_number} onChange={setRoutingNumber}/>
-      <FieldView label={"skip_exit_survey"} value={skip_exit_survey} onChange={setSkipExitSurvey}/>
-      <FieldView label={"skip_intro_screen"} value={skip_intro_screen} onChange={setSkipIntroScreen}/>
-      <Button
-        title={'Fetch Token'}
-        onPress={() => onSubmit({ 
-          account_number, 
-          account_type,
-          job,
-          mode,
-          org_name,
-          routing_number,
-          skip_exit_survey: skip_exit_survey === "true",
-          skip_intro_screen: skip_intro_screen === "true"
-        })}></Button>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View paddingTop={48} flex={1} justifyContent="flex-end">
+          <FieldView label={"account_view"} value={account_number} onChange={setAccountNumber}/>
+          <FieldView label={"account_type"} value={account_type} onChange={setAccountType}/>
+          <FieldView label={"job"} value={job} onChange={setJob}/>
+          <FieldView label={"mode"} value={mode} onChange={setMode}/>
+          <FieldView label={"org_name"} value={org_name} onChange={setOrgName}/>
+          <FieldView label={"routing_number"} value={routing_number} onChange={setRoutingNumber}/>
+          <FieldView label={"skip_exit_survey"} value={skip_exit_survey} onChange={setSkipExitSurvey}/>
+          <FieldView label={"skip_intro_screen"} value={skip_intro_screen} onChange={setSkipIntroScreen}/>
+          <Button
+            title={'Fetch Token'}
+            onPress={() => onSubmit({ 
+              account_number, 
+              account_type,
+              job,
+              mode,
+              org_name,
+              routing_number,
+              skip_exit_survey: skip_exit_survey.toLowerCase() === "true",
+              skip_intro_screen: skip_intro_screen.toLowerCase() === "true"
+            })}></Button>
+            <View style={{ flex : 1 }} />
+        </View>
+      </TouchableWithoutFeedback>
     </SafeAreaView>
   )
 }
@@ -120,17 +131,15 @@ const TokenView = ({
       return; // the first event is an empty string
     }
     events.current.push(event);
-    console.log(JSON.stringify(events, null, 2));
   };
   const onExit = (event) => {
     setIsPinwheelOpen(false);
   }
   const onSuccess = (event) => {
     setIsPinwheelOpen(false);
-    console.log('SUCCESS');
   }
 
-  const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link/tokens', {
+  const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -148,14 +157,15 @@ const TokenView = ({
     }),
   });
 
-  console.log('tokenResponse: ', apiResponse);
-
   const { error, response } = apiResponse;
+  
   if (error) {
-    <View style={styles.centeredView}>
-      <Text>Error:</Text>
-      <Text>error</Text>
-    </View>
+    return (
+      <View style={styles.centeredView}>
+        <Text>Error:</Text>
+        <Text>error</Text>
+      </View>
+    );
   }
 
   if (!response?.data?.token) {
