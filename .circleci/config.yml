@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  publish:
+    docker:
+      - image: circleci/node:12.16.1
+    working_directory: ~/react-native-pinwheel
+    steps:
+      - checkout
+      - run:
+          name: NPM Install
+          command: npm install
+      - run:
+          name: NPM Build
+          command: npm run build
+      - run:
+          name: Done
+          command: echo "Done!"
+
+workflows:
+  publish:
+    jobs:
+      - publish:
+          filters:
+            branches:
+              only: master
