@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.3",
-    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-0.0.4.tgz",
+    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-0.2.0.tgz",
     "react-native-webview": "^10.10.0"
   },
   "devDependencies": {
