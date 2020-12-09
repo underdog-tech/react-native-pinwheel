@@ -14,9 +14,6 @@ jobs:
           name: NPM Install
           command: npm install
       - run:
-          name: NPM Install Peer Dependencies
-          command: npm install react@16.9.0 react-native@0.61.3 react-native-webview@10.9.2
-      - run:
           name: NPM Build
           command: npm run build
       - run: |
