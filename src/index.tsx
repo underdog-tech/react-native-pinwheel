@@ -17,6 +17,7 @@ export const PINWHEEL_MESSAGE_TYPES = {
 };
 
 const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.html';
+const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 type PinwheelProps = {
   linkToken: string,
@@ -101,7 +102,7 @@ export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
         injectedJavaScript={runFirst}
         onShouldStartLoadWithRequest={(request) => {
           const targetURL = request.url;
-          const isLinkPage = targetURL.startsWith(LINK_PAGE_URL);
+          const isLinkPage = targetURL.includes(PINWHEEL_DOMAIN);
           if (!isLinkPage) {
             Linking.canOpenURL(targetURL).then(supported => {
               if (supported) {
