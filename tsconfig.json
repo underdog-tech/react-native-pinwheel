@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
+    "target": "es5",
+    "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
+    "lib": ["dom", "es5", "es2017"],
     "jsx": "react-native",
     "skipLibCheck": true,
     "moduleResolution": "node",
