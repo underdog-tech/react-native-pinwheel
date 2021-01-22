@@ -64,6 +64,6 @@ jobs:
           command: echo "Done!"
 
 workflows:
-  publish:
+  test:
     jobs:
       - test
