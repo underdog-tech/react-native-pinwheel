@@ -1,6 +1,38 @@
 version: 2.1
 
 jobs:
+  test:
+    docker:
+      - image: circleci/node:12.16.1
+
+    working_directory: ~/react-native-pinwheel/example
+
+    steps:
+      - checkout:
+          path: ~/react-native-pinwheel
+      - restore_cache:
+          key: npm-v1-{{ checksum "package-lock.json" }}-{{ arch }}
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+      - run: npm install
+      - save_cache:
+          key: npm-v1-{{ checksum "package-lock.json" }}-{{ arch }}
+          paths:
+            - ~/.cache/npm
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+      - run:
+          name: jest tests
+          command: |
+            mkdir -p test-results/jest
+            yarn run test
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+
   publish:
     docker:
       - image: circleci/node:12.16.1
@@ -32,9 +64,6 @@ jobs:
           command: echo "Done!"
 
 workflows:
-  publish:
+  test:
     jobs:
-      - publish:
-          filters:
-            branches:
-              only: master
+      - test
