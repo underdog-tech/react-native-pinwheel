@@ -91,6 +91,7 @@ export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: Pinwh
           break;
         case 'login':
           onLogin && onLogin(payload);
+          break;
         case 'error':
           onError && onError(payload);
           break;
@@ -123,7 +124,7 @@ export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: Pinwh
               version: {
                 major: 2,
                 minor: 0,
-                patch: 2,
+                patch: 5,
               },
               initializationOptions: {
                 hasOnSuccess: ${!!onSuccess},

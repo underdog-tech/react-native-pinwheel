@@ -10,16 +10,11 @@ import {
   FlatList,
   SafeAreaView,
   StyleSheet,
-  ScrollView,
-  StatusBar,
   Button,
-  Modal,
   View,
   Text,
   TextInput,
-  TouchableHighlight,
   useWindowDimensions,
-  KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
@@ -33,7 +28,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 // Pinwheel server, and you should be retrieving the link
 // token from your server.
 // https://docs.getpinwheel.com/#api-secrets
-const API_SECRET = "b14c9cc50e8c977d17109dde181b55addb2e414816ccef0479d15d1d1810c5ab";
+const API_SECRET = "";
 
 const useFetch = (url, options) => {
   const [response, setResponse] = useState(null);
@@ -126,17 +121,16 @@ const TokenView = ({
   const events = useRef([]);
   const [isPinwheelOpen, setIsPinwheelOpen] = useState(true);
 
-  const onEvent = (event) => {
-    if (!event) {
-      return; // the first event is an empty string
-    }
-    events.current.push(event);
+  const onEvent = (eventName, payload) => {
+    console.log(eventName, payload);
+    events.current.push({eventName, payload});
   };
-  const onExit = (event) => {
+  const onExit = (error) => {
+    console.log('OnExit', error)
     setIsPinwheelOpen(false);
   }
-  const onSuccess = (event) => {
-    setIsPinwheelOpen(false);
+  const onSuccess = (result) => {
+    console.log('OnSuccess', result);
   }
 
   const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
@@ -189,9 +183,9 @@ const TokenView = ({
   return (
     <PinwheelLink
       linkToken={response.data.token}
-      onSuccess={result => console.log(result)}
-      onExit={error => console.log(error)}
-      onEvent={(eventName, payload) => console.log(eventName, payload)}
+      onSuccess={onSuccess}
+      onExit={onExit}
+      onEvent={onEvent}
       onLogin={result => console.log(result)}
       onError={error => console.log(error)}
     />
@@ -222,12 +216,12 @@ const EventListView = ({events}) => {
     <SafeAreaView>
       <FlatList
         data={events}
-        keyExtractor={(item, index) => index + '-' + item.type}
-        renderItem={({item, index}) => {
+        keyExtractor={(item, index) => `${index}`}
+        renderItem={({item}) => {
           return (
             <View style={{backgroundColor: 'white'}}>
               <Text>
-                {item.type} | {item.name}
+                {JSON.stringify(item)}
               </Text>
             </View>
           );

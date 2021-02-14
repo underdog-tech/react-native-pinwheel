@@ -34,23 +34,41 @@ import PinwheelLink from "react-native-pinwheel";
 
 <PinwheelLink
   linkToken={response.data.token}
-  onSuccess={onSuccess}
-  onExit={onExit}
-  onEvent={onEvent}
+  onLogin={result => { /* ... */ }}
+  onError={error => { /* ... */ }}
+  onSuccess={result => { /* ... */ }}
+  onExit={error => { /* ... */ }}
+  onEvent={(eventName, payload) => { /* ... */ }}
 />;
 ```
 
-With the PinwheelLink component, end-users can select their employer, authenticate with their payroll platform login credentials, and authorize the direct deposit change. Throughout the authorization process, events will be emitted to the `onEvent` callback. Upon a successful authorization, the `onSuccess` callback will be called. `onExit` will be called when it is time to close the dialog, and you should remove the PinwheelLink component from your view hierarchy.
+With the PinwheelLink component, end-users can select their employer, authenticate with their payroll platform login credentials, and authorize the direct deposit change. Throughout the authorization process, events will be emitted to the `onEvent` callback and any errors (both user errors such as invalid parameters and any system errors which arise) will be emitted to the `onError` callback. Upon a successful login, `onLogin` will be called and once the full flow is complete the `onSuccess` callback will be called. `onExit` will be called when the Pinwheel modal is closed, and you should remove the PinwheelLink component from your view hierarchy.
 
 ## Props
 
 ### `linkToken`
 
-The link token retrieved using the [create link token endpoint](https://docs.getpinwheel.com/api-reference/index.html#create-link-token).
+The link token retrieved using the [create link token endpoint](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#link-token).
 
 | Type   | Required |
 | ------ | -------- |
 | string | Yes      |
+
+### `onLogin`
+
+Callback when a user successfully signs in to their payroll account.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+### `onError`
+
+Callback whenever an error occurs during the modal flow. This does not necessarily mean that the flow cannot still complete successfully. These include such retryable events as the user inputting an incorrect password or MFA code and needs to reattempt it. Error codes can be seen [here](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#errors-1).
+
+| Type     | Required |
+| -------- | -------- |
+| function | No      |
 
 ### `onSuccess`
 
@@ -62,20 +80,16 @@ Callback whenever a user completes a modal flow successfully. Note: This is simp
 
 ### `onExit`
 
-Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.getpinwheel.com/link/index.html#errors-1).
+Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#errors-1). Will pass back an error result if the modal either crashed due to an error or if the user exited while in an error state (e.g. invalid credentials).
 
 | Type     | Required |
 | -------- | -------- |
-| function | Yes      |
+| function | No      |
 
 ### `onEvent`
 
-Callback whenever a user interacts with the modal (e.g. clicks something or types something). The [eventName](https://docs.getpinwheel.com/link/index.html#events) can be used to gain insight into what the user is doing.
+Callback for all significant events that happen during the modal flow. See all possible [event types](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#events).
 
 | Type     | Required |
 | -------- | -------- |
 | function | No       |
-
-## Example App
-
-See [example app readme](./example/README.md)
