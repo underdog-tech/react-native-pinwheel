@@ -1,6 +1,7 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
+import { version } from '../package.json'
 
 const styles = StyleSheet.create({
   container: {
@@ -100,6 +101,7 @@ export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: Pinwh
     }
   }
   const now = Date.now();
+  const [major, minor, patch] = version.split('.').map(x => Number(x));
   const runFirst = `
       const uuidKey = 'pinwheel-uuid';
       const localStorage = window.localStorage;
@@ -122,9 +124,9 @@ export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: Pinwh
               platform: "${Platform.OS}",
               sdk: 'react native',
               version: {
-                major: 2,
-                minor: 0,
-                patch: 5,
+                major: ${major},
+                minor: ${minor},
+                patch: ${patch}
               },
               initializationOptions: {
                 hasOnSuccess: ${!!onSuccess},
