@@ -39,13 +39,17 @@ describe("<PinwheelLink />", () => {
   test("onSuccess is called", async () => {
     renderPinwheelLink();
       
+    const result = {
+      "accountId": "123",
+      "job": "direct_deposit_switch",
+      "params": {}
+    };
     const eventData = {
       "nativeEvent": {
         "data": JSON.stringify({
-          "type": "PINWHEEL_SUCCESS",
-          "result": {
-            "tokenId": "abc-123"
-          }
+          "type": "PINWHEEL_EVENT",
+          "eventName": "success",
+          "payload": result
         })
       }
     };
@@ -55,12 +59,7 @@ describe("<PinwheelLink />", () => {
     expect(mockOnSuccess.mock.calls.length).toBe(1);
     expect(mockOnExit.mock.calls.length).toBe(0);
 
-    expect(mockOnSuccess.mock.calls[0][0]).toEqual({
-      "type": "PINWHEEL_SUCCESS",
-      "result": {
-        "tokenId": "abc-123"
-      }
-    });
+    expect(mockOnSuccess.mock.calls[0][0]).toEqual(result);
   });
 
   test("onExit is called", async () => {
@@ -69,7 +68,9 @@ describe("<PinwheelLink />", () => {
     const eventData = {
       "nativeEvent": {
         "data": JSON.stringify({
-          "type": "PINWHEEL_MODAL_CLOSE"
+          "type": "PINWHEEL_EVENT",
+          "eventName": "exit",
+          "payload": {}
         })
       }
     };
@@ -78,9 +79,7 @@ describe("<PinwheelLink />", () => {
     expect(mockOnSuccess.mock.calls.length).toBe(0);
     expect(mockOnExit.mock.calls.length).toBe(1);
 
-    expect(mockOnExit.mock.calls[0][0]).toEqual({
-      "type": "PINWHEEL_MODAL_CLOSE"
-    });
+    expect(mockOnExit.mock.calls[0][0]).toEqual({});
   });
 
   test("onEvent is called", async () => {
@@ -90,7 +89,7 @@ describe("<PinwheelLink />", () => {
       "nativeEvent": {
         "data": JSON.stringify({
           "type": "PINWHEEL_EVENT",
-          "name": "Intro",
+          "eventName": "Intro",
           "payload": {
             "job": "direct_deposit_switch"
           }
@@ -102,12 +101,6 @@ describe("<PinwheelLink />", () => {
     expect(mockOnSuccess.mock.calls.length).toBe(0);
     expect(mockOnExit.mock.calls.length).toBe(0);
 
-    expect(mockOnEvent.mock.calls[0][0]).toEqual({
-      "type": "PINWHEEL_EVENT",
-      "name": "Intro",
-      "payload": {
-        "job": "direct_deposit_switch"
-      }
-    });
+    expect(mockOnEvent.mock.calls[0][0]).toEqual("Intro");
   });
 });
