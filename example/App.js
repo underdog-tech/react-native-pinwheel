@@ -10,16 +10,11 @@ import {
   FlatList,
   SafeAreaView,
   StyleSheet,
-  ScrollView,
-  StatusBar,
   Button,
-  Modal,
   View,
   Text,
   TextInput,
-  TouchableHighlight,
   useWindowDimensions,
-  KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
@@ -126,17 +121,16 @@ const TokenView = ({
   const events = useRef([]);
   const [isPinwheelOpen, setIsPinwheelOpen] = useState(true);
 
-  const onEvent = (event) => {
-    if (!event) {
-      return; // the first event is an empty string
-    }
-    events.current.push(event);
+  const onEvent = (eventName, payload) => {
+    console.log(eventName, payload);
+    events.current.push({eventName, payload});
   };
-  const onExit = (event) => {
+  const onExit = (error) => {
+    console.log('OnExit', error)
     setIsPinwheelOpen(false);
   }
-  const onSuccess = (event) => {
-    setIsPinwheelOpen(false);
+  const onSuccess = (result) => {
+    console.log('OnSuccess', result);
   }
 
   const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
@@ -192,6 +186,8 @@ const TokenView = ({
       onSuccess={onSuccess}
       onExit={onExit}
       onEvent={onEvent}
+      onLogin={result => console.log(result)}
+      onError={error => console.log(error)}
     />
   );
 };
@@ -220,12 +216,12 @@ const EventListView = ({events}) => {
     <SafeAreaView>
       <FlatList
         data={events}
-        keyExtractor={(item, index) => index + '-' + item.type}
-        renderItem={({item, index}) => {
+        keyExtractor={(item, index) => `${index}`}
+        renderItem={({item}) => {
           return (
             <View style={{backgroundColor: 'white'}}>
               <Text>
-                {item.type} | {item.name}
+                {JSON.stringify(item)}
               </Text>
             </View>
           );
