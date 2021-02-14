@@ -33,7 +33,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 // Pinwheel server, and you should be retrieving the link
 // token from your server.
 // https://docs.getpinwheel.com/#api-secrets
-const API_SECRET = "";
+const API_SECRET = "b14c9cc50e8c977d17109dde181b55addb2e414816ccef0479d15d1d1810c5ab";
 
 const useFetch = (url, options) => {
   const [response, setResponse] = useState(null);
@@ -189,9 +189,11 @@ const TokenView = ({
   return (
     <PinwheelLink
       linkToken={response.data.token}
-      onSuccess={onSuccess}
-      onExit={onExit}
-      onEvent={onEvent}
+      onSuccess={result => console.log(result)}
+      onExit={error => console.log(error)}
+      onEvent={(eventName, payload) => console.log(eventName, payload)}
+      onLogin={result => console.log(result)}
+      onError={error => console.log(error)}
     />
   );
 };

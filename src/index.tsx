@@ -16,14 +16,39 @@ export const PINWHEEL_MESSAGE_TYPES = {
   PINWHEEL_EVENT: 'PINWHEEL_EVENT',
 };
 
-const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.1.0.html';
+const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v3.0.0-beta.html';
 const PINWHEEL_DOMAIN = 'getpinwheel.com';
+
+export type LinkResult = {
+  accountId: string;
+  job: string;
+  params: {
+    amount?: { value: number; unit: '%' | '$' };
+  };
+};
+
+export type ErrorType =
+  | 'clientError'
+  | 'systemError'
+  | 'userActionRequired'
+  | 'platformError'
+  | 'invalidAccountsConfiguration'
+  | 'invalidUserInput'
+  | 'invalidLinkToken';
+
+export type Error = {
+  type: ErrorType;
+  code: string;
+  message: string;
+};
 
 type PinwheelProps = {
   linkToken: string,
-  onSuccess: (event: Object) => void,
-  onExit: (event: Object) => void,
-  onEvent: (event: Object) => void
+  onLogin?: (result: { accountId: string }) => void;
+  onSuccess?: (result: LinkResult) => void;
+  onError?: (error: Error) => void;
+  onExit?: (error?: Error) => void;
+  onEvent?: (eventName: string, payload: object) => void;
 }
 
 type NativeEvent = {
@@ -34,7 +59,7 @@ type WebViewEvent = {
   nativeEvent: NativeEvent 
 }
 
-export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
+export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: PinwheelProps) => {
 
   const handleEvent = (event: WebViewEvent) => {
     if (!event) {
@@ -46,18 +71,31 @@ export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
       eventData = JSON.parse(event.nativeEvent.data);
     } catch(error) {
       console.error(error);
-      onExit(error);
+      onExit && onExit(error);
+      onError && onError(error);
+      onEvent && onEvent('error', error);
       return;
     }
-    onEvent(eventData);
-    switch (eventData.type) {
-      case PINWHEEL_MESSAGE_TYPES.PINWHEEL_MODAL_CLOSE:
-      case PINWHEEL_MESSAGE_TYPES.PINWHEEL_EXIT:
-        onExit(eventData);
-        break;
-      case PINWHEEL_MESSAGE_TYPES.PINWHEEL_SUCCESS:
-        onSuccess(eventData);
 
+    const { type, eventName, payload } = eventData;
+
+    if (type === 'PINWHEEL_EVENT') {
+      onEvent && onEvent(eventName, payload);
+
+      switch (eventName) {
+        case 'exit':
+          onExit && onExit(payload);
+          break;
+        case 'success':
+          onSuccess && onSuccess(payload);
+          break;
+        case 'login':
+          onLogin && onLogin(payload);
+        case 'error':
+          onError && onError(payload);
+          break;
+        default:
+      }
     }
   }
   const now = Date.now();
@@ -82,7 +120,18 @@ export default ({linkToken, onSuccess, onExit, onEvent}: PinwheelProps) => {
             payload: { 
               platform: "${Platform.OS}",
               sdk: 'react native',
-              fullScreen: true, 
+              version: {
+                major: 2,
+                minor: 0,
+                patch: 2,
+              },
+              initializationOptions: {
+                hasOnSuccess: ${!!onSuccess},
+                hasOnEvent: ${!!onEvent},
+                hasOnExit: ${!!onExit},
+                hasOnError: ${!!onError},
+                hasOnLogin: ${!!onLogin},
+              },
               linkToken: '${linkToken}', 
               uniqueUserId: uuid,
               initializationTimestamp: ${now}
