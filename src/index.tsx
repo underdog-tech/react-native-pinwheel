@@ -17,7 +17,7 @@ export const PINWHEEL_MESSAGE_TYPES = {
   PINWHEEL_EVENT: 'PINWHEEL_EVENT',
 };
 
-const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v3.0.0-beta.html';
+const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v3.1.0.html';
 const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 export type LinkResult = {
@@ -43,13 +43,23 @@ export type Error = {
   message: string;
 };
 
+type EventPayload =
+  | { selectedEmployerId: string; selectedEmployerName: string }
+  | { selectedPlatformId: string; selectedPlatformName: string }
+  | { value: number; unit: '%' | '$' }
+  | LinkResult
+  | { accountId: string; platformId: string }
+  | Error
+  | {}
+  | undefined
+
 type PinwheelProps = {
   linkToken: string,
-  onLogin?: (result: { accountId: string }) => void;
+  onLogin?: (result: { accountId: string; platformId: string }) => void;
   onSuccess?: (result: LinkResult) => void;
   onError?: (error: Error) => void;
   onExit?: (error?: Error) => void;
-  onEvent?: (eventName: string, payload: object) => void;
+  onEvent?: (eventName: string, payload: EventPayload) => void;
 }
 
 type NativeEvent = {
