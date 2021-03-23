@@ -93,3 +93,20 @@ Callback for all significant events that happen during the modal flow. See all p
 | Type     | Required |
 | -------- | -------- |
 | function | No       |
+
+# Releasing
+
+- Bump the version number in `package.json`: `const version = '2.1.0';`
+- `npm run build`
+- `npm pack`
+- Update the version of the tgz file in `example/package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.1.0.tgz"`
+- Update version number in `example/package.json`: `"version": "2.1.0"`
+- `npm install example`
+- `npx react-native start --reset-cache`
+- `cd ios` `pod install`
+- Add production sandbox key for testing purposes only to `example/App.js`: `const API_SECRET = "";`
+- `npm run ios`
+- Remove production sandbox key when finished with testing
+- `git tag -a 2.1.0 -m "Message about new version"`
+- `git push origin 2.1.0`
+- `npm publish` (you will need to have set up your NPM credentials for this to work)
