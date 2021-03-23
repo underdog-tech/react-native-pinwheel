@@ -96,7 +96,8 @@ Callback for all significant events that happen during the modal flow. See all p
 
 # Releasing
 
-- Bump the version number in `package.json`: `const version = '2.1.0';`
+- Bump the version number in `package.json`: `"version": "2.1.0",`
+- Bump the version number in `src/index.tsx`: `const version = '2.1.0';`
 - `npm run build`
 - `npm pack`
 - Update the version of the tgz file in `example/package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.1.0.tgz"`
