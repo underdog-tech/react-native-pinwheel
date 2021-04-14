@@ -1,6 +1,6 @@
 {
   "name": "PinwheelRNExample",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.2.2.tgz",
+    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.3.0.tgz",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-webview": "^10.10.0"
