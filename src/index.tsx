@@ -2,7 +2,7 @@ import React from 'react';
 import {WebView} from 'react-native-webview';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
 
-const version = '2.2.0';
+const version = '2.3.0';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +18,7 @@ export const PINWHEEL_MESSAGE_TYPES = {
   PINWHEEL_EVENT: 'PINWHEEL_EVENT',
 };
 
-const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.2.0.html';
+const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.3.0.html';
 const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 export type LinkResult = {
