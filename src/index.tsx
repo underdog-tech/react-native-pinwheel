@@ -2,7 +2,7 @@ import React from 'react';
 import {WebView} from 'react-native-webview';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
 
-const version = '2.3.0';
+const version = '2.3.2';
 
 const styles = StyleSheet.create({
   container: {
@@ -58,6 +58,7 @@ type EventPayload =
 type PinwheelProps = {
   linkToken: string,
   onLogin?: (result: { accountId: string; platformId: string }) => void;
+  onLoginAttempt?: (result: { platformId: string }) => void;
   onSuccess?: (result: LinkResult) => void;
   onError?: (error: Error) => void;
   onExit?: (error?: Error) => void;
@@ -72,7 +73,7 @@ type WebViewEvent = {
   nativeEvent: NativeEvent 
 }
 
-export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: PinwheelProps) => {
+export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit, onEvent}: PinwheelProps) => {
 
   const handleEvent = (event: WebViewEvent) => {
     if (!event) {
@@ -104,6 +105,9 @@ export default ({linkToken, onLogin, onSuccess, onError, onExit, onEvent}: Pinwh
           break;
         case 'login':
           onLogin && onLogin(payload);
+          break;
+        case 'login_attempt':
+          onLoginAttempt && onLoginAttempt(payload);
           break;
         case 'error':
           onError && onError(payload);
