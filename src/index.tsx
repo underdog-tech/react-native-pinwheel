@@ -83,7 +83,8 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
     let eventData;
     try {
       eventData = JSON.parse(event.nativeEvent.data);
-    } catch(error) {
+    } catch(_error) {
+      let error: Error = (_error as Error);
       console.error(error);
       onExit && onExit(error);
       onError && onError(error);
