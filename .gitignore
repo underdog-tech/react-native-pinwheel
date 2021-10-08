@@ -79,3 +79,4 @@ example/android/.gradle
 example/android/.idea
 example/android/app/build
 example/android/local.properties
+example/.jest/
