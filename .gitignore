@@ -80,3 +80,6 @@ example/android/.idea
 example/android/app/build
 example/android/local.properties
 example/.jest/
+example/.vscode/.react/debuggerWorker.js
+example/.vscode/.react/index.bundle
+example/.vscode/.react/index.map
