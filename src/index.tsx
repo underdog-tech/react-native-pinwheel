@@ -23,6 +23,7 @@ const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 export type LinkResult = {
   accountId: string;
+  platformId: string;
   job: string;
   params: {
     amount?: { value: number; unit: '%' | '$' };
