@@ -30,6 +30,10 @@ export type LinkResult = {
   };
 };
 
+/**
+ * @deprecated This type will be removed in version 2.4. Use the renamed type`PinwheelErrorType`
+ * instead.
+ */
 export type ErrorType =
   | 'clientError'
   | 'systemError'
@@ -39,12 +43,14 @@ export type ErrorType =
   | 'invalidUserInput'
   | 'invalidLinkToken';
 
+export type PinwheelErrorType = ErrorType
+
 /**
  * @deprecated The type should not be used as it clashes with the native JS `Error` object.
  * You should use `PinwheelError` instead. `Error` will be removed in version 2.4
  */
 export type Error = {
-  type: ErrorType;
+  type: PinwheelErrorType;
   code: string;
   message: string;
   pendingRetry: boolean;
