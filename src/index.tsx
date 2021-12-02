@@ -39,6 +39,10 @@ export type ErrorType =
   | 'invalidUserInput'
   | 'invalidLinkToken';
 
+/**
+ * @deprecated The type should not be used as it clashes with the native JS `Error` object.
+ * You should use `PinwheelError` instead. `Error` will be removed in version 2.4
+ */
 export type Error = {
   type: ErrorType;
   code: string;
@@ -46,14 +50,19 @@ export type Error = {
   pendingRetry: boolean;
 };
 
-type EventPayload =
+// Export `Error` as `PinwheelError` to avoid native `Error` namespace clash
+export type PinwheelError = Error
+
+export type EmptyPayloadObject = {}
+
+export type EventPayload =
   | { selectedEmployerId: string; selectedEmployerName: string }
   | { selectedPlatformId: string; selectedPlatformName: string }
   | { value: number; unit: '%' | '$' }
   | LinkResult
   | { accountId: string; platformId: string }
-  | Error
-  | {}
+  | PinwheelError
+  | EmptyPayloadObject
   | undefined
 
 type PinwheelProps = {
@@ -61,8 +70,8 @@ type PinwheelProps = {
   onLogin?: (result: { accountId: string; platformId: string }) => void;
   onLoginAttempt?: (result: { platformId: string }) => void;
   onSuccess?: (result: LinkResult) => void;
-  onError?: (error: Error) => void;
-  onExit?: (error?: Error) => void;
+  onError?: (error: PinwheelError) => void;
+  onExit?: (error: PinwheelError | EmptyPayloadObject) => void;
   onEvent?: (eventName: string, payload: EventPayload) => void;
 }
 
@@ -85,7 +94,7 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
     try {
       eventData = JSON.parse(event.nativeEvent.data);
     } catch(_error) {
-      let error: Error = (_error as Error);
+      let error: PinwheelError = (_error as PinwheelError);
       console.error(error);
       onExit && onExit(error);
       onError && onError(error);
