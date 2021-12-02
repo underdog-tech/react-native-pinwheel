@@ -31,7 +31,7 @@ export type LinkResult = {
 };
 
 /**
- * @deprecated This type will be removed in version 2.4. Use the renamed type`PinwheelErrorType`
+ * @deprecated This type will be removed in version 2.4. Use the renamed type `PinwheelErrorType`
  * instead.
  */
 export type ErrorType =
@@ -59,7 +59,7 @@ export type Error = {
 // Export `Error` as `PinwheelError` to avoid native `Error` namespace clash
 export type PinwheelError = Error
 
-export type EmptyPayloadObject = {}
+export type EmptyPayloadObject = Record<string, never>
 
 export type EventPayload =
   | { selectedEmployerId: string; selectedEmployerName: string }
