@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-### 2.3.4
+### [2.3.4](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.4)
 
 #### Added
 
