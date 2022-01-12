@@ -46,24 +46,16 @@ jobs:
           name: NPM Install
           command: npm install
       - run:
-          name: NPM Build
-          command: npm run build
-      - run: |
-          _NPM_PACKAGE_NAME=$(npm list --silent | head -n 1 | cut -d ' ' -f1)
-          if [[ -z "$(npm info ${_NPM_PACKAGE_NAME} 2> ./test)"  ]]; then
-              echo "version doesnt exist, continuing"
-          else
-              echo "version already exists"
-              circleci-agent step halt
-          fi
-      - run:
           name: NPM Publish
-          command: npm publish
-      - run:
-          name: Done
-          command: echo "Done!"
+          command: npm run pinwheel-publish
 
 workflows:
-  test:
+  test-and-publish:
     jobs:
       - test
+      - publish:
+          requires:
+            - test
+          filters:
+              branches:
+                only: master
