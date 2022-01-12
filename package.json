@@ -9,7 +9,8 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pinwheel-publish": "./scripts/publish.sh"
   },
   "author": "Pinwheel",
   "license": "MIT",

@@ -10,10 +10,16 @@ if [ $pkgjsonversion == $latestversion ]; then
   exit 0
 fi
 
+echo Compiling tsc
 npm run build
 
+echo Publishing to NPM
 npm publish
 
+echo Adding $pkgjsonversion tag to git
 git tag $pkgjsonversion
 
+echo Pushing tag
 git push --tags
+
+echo Done!
