@@ -33,7 +33,7 @@ jobs:
       - store_artifacts:
           path: test-results
 
-  publish:
+  create-publish-branch:
     docker:
       - image: circleci/node:12.16.1
     working_directory: ~/react-native-pinwheel
@@ -67,3 +67,9 @@ workflows:
   test:
     jobs:
       - test
+      - create-publish-branch
+        requires:
+          - test
+        filters:
+          branches:
+            only: master
