@@ -10,11 +10,11 @@ All notable changes to this project will be documented in this file.
 
 ### [2.3.6](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.6)
 
-This version was generated while testing CI publish script.
+N/A
 
 ### [2.3.5](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.5)
 
-This version was generated while testing CI publish script.
+N/A
 
 ### [2.3.4](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.4)
 
