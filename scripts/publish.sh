@@ -21,7 +21,7 @@ fi
 
 echo Testing changelog updates.
 
-grep -oq $pkgjsonversion CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
+grep -oq [^0-9]$pkgjsonversion[^0-9] CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
 echo Confirmed changelog updates!
 
 echo Compiling tsc
