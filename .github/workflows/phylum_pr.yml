@@ -17,5 +17,4 @@ jobs:
           eng_threshold: 0.6
           lic_threshold: 0.6
           aut_threshold: 0.6
-          phylum_username: ${{ secrets.PHYLUM_USER }}
-          phylum_password: ${{ secrets.PHYLUM_PASS }}
+          phylum_token: ${{ secrets.PHYLUM_TOKEN }}
