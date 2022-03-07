@@ -1,7 +1,8 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
-import {version} from '../package.json'
+
+const version = '2.3.8';
 
 const styles = StyleSheet.create({
   container: {

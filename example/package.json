@@ -1,6 +1,6 @@
 {
   "name": "PinwheelRNExample",
-  "version": "2.3.4",
+  "version": "2.3.8",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
