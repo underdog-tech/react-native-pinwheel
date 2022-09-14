@@ -10,10 +10,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.3.4.tgz",
-    "react": "16.13.1",
+    "@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.3.10.tgz",
+    "react": "17.0.2",
     "react-native": "0.66",
-    "react-native-webview": "^10.10.0"
+    "react-native-webview": "11.23.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -24,7 +24,7 @@
     "eslint": "^6.5.1",
     "jest": "^25.5.4",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-test-renderer": "16.13.1",
+    "react-test-renderer": "17.0.2",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   }

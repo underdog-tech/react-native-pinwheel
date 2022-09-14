@@ -133,6 +133,10 @@ const TokenView = ({
     console.log('OnSuccess', result);
   }
 
+  const onError = (error) => {
+    console.log('onError', error);
+  }
+
   const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
     method: 'POST',
     headers: {
@@ -187,7 +191,7 @@ const TokenView = ({
       onExit={onExit}
       onEvent={onEvent}
       onLogin={result => console.log(result)}
-      onError={error => console.log(error)}
+      onError={onError}
     />
   );
 };
