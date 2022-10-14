@@ -83,3 +83,6 @@ example/.jest/
 example/.vscode/.react/debuggerWorker.js
 example/.vscode/.react/index.bundle
 example/.vscode/.react/index.map
+
+# Phylum Integration
+.phylum_project
