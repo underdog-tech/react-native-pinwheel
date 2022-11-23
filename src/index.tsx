@@ -21,7 +21,7 @@ export const PINWHEEL_MESSAGE_TYPES = {
   PINWHEEL_EVENT: 'PINWHEEL_EVENT',
 };
 
-const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.3.0.html';
+const LINK_PAGE_URL = 'https://staging.cdn.getpinwheel.com/link-v2.3.0.html';
 const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 export type LinkResult = {
