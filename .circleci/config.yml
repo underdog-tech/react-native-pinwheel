@@ -11,10 +11,16 @@ jobs:
       - checkout:
           path: ~/react-native-pinwheel
       - restore_cache:
-          key: npm-cache-{{ checksum "package-lock.json" }}-{{ arch }}
+          key: npm-v1-{{ checksum "package-lock.json" }}-{{ arch }}
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
       - run: npm install
       - save_cache:
-          key: npm-cache-{{ checksum "package-lock.json" }}-{{ arch }}
+          key: npm-v1-{{ checksum "package-lock.json" }}-{{ arch }}
+          paths:
+            - ~/.cache/npm
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
           paths:
             - node_modules
       - run:
