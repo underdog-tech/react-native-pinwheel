@@ -94,20 +94,28 @@ Callback for all significant events that happen during the modal flow. See all p
 | -------- | -------- |
 | function | No       |
 
-# Releasing
+# Testing Locally
 
-- Bump the version number in `package.json`: `"version": "2.1.0",`
-- Bump the version number in `src/index.tsx`: `const version = '2.1.0';`
+## Dependencies
+
+- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
+- iPhone 14 simulator (open your Simulator app and check the available versions)
+- iOS 16 running on the simulator (open your Simulator app and check the available versions)
+- `pod` version 1.11.3 (check with `pod --version`)
+
+## Directions
+
+- `npm i`
+- Bump the version number in `package.json`: `"version": "2.x.x",`
+- Bump the version number in `src/index.tsx`: `const version = '2.x.x';`
 - `npm run build`
 - `npm pack`
-- Update the version of the tgz file in `example/package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.1.0.tgz"`
-- Update version number in `example/package.json`: `"version": "2.1.0"`
-- `npm install example`
+- `cd example`
+- Update the version of the tgz file in `package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.x.x.tgz"`
+- Update version number in `package.json`: `"version": "2.x.x"`
+- `npm install`
 - `npx react-native start --reset-cache`
-- `cd ios` `pod install`
+- Open a new terminal window `cd ios` from the `example` directory and `pod install`
 - Add production sandbox key for testing purposes only to `example/App.js`: `const API_SECRET = "";`
-- `npm run ios`
-- Remove production sandbox key when finished with testing
-- `git tag -a 2.1.0 -m "Message about new version"`
-- `git push origin 2.1.0`
-- `npm publish` (you will need to have set up your NPM credentials for this to work)
+- Navigate back to the root directory of this repo and `npm run ios`
+- **IMPORTANT: Remove production sandbox key when finished with testing**

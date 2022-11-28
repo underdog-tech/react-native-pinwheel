@@ -19,4 +19,5 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '\\.snap$'],
   cacheDirectory: '.jest/cache',
   testEnvironment: 'jsdom',
+  modulePathIgnorePatterns: ['<rootDir>/lib']
 };

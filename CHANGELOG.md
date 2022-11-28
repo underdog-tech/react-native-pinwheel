@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 2.3.x Releases
 
-- `2.3.x` Releases - [2.3.4](#234) [2.3.5](#235) [2.3.6](#236)
+- `2.3.x` Releases - [2.3.4](#234) [2.3.5](#235) [2.3.6](#236) [2.3.10](#2310)
 
 ---
+
+### [2.3.10](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.10)
+
+Use node 16.7.0 instead of 12.16.1 to install dependencies.
 
 ### [2.3.6](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.6)
 

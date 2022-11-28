@@ -37,12 +37,15 @@ const useFetch = (url, options) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
+      console.log(`fetching token`); // eslint-disable-line
       try {
         const res = await fetch(url, options);
         const json = await res.json();
+        console.log(`got token`, json); // eslint-disable-line
         setResponse(json);
         setIsLoading(false);
       } catch (error) {
+        console.log(`error getting token`, error); // eslint-disable-line
         setError(error);
       }
     };

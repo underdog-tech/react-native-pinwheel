@@ -5,7 +5,7 @@ import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
 /**
  * Importing package.json here causes a problem with the folder structure when we npm pack and publish.
  */
-const version = '2.3.9';
+const version = '2.3.10';
 
 const styles = StyleSheet.create({
   container: {
