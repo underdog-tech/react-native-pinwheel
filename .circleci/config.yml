@@ -11,6 +11,9 @@ jobs:
       - checkout:
           path: ~/react-native-pinwheel
       - run: cd ../ && npm i && npm run build && npm pack && cd -
+      - run:
+          name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
+          command: node ../scripts/remove-pkg-hash.js
       - run: npm install
       - run:
           name: jest tests
@@ -37,7 +40,7 @@ jobs:
           command: npm install
       - run:
           name: NPM Prepublish
-          command: npm run prepublish
+          command: npm run pre-publish
       - run:
           name: NPM Publish
           command: npm publish
