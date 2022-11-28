@@ -11,6 +11,9 @@ jobs:
       - checkout:
           path: ~/react-native-pinwheel
       - run: cd ../ && npm i && npm run build && npm pack && cd -
+      - run:
+          name: Remove package-lock because tarball will have a different hash than when built locally
+          command: rm package-lock.json
       - run: npm install
       - run:
           name: jest tests
