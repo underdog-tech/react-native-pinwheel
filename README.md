@@ -94,7 +94,16 @@ Callback for all significant events that happen during the modal flow. See all p
 | -------- | -------- |
 | function | No       |
 
-# Releasing
+# Releasing/Testing
+
+## Dependencies
+
+- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
+- iPhone 14 simulator (open your Simulator app and check the available versions)
+- iOS 16 running on the simulator (open your Simulator app and check the available versions)
+- `pod` version 1.11.3 (check with `pod --version`)
+
+## Release/Test
 
 - Bump the version number in `package.json`: `"version": "2.1.0",`
 - Bump the version number in `src/index.tsx`: `const version = '2.1.0';`
@@ -102,11 +111,12 @@ Callback for all significant events that happen during the modal flow. See all p
 - `npm pack`
 - Update the version of the tgz file in `example/package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.1.0.tgz"`
 - Update version number in `example/package.json`: `"version": "2.1.0"`
-- `npm install example`
+- `npm install`
 - `npx react-native start --reset-cache`
 - `cd ios` `pod install`
 - Add production sandbox key for testing purposes only to `example/App.js`: `const API_SECRET = "";`
 - `npm run ios`
+- If you are just testing locally, you may stop here.
 - Remove production sandbox key when finished with testing
 - `git tag -a 2.1.0 -m "Message about new version"`
 - `git push origin 2.1.0`
