@@ -136,7 +136,7 @@ const TokenView = ({
     console.log('OnSuccess', result);
   }
 
-  const apiResponse = useFetch('https://staging.sandbox.getpinwheel.com/v1/link_tokens', {
+  const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
