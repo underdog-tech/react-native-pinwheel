@@ -14,11 +14,6 @@ const pkgName = 'node_modules/@pinwheel/react-native-pinwheel'
 
 const contents = JSON.parse(fs.readFileSync(packageLockLocation, 'utf8'))
 
-console.log(`--------- contents.packages`, contents.packages); // eslint-disable-line
-console.log(`--------- contents.packages[pkgName] before`, contents.packages[pkgName]); // eslint-disable-line
-
 delete contents.packages[pkgName]
-
-console.log(`--------- contents.packages[pkgName] after`, contents.packages[pkgName]); // eslint-disable-line
 
 fs.writeFileSync(packageLockLocation, JSON.stringify(contents, null, 2))
