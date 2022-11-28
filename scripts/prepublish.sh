@@ -27,6 +27,9 @@ echo Confirmed changelog updates!
 echo Compiling tsc
 npm run build
 
+echo Packing the module
+npm pack
+
 # echo Adding $pkgjsonversion tag to git
 # git tag $pkgjsonversion
 
