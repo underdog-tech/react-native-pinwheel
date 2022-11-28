@@ -37,12 +37,15 @@ const useFetch = (url, options) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
+      console.log(`fetching token`); // eslint-disable-line
       try {
         const res = await fetch(url, options);
         const json = await res.json();
+        console.log(`got token`, json); // eslint-disable-line
         setResponse(json);
         setIsLoading(false);
       } catch (error) {
+        console.log(`error getting token`, error); // eslint-disable-line
         setError(error);
       }
     };
@@ -133,7 +136,7 @@ const TokenView = ({
     console.log('OnSuccess', result);
   }
 
-  const apiResponse = useFetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
+  const apiResponse = useFetch('https://staging.sandbox.getpinwheel.com/v1/link_tokens', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
