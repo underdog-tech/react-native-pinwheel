@@ -27,13 +27,10 @@ echo Confirmed changelog updates!
 echo Compiling tsc
 npm run build
 
-echo Publishing to NPM
-npm publish
+# echo Adding $pkgjsonversion tag to git
+# git tag $pkgjsonversion
 
-echo Adding $pkgjsonversion tag to git
-git tag $pkgjsonversion
-
-echo Pushing tag
-git push --tags
+# echo Pushing tag
+# git push --tags
 
 echo Done!

@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "pinwheel-publish": "./scripts/publish.sh"
+    "prepublish": "./scripts/prepublish.sh"
   },
   "author": "Pinwheel",
   "license": "MIT",
