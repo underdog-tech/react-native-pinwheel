@@ -94,7 +94,7 @@ Callback for all significant events that happen during the modal flow. See all p
 | -------- | -------- |
 | function | No       |
 
-# Releasing/Testing
+# Testing Locally
 
 ## Dependencies
 
@@ -103,7 +103,7 @@ Callback for all significant events that happen during the modal flow. See all p
 - iOS 16 running on the simulator (open your Simulator app and check the available versions)
 - `pod` version 1.11.3 (check with `pod --version`)
 
-## Release/Test
+## Directions
 
 - `npm i`
 - Bump the version number in `package.json`: `"version": "2.x.x",`
