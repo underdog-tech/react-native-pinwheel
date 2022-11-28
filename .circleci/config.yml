@@ -13,7 +13,7 @@ jobs:
       - run: cd ../ && npm i && npm run build && npm pack && cd -
       - run:
           name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
-          command: node ../scripts/remove-package-hash.js
+          command: node ../scripts/remove-pkg-hash.js
       - run: npm install
       - run:
           name: jest tests
