@@ -1,7 +1,7 @@
 /**
  * Importing package.json here causes a problem with the folder structure when we npm pack and publish.
  */
-export const VERSION = '2.3.13';
+export const VERSION = '2.3.14';
 
 export const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.3.0.html';
 
