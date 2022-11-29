@@ -4,7 +4,6 @@
  * @format
  * @flow strict-local
  */
-
 import React, {useEffect, useState, useRef} from 'react';
 import {
   FlatList,
@@ -18,17 +17,14 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
+import API_SECRET from './env'
 
 import PinwheelLink from '@pinwheel/react-native-pinwheel';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-// Use your API secret here to see the demo work
-// DO NOT DO THIS IN YOUR SHIPPING APP
-// Your server should retrieve the link token from the
-// Pinwheel server, and you should be retrieving the link
-// token from your server.
-// https://docs.getpinwheel.com/#api-secrets
-const API_SECRET = "";
+if (!API_SECRET) {
+  throw new Error('Please add your sandbox api secret to example/env.js')
+}
 
 const useFetch = (url, options) => {
   const [response, setResponse] = useState(null);
@@ -45,7 +41,7 @@ const useFetch = (url, options) => {
         setResponse(json);
         setIsLoading(false);
       } catch (error) {
-        console.log(`error getting token`, error);
+        console.error(`error getting token -- please make sure you have your sandbox secret loaded in example/.env`, error);
         setError(error);
       }
     };

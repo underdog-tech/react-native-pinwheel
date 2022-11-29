@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "bump-pkg-version": "./scripts/bump-pkg-version.sh",
     "dev": "./scripts/dev.sh"
   },
   "author": "Pinwheel",
