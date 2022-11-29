@@ -47,7 +47,7 @@ jobs:
           command: npm install
       - run:
           name: NPM Prepublish
-          command: npm run prepublish
+          command: npm run pre-publish
       - run:
           name: NPM Publish
           command: npm publish
