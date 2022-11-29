@@ -1,6 +1,22 @@
 # react-native-pinwheel
 
-# Pinwheel SDK for React Native
+Pinwheel SDK for React Native
+
+## Running The Example App Locally
+
+You may want to run the example app locally to get started.
+
+#### Dependencies
+
+- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
+- iPhone 14 simulator (open your Simulator app and check the available versions)
+- iOS 16 running on the simulator (open your Simulator app and check the available versions)
+- `pod` version 1.11.3 (check with `pod --version`)
+
+#### Directions
+
+- `npm run dev`
+
 
 ## Installation
 
@@ -93,16 +109,3 @@ Callback for all significant events that happen during the modal flow. See all p
 | Type     | Required |
 | -------- | -------- |
 | function | No       |
-
-# Testing Locally
-
-## Dependencies
-
-- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
-- iPhone 14 simulator (open your Simulator app and check the available versions)
-- iOS 16 running on the simulator (open your Simulator app and check the available versions)
-- `pod` version 1.11.3 (check with `pod --version`)
-
-## Directions
-
-- `npm run dev`
