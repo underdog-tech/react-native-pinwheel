@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "pre-publish": "./scripts/prepublish.sh"
+    "bump-pkg-version": "./scripts/bump-pkg-version.sh",
+    "dev": "./scripts/dev.sh"
   },
   "author": "Pinwheel",
   "license": "MIT",

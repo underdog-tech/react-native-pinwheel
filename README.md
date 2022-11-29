@@ -1,6 +1,22 @@
 # react-native-pinwheel
 
-# Pinwheel SDK for React Native
+Pinwheel SDK for React Native
+
+## Running The Example App Locally
+
+You may want to run the example app locally to get started.
+
+#### Dependencies
+
+- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
+- iPhone 14 simulator (open your Simulator app and check the available versions)
+- iOS 16 running on the simulator (open your Simulator app and check the available versions)
+- `pod` version 1.11.3 (check with `pod --version`)
+
+#### Directions
+
+- `npm run dev`
+
 
 ## Installation
 
@@ -93,29 +109,3 @@ Callback for all significant events that happen during the modal flow. See all p
 | Type     | Required |
 | -------- | -------- |
 | function | No       |
-
-# Testing Locally
-
-## Dependencies
-
-- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm`)
-- iPhone 14 simulator (open your Simulator app and check the available versions)
-- iOS 16 running on the simulator (open your Simulator app and check the available versions)
-- `pod` version 1.11.3 (check with `pod --version`)
-
-## Directions
-
-- `npm i`
-- Bump the version number in `package.json`: `"version": "2.x.x",`
-- Bump the version number in `src/index.tsx`: `const version = '2.x.x';`
-- `npm run build`
-- `npm pack`
-- `cd example`
-- Update the version of the tgz file in `package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.x.x.tgz"`
-- Update version number in `package.json`: `"version": "2.x.x"`
-- `npm install`
-- `npx react-native start --reset-cache`
-- Open a new terminal window `cd ios` from the `example` directory and `pod install`
-- Add production sandbox key for testing purposes only to `example/App.js`: `const API_SECRET = "";`
-- Navigate back to the root directory of this repo and `npm run ios`
-- **IMPORTANT: Remove production sandbox key when finished with testing**

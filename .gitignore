@@ -1,6 +1,8 @@
 # Local test builds
 
 pinwheel-react-native-pinwheel-*.tgz
+.env
+env.js
 
 # OSX
 #

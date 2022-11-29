@@ -1,11 +1,7 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
-
-/**
- * Importing package.json here causes a problem with the folder structure when we npm pack and publish.
- */
-const version = '2.3.12';
+import { LINK_PAGE_URL, PINWHEEL_DOMAIN, VERSION } from './constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,9 +16,6 @@ export const PINWHEEL_MESSAGE_TYPES = {
   PINWHEEL_SUCCESS: 'PINWHEEL_SUCCESS',
   PINWHEEL_EVENT: 'PINWHEEL_EVENT',
 };
-
-const LINK_PAGE_URL = 'https://cdn.getpinwheel.com/link-v2.3.0.html';
-const PINWHEEL_DOMAIN = 'getpinwheel.com';
 
 export type LinkResult = {
   accountId: string;
@@ -137,7 +130,7 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
     }
   }
   const now = Date.now();
-  const [major, minor, patch] = version.split('.').map(x => Number(x));
+  const [major, minor, patch] = VERSION.split('.').map(x => Number(x));
   const runFirst = `
       const uuidKey = 'pinwheel-uuid';
       const localStorage = window.localStorage;

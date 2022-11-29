@@ -14,6 +14,22 @@ jobs:
       - run:
           name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
           command: node ../scripts/remove-pkg-hash.js
+      - run:
+          name: Create dummy env file
+          command: echo "export default \"x\"" > env.js
+      - run:
+          name: Check changelog for updates
+          command: grep -oq [^0-9]$pkgjsonversion[^0-9] ../CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
+      - run:
+          name: Check for version bump
+          command:
+            (git branch | grep '\* master' && echo 'Skipping version check since on master') ||
+            (! (git status | grep -E "(src|package)") && echo 'Skipping version check since no changes to src or package') ||
+            (echo $(git diff master:package.json package.json) | grep version ||
+            (echo "Must bump version" && exit 1))
+      - run:
+          name: Confirm node version npm install
+          command: cat package-lock.json | grep lockfileVersion | grep 2 || exit 1
       - run: npm install
       - run:
           name: jest tests
@@ -40,7 +56,7 @@ jobs:
           command: npm install
       - run:
           name: NPM Prepublish
-          command: npm run pre-publish
+          command: ./scripts/prepublish-test.sh
       - run:
           name: NPM Publish
           command: npm publish
