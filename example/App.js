@@ -41,7 +41,7 @@ const useFetch = (url, options) => {
         setResponse(json);
         setIsLoading(false);
       } catch (error) {
-        console.error(`error getting token -- please make sure you have your sandbox secret loaded in example/.env`, error);
+        console.error(`error getting token -- please make sure you have your sandbox secret loaded in example/env.js`, error);
         setError(error);
       }
     };
