@@ -11,3 +11,7 @@ echo ✅ Updated package.json
 echo ⌛ Updating src folder
 node -e "const fs=require('fs');const file='./src/constants.ts';const contents=fs.readFileSync(file, 'utf8');const newContents = contents.replace(/VERSION\W*\=\W*[0-9\.]+/, 'VERSION = \'$v_new\''); fs.writeFileSync(file, newContents)"
 echo ✅ Updated src folder
+
+echo ⌛ Updating example/package.json
+node -e "const fs=require('fs');const file='./example/package.json';const pkg=require(file); pkg.version='$v_new'; fs.writeFileSync(file, JSON.stringify(pkg, null, 2).replace(/pinwheel\-[0-9\.]+\.tgz/,'pinwheel-$v_new.tgz')+'\n')"
+echo ✅ Updated example/package.json
