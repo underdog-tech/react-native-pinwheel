@@ -5,7 +5,7 @@ echo "\n\nEnter a new version number:"
 read v_new
 
 echo ⌛ Updating package.json
-node -e "const fs=require('fs');const file='./package.json';const pkg=require(file); pkg.version='$v_new'; fs.writeFileSync(file, JSON.stringify(pkg, null, 2))"
+node -e "const fs=require('fs');const file='./package.json';const pkg=require(file); pkg.version='$v_new'; fs.writeFileSync(file, JSON.stringify(pkg, null, 2)+'\n')"
 echo ✅ Updated package.json
 
 echo ⌛ Updating src folder
