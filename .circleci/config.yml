@@ -50,7 +50,7 @@ jobs:
           command: npm install
       - run:
           name: NPM Prepublish
-          command: npm run pre-publish
+          command: ./scripts/prepublish-test.sh
       - run:
           name: NPM Publish
           command: npm publish

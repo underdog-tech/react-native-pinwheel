@@ -105,17 +105,4 @@ Callback for all significant events that happen during the modal flow. See all p
 
 ## Directions
 
-- `npm i`
-- Bump the version number in `package.json`: `"version": "2.x.x",`
-- Bump the version number in `src/index.tsx`: `const version = '2.x.x';`
-- `npm run build`
-- `npm pack`
-- `cd example`
-- Update the version of the tgz file in `package.json`: `"@pinwheel/react-native-pinwheel": "../pinwheel-react-native-pinwheel-2.x.x.tgz"`
-- Update version number in `package.json`: `"version": "2.x.x"`
-- `npm install`
-- `npx react-native start --reset-cache`
-- Open a new terminal window `cd ios` from the `example` directory and `pod install`
-- Add production sandbox key for testing purposes only to `example/App.js`: `const API_SECRET = "";`
-- Navigate back to the root directory of this repo and `npm run ios`
-- **IMPORTANT: Remove production sandbox key when finished with testing**
+- `npm run dev`

@@ -1,3 +1,6 @@
+source ~/.nvm/nvm.sh
+nvm use 16.7.0
+
 v_pkgjson=$(node -e "console.log(require('./package.json').version)")
 echo "\n\nFound version in package.json: $v_pkgjson"
 
@@ -28,3 +31,11 @@ else
   node -e "const fs=require('fs');const file='./example/package.json';const pkg=require(file); pkg.version='$v_new'; fs.writeFileSync(file, JSON.stringify(pkg, null, 2).replace(/pinwheel\-[0-9\.]+\.tgz/,'pinwheel-$v_new.tgz')+'\n')"
   echo ✅ Updated example/package.json
 fi
+
+npm i
+npm run build
+npm pack
+cd example
+npm i
+
+npx react-native start --reset-cache & cd ios && pod install && cd ../ && npm run ios
