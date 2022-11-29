@@ -12,6 +12,9 @@ jobs:
           path: ~/react-native-pinwheel
       - run: cd ../ && npm i && npm run build && npm pack && cd -
       - run:
+          name: Check changelog for updates
+          command: grep -oq [^0-9]$pkgjsonversion[^0-9] CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
+      - run:
           name: Check for version bump
           command:
             (git branch | grep '\* master' && echo 'Skipping version check since on master') ||
