@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## 2.3.x Releases
 
-- `2.3.x` Releases - [2.3.4](#234) | [2.3.5](#235) | [2.3.6](#236) | [2.3.10](#2310) | [2.3.12](#2312)
+- `2.3.x` Releases - [2.3.4](#234) | [2.3.5](#235) | [2.3.6](#236) | [2.3.10](#2310) | [2.3.12](#2312) | [2.3.13](#2313)
 
 ---
+
+### [2.3.13](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.13)
+
+Bump `hermes-engine` and `shell-quote` sub-dependency package.
 
 ### [2.3.12](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.12)
 
