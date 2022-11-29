@@ -37,15 +37,15 @@ const useFetch = (url, options) => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      console.log(`fetching token`); // eslint-disable-line
+      console.log(`fetching token`, {API_SECRET, url, options});
       try {
         const res = await fetch(url, options);
         const json = await res.json();
-        console.log(`got token`, json); // eslint-disable-line
+        console.log(`got token`, json);
         setResponse(json);
         setIsLoading(false);
       } catch (error) {
-        console.log(`error getting token`, error); // eslint-disable-line
+        console.log(`error getting token`, error);
         setError(error);
       }
     };

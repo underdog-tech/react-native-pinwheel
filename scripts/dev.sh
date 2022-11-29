@@ -38,4 +38,4 @@ npm pack
 cd example
 npm i
 
-npx react-native start --reset-cache & cd ios && pod install && cd ../ && npm run ios
+./node_modules/.bin/concurrently "npx react-native start --reset-cache" "cd ios && pod install && cd ../ && npm run ios"
