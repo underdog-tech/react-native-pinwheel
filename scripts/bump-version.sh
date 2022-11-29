@@ -1,3 +1,17 @@
+latestversion=$(npm show @pinwheel/react-native-pinwheel |
+  head -n 2 |
+  tail -n 1 |
+  cut -d ' ' -f1 |
+  cut -d '@' -f3 |
+  sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g')
+echo Got last published version $latestversion
+echo
+
+if [ $pkgjsonversion != $latestversion ]; then
+  echo SKIPPING version bump prompt as version is already bumped on this branch.
+  exit 0
+fi
+
 v_pkgjson=$(node -e "console.log(require('./package.json').version)")
 echo "---\n\nFound version in package.json: $v_pkgjson"
 
