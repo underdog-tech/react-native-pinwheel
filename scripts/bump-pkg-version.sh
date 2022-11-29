@@ -21,7 +21,7 @@ else
   echo ✅ Updated package.json
 
   echo ⌛ Updating src folder
-  node -e "const fs=require('fs');const file='./src/constants.ts';const contents=fs.readFileSync(file, 'utf8');const newContents = contents.replace(/VERSION\W*\=\W*[0-9\.]+/, 'VERSION = \'$v_new\''); fs.writeFileSync(file, newContents)"
+  node -e "const fs=require('fs');const file='./src/constants.ts';const contents=fs.readFileSync(file, 'utf8');const newContents = contents.replace(/VERSION\W*\=\W*[0-9\.]+/, 'VERSION = \'$v_new'); fs.writeFileSync(file, newContents)"
   echo ✅ Updated src folder
 
   echo ⌛ Updating example/package.json
