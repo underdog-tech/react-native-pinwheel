@@ -12,6 +12,9 @@ jobs:
           path: ~/react-native-pinwheel
       - run: cd ../ && npm i && npm run build && npm pack && cd -
       - run:
+          name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
+          command: node ../scripts/remove-pkg-hash.js
+      - run:
           name: Check changelog for updates
           command: grep -oq [^0-9]$pkgjsonversion[^0-9] ../CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
       - run:
