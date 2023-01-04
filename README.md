@@ -46,7 +46,7 @@ The link token returned is valid for 15 minutes, after which it expires and can 
 The PinwheelLink component is a view that you can integrate into your app's flow like so:
 
 ```javascript
-import PinwheelLink from "react-native-pinwheel";
+import PinwheelLink from "@pinwheel/react-native-pinwheel";
 
 <PinwheelLink
   linkToken={response.data.token}
