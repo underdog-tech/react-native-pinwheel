@@ -32,7 +32,7 @@ jobs:
           command: cat package-lock.json | grep lockfileVersion | grep 2 || exit 1
       - run:
           name: Confirm example app version matches base version
-          command: node ../scripts/check-version-matchups.js | grep success || exit 1
+          command: node ../scripts/check-version-matchups.cjs
       - run: npm install
       - run:
           name: jest tests

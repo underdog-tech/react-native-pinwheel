@@ -13,4 +13,4 @@ console.log(`Got example app installation of package (${packageName}): ${install
 
 if (baseVersion === exampleVersion && exampleVersion === installVersion) {
   console.log('success, check passed')
-}
+} else throw new Error('failed test')
