@@ -16,7 +16,7 @@
   "author": "Pinwheel",
   "license": "MIT",
   "peerDependencies": {
-    "react": ">=16.13.1",
+    "react": "^16.13.1 || ^17 || ^18",
     "react-native": "*",
     "react-native-webview": "^10.10.0 || ^11.0.0"
   },
