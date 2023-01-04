@@ -1,6 +1,6 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "2.3.14",
+  "version": "2.3.15",
   "type": "module",
   "description": "Pinwheel React Native SDK",
   "main": "lib/index.js",
@@ -16,9 +16,9 @@
   "author": "Pinwheel",
   "license": "MIT",
   "peerDependencies": {
-    "react": "16.13.1",
-    "react-native": "0.63.3",
-    "react-native-webview": "^10.10.0"
+    "react": "^16.13.1 || ^17 || ^18",
+    "react-native": "*",
+    "react-native-webview": "^10.10.0 || ^11.0.0"
   },
   "devDependencies": {
     "@types/react-native": "^0.63.29",
