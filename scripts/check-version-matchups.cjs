@@ -9,8 +9,10 @@ const installVersion = require('../example/package.json')
 
 console.log(`Got package version (package.json): ${baseVersion}`)
 console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
-console.log(`Got example app installation of package (${packageName}): ${installVersion}`)
+console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
 
 if (baseVersion === exampleVersion && exampleVersion === installVersion) {
   console.log('success, check passed')
-} else throw new Error('failed test')
+} else {
+  throw new Error('Versions did not match up. Please sync them all.')
+}
