@@ -69,8 +69,10 @@ jobs:
 workflows:
   test-and-publish:
     jobs:
-      - test
+      - test:
+          context: 'frontend-production'
       - publish:
+          context: 'frontend-production'
           requires:
             - test
           filters:
