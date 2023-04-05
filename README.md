@@ -12,6 +12,7 @@ You may want to run the example app locally to get started.
 - iPhone 14 simulator (open your Simulator app and check the available versions)
 - iOS 16 running on the simulator (open your Simulator app and check the available versions)
 - `pod` version 1.11.3 (check with `pod --version`)
+- Add your pinwheel secret to `example/env.js` (create this file) with `export default "<YOUR PINWHEEL SECRET>"`.
 
 #### Directions
 
