@@ -18,6 +18,13 @@ You may want to run the example app locally to get started.
 
 - `npm run dev`
 
+#### Troubleshooting
+
+###### An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405)
+- Click Apple > About This Mac > Storage > Manage > Developer
+- Delete Xcode cache
+- Delete Project Build and indexes
+
 
 ## Installation
 
