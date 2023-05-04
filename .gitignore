@@ -21,6 +21,9 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# IntelliJ
+.idea
+
 lib
 
 # Example
