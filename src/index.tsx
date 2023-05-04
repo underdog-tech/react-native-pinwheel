@@ -26,6 +26,14 @@ export type LinkResult = {
   };
 };
 
+export type ScreenTransition = {
+  screenName: string;
+  selectedEmployerId?: string;
+  selectedEmployerName?: string;
+  selectedPlatformId?: string;
+  selectedPlatformName?: string;
+}
+
 /**
  * @deprecated This type will be removed in version 2.4. Use the renamed type `PinwheelErrorType`
  * instead.
@@ -63,6 +71,7 @@ export type EventPayload =
   | { value: number; unit: '%' | '$' }
   | LinkResult
   | { accountId: string; platformId: string }
+  | ScreenTransition
   | PinwheelError
   | EmptyPayloadObject
   | undefined

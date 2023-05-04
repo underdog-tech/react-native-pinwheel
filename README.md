@@ -25,6 +25,9 @@ You may want to run the example app locally to get started.
 - Delete Xcode cache
 - Delete Project Build and indexes
 
+###### Failed to build iOS project. We ran "xcodebuild" command but it exited with error code 65
+- Try downloading Xcode 14.2 from https://developer.apple.com/download/all/?q=xcode
+
 
 ## Installation
 
@@ -72,7 +75,7 @@ With the PinwheelLink component, end-users can select their employer, authentica
 
 ### `linkToken`
 
-The link token retrieved using the [create link token endpoint](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#link-token).
+The link token retrieved using the [create link token endpoint](https://docs.pinwheelapi.com/reference/post_v1_link_tokens___post).
 
 | Type   | Required |
 | ------ | -------- |
@@ -88,7 +91,7 @@ Callback when a user successfully signs in to their payroll account.
 
 ### `onError`
 
-Callback whenever an error occurs during the modal flow. This does not necessarily mean that the flow cannot still complete successfully. These include such retryable events as the user inputting an incorrect password or MFA code and needs to reattempt it. Error codes can be seen [here](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#errors-1).
+Callback whenever an error occurs during the modal flow. This does not necessarily mean that the flow cannot still complete successfully. These include such retryable events as the user inputting an incorrect password or MFA code and needs to reattempt it. Error codes can be seen [here](https://docs.pinwheelapi.com/docs/link-sdk-errors).
 
 | Type     | Required |
 | -------- | -------- |
@@ -104,7 +107,7 @@ Callback whenever a user completes a modal flow successfully. Note: This is simp
 
 ### `onExit`
 
-Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#errors-1). Will pass back an error result if the modal either crashed due to an error or if the user exited while in an error state (e.g. invalid credentials).
+Callback whenever a user exits the modal either explicitly or if an error occurred that crashed the modal. Error codes can be seen [here](https://docs.pinwheelapi.com/docs/link-sdk-errors). Will pass back an error result if the modal either crashed due to an error or if the user exited while in an error state (e.g. invalid credentials).
 
 | Type     | Required |
 | -------- | -------- |
@@ -112,7 +115,7 @@ Callback whenever a user exits the modal either explicitly or if an error occurr
 
 ### `onEvent`
 
-Callback for all significant events that happen during the modal flow. See all possible [event types](https://docs.getpinwheel.com/docs/api/docs/guides/Link.md#events).
+Callback for all significant events that happen during the modal flow. See all possible [event types](https://docs.pinwheelapi.com/docs/link-1#link-events).
 
 | Type     | Required |
 | -------- | -------- |
