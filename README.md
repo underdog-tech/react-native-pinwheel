@@ -28,6 +28,10 @@ You may want to run the example app locally to get started.
 ###### Failed to build iOS project. We ran "xcodebuild" command but it exited with error code 65
 - Try downloading Xcode 14.2 from https://developer.apple.com/download/all/?q=xcode
 
+###### Failed to locate 'git', requesting installation of command line developer tools
+For this or other errors related to command line developer tools:
+- Make sure you have Command Line Tools for Xcode 14.2 installed
+- Open Xcode > Click Xcode in the app menu > Settings > Locations > Command Line Tools dropdown and set the correct location 
 
 ## Installation
 
