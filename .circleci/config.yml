@@ -23,9 +23,9 @@ jobs:
       - run:
           name: Check for version bump
           command:
-            (git branch | grep '\* master' && echo 'Skipping version check since on master') ||
+            (git branch | grep '\* main' && echo 'Skipping version check since on main') ||
             (! (git status | grep -E "(src|package)") && echo 'Skipping version check since no changes to src or package') ||
-            (echo $(git diff master:package.json package.json) | grep version ||
+            (echo $(git diff main:package.json package.json) | grep version ||
             (echo "Must bump version" && exit 1))
       - run:
           name: Confirm node version npm install
@@ -77,4 +77,4 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only: main
