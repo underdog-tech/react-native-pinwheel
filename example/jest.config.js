@@ -14,7 +14,7 @@ module.exports = {
   },
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   transformIgnorePatterns: [
-    '<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push)',
+    '<rootDir>/node_modules/(react-clone-referenced-element|@react-native-community|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|react-native-code-push|jest-runner)',
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '\\.snap$'],
   cacheDirectory: '.jest/cache',
