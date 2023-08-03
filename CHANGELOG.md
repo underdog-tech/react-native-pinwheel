@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.4.x Releases
+
+### [2.4.0](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.4.0)
+
+- Removing `overrides` from main package.
+- Updating example app to use newest ReactNative versions.
+- Changing devDependencies to use newest React Native Webview (for typing).
+
 ## 2.3.x Releases
 
 - `2.3.x` Releases - [2.3.4](#234) | [2.3.5](#235) | [2.3.6](#236) | [2.3.10](#2310) | [2.3.12](#2312) | [2.3.13](#2313) | [2.3.14](#2314) | [2.3.17](#2317)

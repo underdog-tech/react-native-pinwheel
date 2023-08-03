@@ -3,6 +3,7 @@
 pinwheel-react-native-pinwheel-*.tgz
 .env
 env.js
+env.ts
 
 # OSX
 #

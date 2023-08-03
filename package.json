@@ -1,6 +1,6 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "2.3.17",
+  "version": "2.4.0",
   "type": "module",
   "description": "Pinwheel React Native SDK",
   "main": "lib/index.js",
@@ -18,19 +18,11 @@
   "peerDependencies": {
     "react": "^16.13.1 || ^17 || ^18",
     "react-native": "*",
-    "react-native-webview": "^10.10.0 || ^11.0.0"
+    "react-native-webview": "*"
   },
   "devDependencies": {
-    "@types/react-native": "^0.63.29",
-    "react-native-webview": "^11.0.0",
+    "@types/react-native": "^0.72.2",
+    "react-native-webview": "^13.3.1",
     "typescript": "^4.0.3"
-  },
-  "overrides": {
-    "react-native": {
-      "hermes-engine": "0.11.0"
-    },
-    "@react-native-community/cli-tools": {
-      "shell-quote": "^1.7.4"
-    }
   }
 }
