@@ -1,6 +1,6 @@
 import React from 'react';
 import Pinwheel from './pinwheel-wrapper';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import {Linking, Platform, NativeModules, SafeAreaView, StyleSheet} from 'react-native';
 import { LINK_PAGE_URL, PINWHEEL_DOMAIN, VERSION } from './constants';
 
@@ -145,7 +145,7 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
   const [major, minor, patch] = VERSION.split('.').map(x => Number(x));
   return (
     <SafeAreaView style={styles.container}>
-      <Pinwheel token={linkToken} style={{flex: 1}} />
+      {linkToken && <Pinwheel token={linkToken} style={{flex: 1}} />}
     </SafeAreaView>
   );
 };
