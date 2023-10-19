@@ -4,6 +4,7 @@ import { requireNativeComponent, NativeEventEmitter, NativeModules } from 'react
 interface RNTPinwheelProps {
   token: string;
   style: any;
+  onEvent: (event: any) => void;
 }
 
 const RNTPinwheel = requireNativeComponent<RNTPinwheelProps>('RNTPinwheel');
@@ -12,8 +13,8 @@ const RNTPinwheelView = (props: RNTPinwheelProps) => {
   useEffect(() => {
     const { RNTPinwheelEvents } = NativeModules;
     const eventEmitter = new NativeEventEmitter(RNTPinwheelEvents);
-    const eventListener = eventEmitter.addListener('MyEvent', (event) => {
-      console.log(event); // Log the event data received from the native module
+    const eventListener = eventEmitter.addListener('PINWHEEL_EVENT', (event) => {
+      props.onEvent(event);
     });
 
     return () => {

@@ -38,10 +38,8 @@
 
 - (void)onEventWithName:(NSString *)name event:(NSDictionary<NSString *, id> *)event {
     NSLog(@"%@", name);
-    NSDictionary *dataToSend = @{@"name": name};
-    // [[RNTPinwheelModule sharedInstance] sendEventToRN:dataToSend];
-    // [[self module] sendEventToRN:dataToSend];
-    [RNTPinwheelEvents.sharedInstance handleMyEvent:name];
+    NSDictionary *dataToSend = @{@"name": name, @"payload": event};
+    [RNTPinwheelEvents.sharedInstance handlePinwheelEvent:dataToSend];
 }
 
 - (void)onExit:(NSDictionary<NSString *, id> *)error {

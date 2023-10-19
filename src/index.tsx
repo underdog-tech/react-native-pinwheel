@@ -97,53 +97,40 @@ type WebViewEvent = {
 
 export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit, onEvent}: PinwheelProps) => {
 
-  const handleEvent = (event: WebViewEvent) => {
+  const handleEvent = (event: any) => {
     if (!event) {
       // first event is always an empty string
       return;
     }
-    let eventData;
-    try {
-      eventData = JSON.parse(event.nativeEvent.data);
-    } catch(_error) {
-      let error: PinwheelError = (_error as PinwheelError);
-      console.error(error);
-      onExit && onExit(error);
-      onError && onError(error);
-      onEvent && onEvent('error', error);
-      return;
-    }
 
-    const { type, eventName, payload } = eventData;
+    const { name, payload } = event;
 
-    if (type === 'PINWHEEL_EVENT') {
-      onEvent && onEvent(eventName, payload);
+    onEvent && onEvent(name, payload);
 
-      switch (eventName) {
-        case 'exit':
-          onExit && onExit(payload);
-          break;
-        case 'success':
-          onSuccess && onSuccess(payload);
-          break;
-        case 'login':
-          onLogin && onLogin(payload);
-          break;
-        case 'login_attempt':
-          onLoginAttempt && onLoginAttempt(payload);
-          break;
-        case 'error':
-          onError && onError(payload);
-          break;
-        default:
-      }
+    switch (name) {
+      case 'exit':
+        onExit && onExit(payload);
+        break;
+      case 'success':
+        onSuccess && onSuccess(payload);
+        break;
+      case 'login':
+        onLogin && onLogin(payload);
+        break;
+      case 'login_attempt':
+        onLoginAttempt && onLoginAttempt(payload);
+        break;
+      case 'error':
+        onError && onError(payload);
+        break;
+      default:
     }
   }
   const now = Date.now();
   const [major, minor, patch] = VERSION.split('.').map(x => Number(x));
   return (
     <SafeAreaView style={styles.container}>
-      {linkToken && <Pinwheel token={linkToken} style={{flex: 1}} />}
+      {linkToken && <Pinwheel token={linkToken} style={{flex: 1}} onEvent={handleEvent} />}
     </SafeAreaView>
   );
 };

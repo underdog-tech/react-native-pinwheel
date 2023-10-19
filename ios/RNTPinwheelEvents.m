@@ -48,15 +48,15 @@ RCT_EXPORT_MODULE();
     // Remove upstream listeners, stop unnecessary background tasks
 }
 
-- (void)handleMyEvent:(NSString *)eventName
+- (void)handlePinwheelEvent:(NSDictionary<NSString *, id> *)payload
 {
   if (hasListeners) {// Only send events if anyone is listening
-    [self sendEventWithName:@"MyEvent" body:@{@"name": eventName}];
+    [self sendEventWithName:@"PINWHEEL_EVENT" body:payload];
   }
 }
 
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"MyEvent"]; // Add more event names here.
+  return @[@"PINWHEEL_EVENT"]; // Add more event names here.
 }
 
 @end

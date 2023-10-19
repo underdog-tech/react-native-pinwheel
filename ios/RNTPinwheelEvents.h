@@ -4,6 +4,6 @@
 @interface RNTPinwheelEvents : RCTEventEmitter <RCTBridgeModule>
 
 + (instancetype)sharedInstance;
-- (void)handleMyEvent:(NSString *)eventName;
+- (void)handlePinwheelEvent:(NSDictionary<NSString *, id> *)payload;
 
 @end
