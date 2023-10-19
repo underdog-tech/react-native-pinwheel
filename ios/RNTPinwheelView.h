@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <PinwheelSDK/PinwheelSDK-Swift.h>
+#import "RNTPinwheelEvents.h"
 
 @interface RNTPinwheelView : UIView <PinwheelWrapperDelegate>
 

@@ -3,12 +3,8 @@
 @implementation RNTPinwheelView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-//    return [self initWithFrame:frame token:nil];
     if ((self = [super initWithFrame:frame])) {
-        if (self.token != nil) {
-            self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self];
-            [self addSubview:self.pinwheelWrapperVC.view];
-        }
+        [self initPinwheelWrapperVC];
     }
     return self;
 }
@@ -16,21 +12,21 @@
 - (instancetype)initWithFrame:(CGRect)frame token:(NSString *)token {
     if ((self = [super initWithFrame:frame])) {
         _token = token;
-        
+    }
+    return self;
+}
+
+- (void)initPinwheelWrapperVC {
+    if (self.token != nil && self.pinwheelWrapperVC == nil) {
         self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
-    return self;
 }
 
 - (void)setToken:(NSString *)newToken {
     if (![_token isEqualToString:newToken]) {
         _token = newToken;
-        
-        if (newToken != nil) {
-            self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self];
-            [self addSubview:self.pinwheelWrapperVC.view];
-        }
+        [self initPinwheelWrapperVC];
     }
 }
 
@@ -42,6 +38,10 @@
 
 - (void)onEventWithName:(NSString *)name event:(NSDictionary<NSString *, id> *)event {
     NSLog(@"%@", name);
+    NSDictionary *dataToSend = @{@"name": name};
+    // [[RNTPinwheelModule sharedInstance] sendEventToRN:dataToSend];
+    // [[self module] sendEventToRN:dataToSend];
+    [RNTPinwheelEvents.sharedInstance handleMyEvent:name];
 }
 
 - (void)onExit:(NSDictionary<NSString *, id> *)error {

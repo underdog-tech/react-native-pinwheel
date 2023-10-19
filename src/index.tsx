@@ -1,10 +1,8 @@
 import React from 'react';
 import Pinwheel from './pinwheel-wrapper';
 import { View, Text } from 'react-native';
-import {Linking, Platform, NativeModules, SafeAreaView, StyleSheet} from 'react-native';
+import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
 import { LINK_PAGE_URL, PINWHEEL_DOMAIN, VERSION } from './constants';
-
-const { RNPinwheel } = NativeModules;
 
 const styles = StyleSheet.create({
   container: {
