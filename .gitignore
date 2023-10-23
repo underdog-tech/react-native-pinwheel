@@ -4,6 +4,12 @@ pinwheel-react-native-pinwheel-*.tgz
 .env
 env.js
 env.ts
+constants.d.ts
+constants.js
+index.d.ts
+index.js
+pinwheel-wrapper.d.ts
+pinwheel-wrapper.js
 
 # OSX
 #
@@ -96,3 +102,4 @@ example/.vscode/.react/index.map
 
 # Phylum Integration
 .phylum_project
+pinwheel-wrapper.js
