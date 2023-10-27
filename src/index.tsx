@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-ignore-next-line
 import Pinwheel from './pinwheel-wrapper';
 import { View, Text } from 'react-native';
 import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';

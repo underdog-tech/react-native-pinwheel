@@ -7,7 +7,7 @@ import com.facebook.react.uimanager.ViewManager
 
 class PinwheelPackage : ReactPackage {
   override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return emptyList() // Return an empty list if you don't have any native modules
+        return listOf(RNTPinwheelEvents(reactContext)).toMutableList()
     }
         
   override fun createViewManagers(

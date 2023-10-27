@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { requireNativeComponent, NativeEventEmitter, NativeModules } from 'react-native';
 
-interface RNTPinwheelProps {
+export interface RNTPinwheelProps {
   token: string;
   style: any;
   onEvent: (event: any) => void;
 }
 
-const RNTPinwheel = requireNativeComponent<RNTPinwheelProps>('RNTPinwheel');
+export const RNTPinwheel = requireNativeComponent<RNTPinwheelProps>('RNTPinwheel');
 
 const RNTPinwheelView = (props: RNTPinwheelProps) => {
   useEffect(() => {
