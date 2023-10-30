@@ -27,14 +27,12 @@ const createFragment = (viewId: number) => {
         useEffect(() => {
             setTimeout(() => {
                 const viewId = findNodeHandle(ref.current);
-                console.log(`viewId: ${viewId}`)
                 if (viewId) {
                     createFragment(viewId);
                 }
 
                 // events
                 const { RNTPinwheelEvents } = NativeModules;
-                console.log(`RNTPinwheelEvents: ${JSON.stringify(RNTPinwheelEvents, null, 2)}`);
                 const eventEmitter = new NativeEventEmitter(RNTPinwheelEvents);
                 const eventListener = eventEmitter.addListener('PINWHEEL_EVENT', (event) => {
                     props.onEvent(event);
