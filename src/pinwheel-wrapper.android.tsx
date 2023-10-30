@@ -31,21 +31,17 @@ const createFragment = (viewId: number) => {
                 if (viewId) {
                     createFragment(viewId);
                 }
+
+                // events
+                const { RNTPinwheelEvents } = NativeModules;
+                console.log(`RNTPinwheelEvents: ${JSON.stringify(RNTPinwheelEvents, null, 2)}`);
+                const eventEmitter = new NativeEventEmitter(RNTPinwheelEvents);
+                const eventListener = eventEmitter.addListener('PINWHEEL_EVENT', (event) => {
+                    console.log(`rawbee: ${JSON.stringify(event, null, 2)}`);
+                    // props.onEvent(`rawbee: ${JSON.stringify(event)}`);
+                });
             }, 10);
         }, []);
-        
-        useEffect(() => {
-            const { RNTPinwheelEvents } = NativeModules;
-            console.log(`RNTPinwheelEvents: ${RNTPinwheelEvents}`);
-            const eventEmitter = new NativeEventEmitter(RNTPinwheelEvents);
-            const eventListener = eventEmitter.addListener('PINWHEEL_EVENT', (event) => {
-                props.onEvent(`rawbee: ${JSON.stringify(event)}`);
-            });
-            
-            return () => {
-                eventListener.remove(); // Remove the listener when the component unmounts
-            };
-        }, []); // The empty array causes this effect to only run on mount and unmount
         
         return <RNTPinwheel {...props} onEvent={(event) => {console.log`rawbee: ${JSON.stringify(event)}`}} ref={ref} />;
     }
