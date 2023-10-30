@@ -108,20 +108,25 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
 
     onEvent && onEvent(name, payload);
 
-    switch (name) {
+    switch (name.toLowerCase()) {
       case 'exit':
+        // console.log(`case: exit, onExit: ${onExit}`);
         onExit && onExit(payload);
         break;
       case 'success':
+        // console.log(`case: success, onSuccess: ${onSuccess}`);
         onSuccess && onSuccess(payload);
         break;
       case 'login':
+        // console.log(`case: login, onLogin: ${onLogin}`);
         onLogin && onLogin(payload);
         break;
       case 'login_attempt':
+        // console.log(`case: login_attempt, onLoginAttempt: ${onLoginAttempt}`);
         onLoginAttempt && onLoginAttempt(payload);
         break;
       case 'error':
+        // console.log(`case: error, onError: ${onError}`);
         onError && onError(payload);
         break;
       default:

@@ -37,8 +37,7 @@ const createFragment = (viewId: number) => {
                 console.log(`RNTPinwheelEvents: ${JSON.stringify(RNTPinwheelEvents, null, 2)}`);
                 const eventEmitter = new NativeEventEmitter(RNTPinwheelEvents);
                 const eventListener = eventEmitter.addListener('PINWHEEL_EVENT', (event) => {
-                    console.log(`rawbee: ${JSON.stringify(event, null, 2)}`);
-                    // props.onEvent(`rawbee: ${JSON.stringify(event)}`);
+                    props.onEvent(event);
                 });
             }, 10);
         }, []);
