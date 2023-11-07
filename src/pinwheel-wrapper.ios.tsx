@@ -1,13 +1,7 @@
 import React, { useEffect } from 'react';
-import { requireNativeComponent, NativeEventEmitter, NativeModules } from 'react-native';
+import { NativeEventEmitter, NativeModules } from 'react-native';
 
-interface RNTPinwheelProps {
-  token: string;
-  style: any;
-  onEvent: (event: any) => void;
-}
-
-const RNTPinwheel = requireNativeComponent<RNTPinwheelProps>('RNTPinwheel');
+import { RNTPinwheel, RNTPinwheelProps } from './pinwheel-view';
 
 const RNTPinwheelView = (props: RNTPinwheelProps) => {
   useEffect(() => {
@@ -18,9 +12,9 @@ const RNTPinwheelView = (props: RNTPinwheelProps) => {
     });
 
     return () => {
-      eventListener.remove(); // Remove the listener when the component unmounts
+      eventListener.remove(); 
     };
-  }, []); // The empty array causes this effect to only run on mount and unmount
+  }, []);
 
 
   return <RNTPinwheel {...props} />;

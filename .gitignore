@@ -103,3 +103,11 @@ example/.vscode/.react/index.map
 # Phylum Integration
 .phylum_project
 pinwheel-wrapper.js
+android/.gradle
+pinwheel-view.d.ts
+pinwheel-view.js
+pinwheel-wrapper.android.d.ts
+pinwheel-wrapper.android.js
+pinwheel-wrapper.ios.d.ts
+pinwheel-wrapper.ios.js
+example/ios/build/generated/ios/React-Codegen.podspec.json
