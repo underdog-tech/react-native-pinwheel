@@ -4,7 +4,7 @@
     "module": "es6",
     "declaration": true,
     "outDir": "./",
-    "strict": false,
+    "strict": true,
     "jsx": "react-native",
     "skipLibCheck": true,
     "moduleResolution": "node",
