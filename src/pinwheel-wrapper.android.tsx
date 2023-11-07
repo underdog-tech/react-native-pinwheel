@@ -10,9 +10,6 @@ import { RNTPinwheel, RNTPinwheelProps } from './pinwheel-view';
 
 
 const createFragment = (viewId: number) => {
-    console.log("Dispatching the create command for viewId:", viewId);
-    // @ts-ignore
-    console.log(`UIManager.RNTPinwheel: ${JSON.stringify(UIManager.RNTPinwheel, null, 2)}`)
     UIManager.dispatchViewManagerCommand(
         viewId,
         // we are calling the 'create' command
