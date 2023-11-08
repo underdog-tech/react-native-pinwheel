@@ -9,11 +9,6 @@ class PinwheelView(context: Context) : FrameLayout(context) {
   init {
     // set padding and background color
     setPadding(16,16,16,16)
-    setBackgroundColor(Color.parseColor("#5FD3F3"))
-
-    // add default text view
-    addView(TextView(context).apply {
-      text = "Welcome to Android Fragments with React Native."
-    })
+    setBackgroundColor(Color.parseColor("#FFFFFF"))
   }
 }

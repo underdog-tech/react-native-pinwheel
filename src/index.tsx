@@ -1,9 +1,8 @@
 import React from 'react';
 // @ts-ignore-next-line
 import Pinwheel from './pinwheel-wrapper';
-import { View, Text } from 'react-native';
-import {Linking, Platform, SafeAreaView, StyleSheet} from 'react-native';
-import { LINK_PAGE_URL, PINWHEEL_DOMAIN, VERSION } from './constants';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import { VERSION } from './constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -132,8 +131,6 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
       default:
     }
   }
-  const now = Date.now();
-  const [major, minor, patch] = VERSION.split('.').map(x => Number(x));
   return (
     <SafeAreaView style={styles.container}>
       {linkToken && <Pinwheel token={linkToken} style={{flex: 1}} onEvent={handleEvent} />}
