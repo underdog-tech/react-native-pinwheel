@@ -47,7 +47,7 @@ $ npm install --save @pinwheel/react-native-pinwheel
 
 To initialize Link Modal, a short-lived link token will need to be generated first. Your server can generate the link token by sending a POST request to the /v1/link_tokens endpoint. DO NOT ever send this request from the client side and publicly expose your api_secret.
 
-The link token returned is valid for 15 minutes, after which it expires and can no longer be used to initialize Link. The expiration time is returned as a unix timestamp.
+The link token returned is valid for one hour, after which it expires and can no longer be used to initialize Link. The expiration time is returned as a unix timestamp.
 
 ### Pinwheel Component
 
