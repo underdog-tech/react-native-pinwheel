@@ -21,7 +21,7 @@ jobs:
           name: Check changelog for updates
           command: grep -oq [^0-9]$pkgjsonversion[^0-9] ../CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
       - run:
-          name: Check for version bump
+          name: Check for version bump if necessary
           command:
             (git branch | grep '\* main' && echo 'Skipping version check since on main') ||
             (! (git status | grep -E "(src|package)") && echo 'Skipping version check since no changes to src or package') ||
@@ -31,7 +31,7 @@ jobs:
           name: Confirm node version npm install
           command: cat package-lock.json | grep lockfileVersion | grep 3 || exit 1
       - run:
-          name: Confirm example app version matches base version
+          name: Confirm version matches in all relevant places
           command: node ../scripts/check-version-matchups.cjs
       - run: npm install
       - run:
