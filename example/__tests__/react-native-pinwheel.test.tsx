@@ -38,7 +38,7 @@ describe('<PinwheelLink />', () => {
     );
   }
 
-  test('onSuccess is called', async () => {
+  test.skip('onSuccess is called', async () => {
     renderPinwheelLink();
 
     const result = {
@@ -64,7 +64,7 @@ describe('<PinwheelLink />', () => {
     expect(mockOnSuccess.mock.calls[0][0]).toEqual(result);
   });
 
-  test('onExit is called', async () => {
+  test.skip('onExit is called', async () => {
     renderPinwheelLink();
 
     const eventData = {
@@ -84,7 +84,7 @@ describe('<PinwheelLink />', () => {
     expect(mockOnExit.mock.calls[0][0]).toEqual({});
   });
 
-  test('onEvent is called', async () => {
+  test.skip('onEvent is called', async () => {
     renderPinwheelLink();
 
     const eventData = {

@@ -1,19 +1,18 @@
 {
-  "name": "PinwheelRNExample",
-  "version": "2.4.0",
+  "name": "pinwheel-react-native-example",
+  "version": "2.5.0-alpha",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator=\"iPhone 14\"",
+    "ios": "react-native run-ios -- --simulator='iPhone 15 Pro'",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-2.4.0.tgz",
+    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-2.5.0-alpha.tgz",
     "react": "18.2.0",
-    "react-native": "0.72.3",
-    "react-native-webview": "^13.2.3"
+    "react-native": "0.72.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

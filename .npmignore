@@ -1,0 +1,12 @@
+# Ignore sample code
+example/
+node_modules/
+src/
+.circleci/config.yml
+.github/CODEOWNERS
+.github/pull_request_template.md
+.vscode/launch.json
+README.md
+pinwheel-react-native-pinwheel-*.tgz
+scripts/
+tsconfig.json

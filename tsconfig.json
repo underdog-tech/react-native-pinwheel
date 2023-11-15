@@ -3,14 +3,18 @@
     "target": "es6",
     "module": "es6",
     "declaration": true,
-    "outDir": "./lib",
+    "outDir": "./",
     "strict": true,
     "jsx": "react-native",
     "skipLibCheck": true,
     "moduleResolution": "node",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "*.ios", "*.android"]
+    }
   },
   "include": [
     "src"

@@ -39,16 +39,25 @@ const TokenView: React.FC<TokenViewProps> = ({
   const [isPinwheelOpen, setIsPinwheelOpen] = useState(true);
 
   const onEvent = (eventName: string, payload: any) => {
-    console.log(eventName, payload);
+    console.log(`name: ${eventName}, payload: ${JSON.stringify(payload)}`);
     // @ts-ignore
     events.current.push({eventName, payload});
   };
   const onExit = (error: any) => {
-    console.log('OnExit', error);
+    console.log('onExit', error);
     setIsPinwheelOpen(false);
   };
   const onSuccess = (result: any) => {
-    console.log('OnSuccess', result);
+    console.log('onSuccess', result);
+  };
+  const onLogin = (result: any) => {
+    console.log('onLogin', result);
+  };
+  const onLoginAttempt = (result: any) => {
+    console.log('onLoginAttempt', result);
+  };
+  const onError = (result: any) => {
+    console.log('onError', result);
   };
 
   const apiResponse = useFetch(
@@ -106,8 +115,9 @@ const TokenView: React.FC<TokenViewProps> = ({
       onSuccess={onSuccess}
       onExit={onExit}
       onEvent={onEvent}
-      onLogin={result => console.log(result)}
-      onError={error => console.log(error)}
+      onLogin={onLogin}
+      onLoginAttempt={onLoginAttempt}
+      onError={onError}
     />
   );
 };
