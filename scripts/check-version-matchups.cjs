@@ -22,14 +22,25 @@ const versionInPodspec = fs.readFileSync(PODSPEC_FILE, 'utf-8')
   .trim()
   .replace(/('|"|;)/g, '')
 
+const allVersions = []
 
 console.log(`Got package version (package.json): ${baseVersion}`)
-console.log(`Got version from constants file (${CONSTANTS_FILE_LOCATION}): ${versionInConstants}`)
-console.log(`Got version from podspec file (${PODSPEC_FILE}): ${versionInPodspec}`)
-console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
-console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
+allVersions.push(baseVersion)
 
-if (baseVersion !== exampleVersion || exampleVersion !== installVersion || baseVersion !== versionInConstants) {
+console.log(`Got version from constants file (${CONSTANTS_FILE_LOCATION}): ${versionInConstants}`)
+allVersions.push(versionInConstants)
+
+console.log(`Got version from podspec file (${PODSPEC_FILE}): ${versionInPodspec}`)
+allVersions.push(versionInPodspec)
+
+console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
+allVersions.push(exampleVersion)
+
+console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
+allVersions.push(installVersion)
+
+if ((new Set(allVersions)).size !== 1) {
+// if ((baseVersion !== exampleVersion || exampleVersion !== installVersion || baseVersion !== versionInConstants)) {
   const errorMessage = 'Versions did not match up. (See above logs.) Please sync them all.'
   console.log(`
 ------------------------------------------------------------------------
