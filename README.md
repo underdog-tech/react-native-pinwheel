@@ -35,14 +35,7 @@ For this or other errors related to command line developer tools:
 
 ## Installation
 
-1. Install [`react-native-webview`](https://www.npmjs.com/package/react-native-webview) peer dependency.
-
-```bash
-$ npm install --save react-native-webview
-$ cd ios && pod install
-```
-
-2. Install Pinwheel React Native SDK
+1. Install Pinwheel React Native SDK
 
 ```bash
 $ npm install --save @pinwheel/react-native-pinwheel
