@@ -15,8 +15,17 @@ const versionInConstants = fs.readFileSync(CONSTANTS_FILE_LOCATION, 'utf-8')
   .trim()
   .replace(/('|"|;)/g, '')
 
+const PODSPEC_FILE = '../RNPinwheelSDK.podspec'
+const versionInPodspec = fs.readFileSync(PODSPEC_FILE, 'utf-8')
+  .match(/s\.version      = \".+\"/)[0]
+  .split('=')[1]
+  .trim()
+  .replace(/('|"|;)/g, '')
+
+
 console.log(`Got package version (package.json): ${baseVersion}`)
 console.log(`Got version from constants file (${CONSTANTS_FILE_LOCATION}): ${versionInConstants}`)
+console.log(`Got version from podspec file (${PODSPEC_FILE}): ${versionInPodspec}`)
 console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
 console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
 
@@ -32,4 +41,4 @@ if (baseVersion !== exampleVersion || exampleVersion !== installVersion || baseV
   throw new Error(errorMessage)
 }
 
-  console.log('success, check passed')
+console.log('success, check passed')
