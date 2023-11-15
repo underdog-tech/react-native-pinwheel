@@ -1,3 +1,4 @@
+const fs = require('fs')
 const baseVersion = require('../package.json').version
 const exampleVersion = require('../example/package.json').version
 const packageName = '@pinwheel/react-native-pinwheel'
@@ -7,12 +8,48 @@ const installVersion = require('../example/package.json')
   [0]
   .replace('.tgz', '')
 
-console.log(`Got package version (package.json): ${baseVersion}`)
-console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
-console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
+const CONSTANTS_FILE_LOCATION = '../src/constants.ts'
+const versionInConstants = fs.readFileSync(CONSTANTS_FILE_LOCATION, 'utf-8')
+  .match(/export const VERSION \= \'.+\';/)[0]
+  .split('=')[1]
+  .trim()
+  .replace(/('|"|;)/g, '')
 
-if (baseVersion === exampleVersion && exampleVersion === installVersion) {
-  console.log('success, check passed')
-} else {
-  throw new Error('Versions did not match up. Please sync them all.')
+const PODSPEC_FILE = '../RNPinwheelSDK.podspec'
+const versionInPodspec = fs.readFileSync(PODSPEC_FILE, 'utf-8')
+  .match(/s\.version      = \".+\"/)[0]
+  .split('=')[1]
+  .trim()
+  .replace(/('|"|;)/g, '')
+
+const allVersions = []
+
+console.log(`Got package version (package.json): ${baseVersion}`)
+allVersions.push(baseVersion)
+
+console.log(`Got version from constants file (${CONSTANTS_FILE_LOCATION}): ${versionInConstants}`)
+allVersions.push(versionInConstants)
+
+console.log(`Got version from podspec file (${PODSPEC_FILE}): ${versionInPodspec}`)
+allVersions.push(versionInPodspec)
+
+console.log(`Got example app (example/package.json) version: ${exampleVersion}`)
+allVersions.push(exampleVersion)
+
+console.log(`Got example app installation of package (${packageName}): ${installVersion}\n\n`)
+allVersions.push(installVersion)
+
+if ((new Set(allVersions)).size !== 1) {
+// if ((baseVersion !== exampleVersion || exampleVersion !== installVersion || baseVersion !== versionInConstants)) {
+  const errorMessage = 'Versions did not match up. (See above logs.) Please sync them all.'
+  console.log(`
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+>> ${errorMessage}
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+`)
+  throw new Error(errorMessage)
 }
+
+console.log('success, check passed')
