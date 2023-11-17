@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
     s.public_header_files = 'ios/**/*.h'
     s.requires_arc = true
     s.dependency "React"
-    s.dependency 'PinwheelSDK', '2.4.3'
+    s.dependency 'PinwheelSDK', '2.4.4'
   end
