@@ -18,7 +18,7 @@
 
 - (void)initPinwheelWrapperVC {
     if (self.token != nil && self.pinwheelWrapperVC == nil) {
-        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: "2.5.0"];
+        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"2.5.0"];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
