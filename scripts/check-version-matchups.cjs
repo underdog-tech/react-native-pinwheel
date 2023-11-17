@@ -4,8 +4,7 @@ const exampleVersion = require('../example/package.json').version
 const packageName = '@pinwheel/react-native-pinwheel'
 const installVersion = require('../example/package.json')
   .dependencies[packageName]
-  .match(/[0-9]+\.[0-9]+\.[0-9]+\..*/)
-  [0]
+  .split('react-native-pinwheel-')[1]
   .replace('.tgz', '')
 
 const CONSTANTS_FILE_LOCATION = '../src/constants.ts'
