@@ -75,9 +75,9 @@ PODS:
   - hermes-engine/Pre-built (0.72.5)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
-  - PinwheelSDK (2.4.0):
-    - PinwheelSDK/PinwheelLinkSDK (= 2.4.0)
-  - PinwheelSDK/PinwheelLinkSDK (2.4.0)
+  - PinwheelSDK (2.4.4):
+    - PinwheelSDK/PinwheelLinkSDK (= 2.4.4)
+  - PinwheelSDK/PinwheelLinkSDK (2.4.4)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -488,8 +488,8 @@ PODS:
     - React-jsi (= 0.72.5)
     - React-logger (= 0.72.5)
     - React-perflogger (= 0.72.5)
-  - RNPinwheelSDK (2.4.1):
-    - PinwheelSDK (= 2.4.0)
+  - RNPinwheelSDK (2.5.0):
+    - PinwheelSDK (= 2.4.4)
     - React
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
@@ -525,7 +525,6 @@ DEPENDENCIES:
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
   - OpenSSL-Universal (= 1.1.1100)
-  - PinwheelSDK (from `../../../pinwheel-ios-sdk-internal/PinwheelSDK.podspec`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -577,6 +576,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - PinwheelSDK
     - SocketRocket
     - YogaKit
 
@@ -594,8 +594,6 @@ EXTERNAL SOURCES:
   hermes-engine:
     :podspec: "../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec"
     :tag: hermes-2023-08-07-RNv0.72.4-813b2def12bc9df02654b3e3653ae4a68d0572e0
-  PinwheelSDK:
-    :path: "../../../pinwheel-ios-sdk-internal/PinwheelSDK.podspec"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -684,7 +682,7 @@ SPEC CHECKSUMS:
   hermes-engine: f6cf92a471053245614d9d8097736f6337d5b86c
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
-  PinwheelSDK: 14e1161e7b6e426026732dc13ad4bcbad4c53476
+  PinwheelSDK: f45bfa97f18691481c1a2e2487aab84731829494
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: df81ab637d35fac9e6eb94611cfd20f0feb05455
   RCTTypeSafety: 4636e4a36c7c2df332bda6d59b19b41c443d4287
@@ -717,11 +715,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: cc32add98c45c5df18436a6a52a7e1f6edec102c
   React-utils: 7a9918a1ffdd39aba67835d42386f592ea3f8e76
   ReactCommon: 91ece8350ebb3dd2be9cef662abd78b6948233c0
-  RNPinwheelSDK: f2bc70b3c696eb3cfca61b1f12317a7b5caab93a
+  RNPinwheelSDK: b9d3a9b3afc04fa92e6cc2522345d6292c87e7fe
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 86fed2e4d425ee4c6eab3813ba1791101ee153c6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 70728cf13c3b1c92423bd17f76c7bea49e3e14c7
+PODFILE CHECKSUM: dbe149c6bc3193dde06456e3b092c3ad8806bf77
 
 COCOAPODS: 1.13.0

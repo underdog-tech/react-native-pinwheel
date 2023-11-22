@@ -15,8 +15,6 @@ buildscript {
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-def MIN_PW_SDK_VERSION = '2.4.1'
-
 android {
     compileSdkVersion 33
 
@@ -43,8 +41,10 @@ rootProject.allprojects {
     }
 }
 
+def PW_SDK_VERSION = '2.4.3'
+
 dependencies {
-    def pwVersion = rootProject.hasProperty('pwVersion') ? rootProject.pwVersion : MIN_PW_SDK_VERSION
+    def pwVersion = rootProject.hasProperty('pwVersion') ? rootProject.pwVersion : PW_SDK_VERSION
     implementation 'com.facebook.react:react-native:+'
     implementation "com.getpinwheel:pinwheel-android:$pwVersion"
 }
