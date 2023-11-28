@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "RNPinwheelSDK"
-    s.version      = "2.5.0"
+    s.version      = "2.5.1"
     s.summary      = "React Native plugin for Pinwheel's SDK"
     s.description  = <<-DESC
                      An open source React Native plugin for calling Pinwheel's native SDKs to manage payroll data.
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
     s.public_header_files = 'ios/**/*.h'
     s.requires_arc = true
     s.dependency "React"
-    s.dependency 'PinwheelSDK', '2.4.4'
+    s.dependency 'PinwheelSDK', '2.4.5'
   end
