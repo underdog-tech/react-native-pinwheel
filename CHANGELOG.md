@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## 2.5.x Releases
 
-[2.5.0](#250)
+[2.5.0](#250) | [2.5.1](#251)
 
 ---
+### 2.5.1
+
+#### Notes
+
+- Internal contract changes.
 
 ### 2.5.0
 
