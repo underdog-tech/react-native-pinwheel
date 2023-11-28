@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 
 #### Notes
 
-- Internal contract changes.
+- Internal contract changes
 
 ### 2.5.0
 
