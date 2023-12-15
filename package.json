@@ -29,6 +29,7 @@
     "react-native": {
       "hermes-engine": "0.11.0"
     },
+    "node-fetch": "3.3.2",
     "@react-native-community/cli-tools": {
       "shell-quote": "^1.7.4"
     }
