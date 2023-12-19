@@ -162,7 +162,7 @@ class PinwheelViewManager(
 
 
     this.token?.let {
-      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "2.5.1")
+      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.0.0")
       pinwheelFragment.pinwheelEventListener = this
       val activity = reactContext.currentActivity as FragmentActivity
       activity.supportFragmentManager
