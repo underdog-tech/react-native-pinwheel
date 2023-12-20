@@ -10,6 +10,7 @@ index.d.ts
 index.js
 pinwheel-wrapper.d.ts
 pinwheel-wrapper.js
+dist
 
 # OSX
 #
@@ -111,3 +112,9 @@ pinwheel-wrapper.android.js
 pinwheel-wrapper.ios.d.ts
 pinwheel-wrapper.ios.js
 example/ios/build/generated/ios/React-Codegen.podspec.json
+
+android/build
+android/gradle
+android/gradlew
+android/gradlew.bat
+android/local.properties

@@ -19,7 +19,7 @@ import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.model.PinwheelEventType
 import com.underdog_tech.pinwheel_android.model.PinwheelEventPayload
-import com.underdog_tech.pinwheel_android.model.PinwheelAmount
+import com.underdog_tech.pinwheel_android.model.PinwheelInputAllocationPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelTarget
 import com.underdog_tech.pinwheel_android.model.PinwheelAllocation
 import com.underdog_tech.pinwheel_android.model.PinwheelParams
@@ -31,7 +31,6 @@ import com.underdog_tech.pinwheel_android.model.PinwheelLoginPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelLoginAttemptPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelDDFormCreatePayload
 import com.underdog_tech.pinwheel_android.model.PinwheelScreenTransitionPayload
-import com.underdog_tech.pinwheel_android.model.PinwheelInputAmountPayload
 
 fun PinwheelTarget.toWritableMap(): WritableMap {
   return Arguments.createMap().apply {
@@ -50,17 +49,14 @@ fun PinwheelAllocation.toWritableMap(): WritableMap {
 
 fun PinwheelParams.toWritableMap(): WritableMap {
   return Arguments.createMap().apply {
-    putMap("amount", this@toWritableMap.amount?.toWritableMap())
+    putString("action", this@toWritableMap.action)
+    putMap("allocation", this@toWritableMap.allocation?.toWritableMap())
   }
 }
 
 fun PinwheelEventPayload.toWritableMap(): WritableMap = when (this) {
-  is PinwheelAmount -> Arguments.createMap().apply {
-    putDouble("value", this@toWritableMap.value.toDouble())
-    putString("unit", this@toWritableMap.unit)
-  }
 
-  is PinwheelInputAmountPayload -> Arguments.createMap().apply {
+  is PinwheelInputAllocationPayload -> Arguments.createMap().apply {
     putString("action", this@toWritableMap.action)
     putMap("allocation", this@toWritableMap.allocation?.toWritableMap())
   }
@@ -162,7 +158,7 @@ class PinwheelViewManager(
 
 
     this.token?.let {
-      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "2.5.1")
+      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.0.0")
       pinwheelFragment.pinwheelEventListener = this
       val activity = reactContext.currentActivity as FragmentActivity
       activity.supportFragmentManager
@@ -210,4 +206,4 @@ class PinwheelViewManager(
     private const val REACT_CLASS = "RNTPinwheel"
     private const val COMMAND_CREATE = 1
   }
-}
+}}

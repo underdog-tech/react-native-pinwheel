@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+# 3.0.x Releases
+
+- `3.0.x` Releases - [3.0.0](#300)
+
+### [3.0.0](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.0)
+
+---
+
+This new major version bump introduces an updated API to support partner-based switches.
+
+#### Changed
+- The `action` field in `input_allocation` event is now optional.
+- The `params` field in the `success` event uses the `input_allocation` schema with fields `action` and `allocation`.
+
+#### Removed
+- Removed `LinkResult` type export. This was the old `success` event payload. The new payload has the same format as the newly exported `SuccessEventPayload`.
+- Removed `EventPayload` type export. The event handler function will now be implicitly typed.
+- Removed `ScreenTransition` type export. Use `ScreenTransitionEventPayload` instead.
+- Removed `EmptyPayloadObject` type export.
+- Removed `Error` type export. Use `ErrorEventPayload` instead. (`Error` was marked as deprecated in version 2.)
+- Removed `ErrorType` type export. Use `PinwheelErrorType` instead. (`ErrorType` was marked as deprecated in version 2.)
+- Removed `input_amount` event. Use `input_allocation` even instead.
+- Removed `PINWHEEL_MESSAGE_TYPES`.
+
 ## 2.5.x Releases
 
 [2.5.0](#250) | [2.5.1](#251) 

@@ -7,7 +7,7 @@ if [ ! -f example/env.js ]; then
 fi
 
 
-node -v | grep 16.7.0 || (echo 'Please use node 16.7.0. If you want to use a different node version, comment out this line in scripts/dev.sh and continue.' && exit 1)
+# node -v | grep 16.7.0 || (echo 'Please use node 16.7.0. If you want to use a different node version, comment out this line in scripts/dev.sh and continue.' && exit 1)
 
 npm run bump-pkg-version
 
