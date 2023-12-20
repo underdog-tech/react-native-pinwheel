@@ -17,16 +17,14 @@ This new major version bump introduces an updated API to support partner-based s
 - The `params` field in the `success` event uses the `input_allocation` schema with fields `action` and `allocation`.
 
 #### Removed
-- Removed `LinkResult` export. This was the old `success` event payload. The new payload has the same format as the newly exported `SuccessEventPayload`.
-<!-- - Removed `PinwheelError` export. Use `ErrorEventPayload` instead. -->
-- Removed `EventPayload` export. The event handler function will now be implicitly typed.
-<!-- - Removed `ScreenTransition` export. Use `ScreenTransitionEventPayload` instead. -->
-<!-- - Removed `InputAllocation` export. Use `ScreenTransitionEventPayload` instead. -->
-- Removed `EmptyPayloadObject` export.
-- Removed `Error` export. Use `ErrorEventPayload` instead. (`Error` was marked as deprecated in version 2.)
-- Removed `ErrorType` export. Use `PinwheelErrorType` instead. (`ErrorType` was marked as deprecated in version 2.)
+- Removed `LinkResult` type export. This was the old `success` event payload. The new payload has the same format as the newly exported `SuccessEventPayload`.
+- Removed `EventPayload` type export. The event handler function will now be implicitly typed.
+- Removed `ScreenTransition` type export. Use `ScreenTransitionEventPayload` instead.
+- Removed `EmptyPayloadObject` type export.
+- Removed `Error` type export. Use `ErrorEventPayload` instead. (`Error` was marked as deprecated in version 2.)
+- Removed `ErrorType` type export. Use `PinwheelErrorType` instead. (`ErrorType` was marked as deprecated in version 2.)
 - Removed `input_amount` event. Use `input_allocation` even instead.
-
+- Removed `PINWHEEL_MESSAGE_TYPES`.
 
 ## 2.5.x Releases
 
