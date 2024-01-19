@@ -77,4 +77,6 @@ workflows:
             - test
           filters:
             branches:
-              only: main
+              only:
+                - main
+                - main-2.5
