@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - `3.0.x` Releases - [3.0.0](#300)
 
-### [3.0.0](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.0)
+### [3.0.0](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.0) | [3.0.1](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.1)
 
 ---
 

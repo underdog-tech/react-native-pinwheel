@@ -206,4 +206,4 @@ class PinwheelViewManager(
     private const val REACT_CLASS = "RNTPinwheel"
     private const val COMMAND_CREATE = 1
   }
-}}
+}
