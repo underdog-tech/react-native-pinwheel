@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## 2.5.x Releases
 
-[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252)
+[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252) | [2.5.3](#253)
+
+---
+### 2.5.3
+
+#### Notes
+
+- Changed Minimum Android SDK requirements to 22
 
 ---
 ### 2.5.2
