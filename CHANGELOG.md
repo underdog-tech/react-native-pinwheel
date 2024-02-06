@@ -4,17 +4,19 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301)
-
-### [3.0.1](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.1)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302)
 
 ---
+
+### [3.0.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.2)
+
+Changed Minimum Android SDK requirements to 22
+
+### [3.0.1](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.1)
 
 Expand internal functionality to support a broader range of platforms and increase conversion rate.
 
 ### [3.0.0](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.0)
-
----
 
 This new major version bump introduces an updated API to support partner-based switches.
 
