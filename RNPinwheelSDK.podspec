@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "RNPinwheelSDK"
-    s.version      = "3.0.1"
+    s.version      = "3.0.2"
     s.summary      = "React Native plugin for Pinwheel's SDK"
     s.description  = <<-DESC
                      An open source React Native plugin for calling Pinwheel's native SDKs to manage payroll data.
