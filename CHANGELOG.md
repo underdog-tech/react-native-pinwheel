@@ -8,11 +8,9 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-### [3.0.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.3)
+### [3.0.3](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.3)
 
 Changed Minimum Android SDK requirements to 22
-
----
 
 ### [3.0.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.2)
 
