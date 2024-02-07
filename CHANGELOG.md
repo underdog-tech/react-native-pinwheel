@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303)
+
+---
+
+### [3.0.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.3)
+
+Changed Minimum Android SDK requirements to 22
 
 ---
 
