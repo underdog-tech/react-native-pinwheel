@@ -1,6 +1,6 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "2.5.3",
+  "version": "2.5.4",
   "type": "module",
   "description": "Pinwheel React Native SDK",
   "main": "index.js",
