@@ -7,14 +7,14 @@ const installVersion = require('../example/package.json')
   .split('react-native-pinwheel-')[1]
   .replace('.tgz', '')
 
-const CONSTANTS_FILE_LOCATION = '../src/constants.ts'
+const CONSTANTS_FILE_LOCATION = './src/constants.ts'
 const versionInConstants = fs.readFileSync(CONSTANTS_FILE_LOCATION, 'utf-8')
   .match(/export const VERSION \= \'.+\';/)[0]
   .split('=')[1]
   .trim()
   .replace(/('|"|;)/g, '')
 
-const PODSPEC_FILE = '../RNPinwheelSDK.podspec'
+const PODSPEC_FILE = './RNPinwheelSDK.podspec'
 const versionInPodspec = fs.readFileSync(PODSPEC_FILE, 'utf-8')
   .match(/s\.version      = \".+\"/)[0]
   .split('=')[1]
