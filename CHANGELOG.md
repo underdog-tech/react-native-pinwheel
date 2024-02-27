@@ -14,13 +14,18 @@ All notable changes to this project will be documented in this file.
 - Changed Minimum Android SDK requirements to 22
 
 ---
+### 2.5.3
+
+#### Notes
+
+Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
+
 ### 2.5.2
 
 #### Notes
 
 - Expand internal functionality to support a broader range of platforms and increase conversion rate.
 
----
 ### 2.5.1
 
 #### Notes
