@@ -44,13 +44,19 @@ This new major version bump introduces an updated API to support partner-based s
 
 ## 2.5.x Releases
 
-[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252) | [2.5.3](#253)
+[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252) | [2.5.3](#253) | [2.5.4](#254)
 
 ---
-### [2.5.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.3)
+### [2.5.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.4)
 
 ####
 Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
+
+### [2.5.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.3)
+
+#### Notes
+
+- Changed Minimum Android SDK requirements to 22
 
 ### [2.5.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.2)
 
