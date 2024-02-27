@@ -67,14 +67,23 @@ const TokenView: React.FC<TokenViewProps> = ({
       headers: {
         'Content-Type': 'application/json',
         'X-API-SECRET': API_SECRET,
+        'Pinwheel-Version': '2023-11-22',
       },
       body: JSON.stringify({
-        account_number,
-        account_type,
-        job,
-        mode,
+        allocation: {
+          targets: [
+            {
+              type: 'checking',
+              account_number,
+              routing_number,
+              name: 'BK BNK Checking',
+            },
+          ],
+        },
+        required_jobs: [job],
         org_name,
-        routing_number,
+        end_user_id: 'my_user_123',
+        mode,
         skip_exit_survey,
         skip_intro_screen,
       }),
