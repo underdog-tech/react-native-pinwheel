@@ -20,9 +20,13 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
     }
 
     const { name, payload } = event;
-    onEvent && onEvent(name, payload);
+    // Our Android SDK, since the beginning, has been firing events with upper case.
+    // Since we are now wrapping the Android SDK to create the RN SDK, we need to reconcile
+    // the event names here.
+    const normalizedName = name.toLowerCase()
+    onEvent && onEvent(normalizedName, payload);
 
-    switch (name.toLowerCase()) {
+    switch (normalizedName) {
       case 'exit':
         // console.log(`case: exit, onExit: ${onExit}`);
         onExit && onExit(payload);

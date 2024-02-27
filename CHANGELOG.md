@@ -4,23 +4,27 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304)
 
 ---
+### [3.0.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.4)
 
-### [3.0.3](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.3)
+####
+Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
+
+### [3.0.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.3)
 
 Changed Minimum Android SDK requirements to 22
 
-### [3.0.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.2)
+### [3.0.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.2)
 
 Changed Minimum Android SDK requirements to 22
 
-### [3.0.1](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.1)
+### [3.0.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.1)
 
 Expand internal functionality to support a broader range of platforms and increase conversion rate.
 
-### [3.0.0](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/3.0.0)
+### [3.0.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.0)
 
 This new major version bump introduces an updated API to support partner-based switches.
 
@@ -40,12 +44,15 @@ This new major version bump introduces an updated API to support partner-based s
 
 ## 2.5.x Releases
 
-[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252)
+[2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252) | [2.5.3](#253)
 
 ---
-### [2.5.2](https://github.com/underdog-tech/pinwheel-ios-sdk/releases/tag/2.5.2)
+### [2.5.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.3)
 
----
+####
+Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
+
+### [2.5.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.2)
 
 Expand internal functionality to support a broader range of platforms and increase conversion rate.
 
@@ -107,15 +114,15 @@ Add CircleCI scripting and local scripts.
 
 Use node 16.7.0 instead of 12.16.1 to install dependencies.
 
-### [2.3.6](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.6)
+### [2.3.6](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.3.6)
 
 N/A
 
-### [2.3.5](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.5)
+### [2.3.5](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.3.5)
 
 N/A
 
-### [2.3.4](https://github.com/underdog-tech/react-native-pinwheel/releases/tag/2.3.4)
+### [2.3.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.3.4)
 
 #### Added
 
