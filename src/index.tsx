@@ -20,9 +20,10 @@ export default ({linkToken, onLogin, onLoginAttempt, onSuccess, onError, onExit,
     }
 
     const { name, payload } = event;
-    onEvent && onEvent(name, payload);
+    const normalizedName = name.toLowerCase()
+    onEvent && onEvent(normalizedName, payload);
 
-    switch (name.toLowerCase()) {
+    switch (normalizedName) {
       case 'exit':
         // console.log(`case: exit, onExit: ${onExit}`);
         onExit && onExit(payload);
