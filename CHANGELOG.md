@@ -49,16 +49,18 @@ This new major version bump introduces an updated API to support partner-based s
 ---
 ### [2.5.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.4)
 
-####
-Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
+#### Bugfix
+Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
 
 ### [2.5.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.3)
 
 #### Notes
 
-- Changed Minimum Android SDK requirements to 22
+Changed Minimum Android SDK requirements to 22
 
 ### [2.5.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.2)
+
+#### Notes
 
 Expand internal functionality to support a broader range of platforms and increase conversion rate.
 
