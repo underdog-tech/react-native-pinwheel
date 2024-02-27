@@ -51,4 +51,15 @@ if ((new Set(allVersions)).size !== 1) {
   throw new Error(errorMessage)
 }
 
+const version = allVersions[0]
+const [a, b, c] = version.split('.')
+const regexForChangelog = new RegExp(`### \\[?${a}\.${b}\.${c}\\D`)
+const changelog = fs.readFileSync('./CHANGELOG.md', 'utf-8')
+if (!changelog.match(regexForChangelog)) {
+  const errorMsg = `Version entry (${version}) not found in CHANGELOG.md`
+  throw new Error(errorMsg)
+} else {
+  console.log(`CHANGELOG.md contains version entry ${version}`)
+}
+
 console.log('success, check passed')
