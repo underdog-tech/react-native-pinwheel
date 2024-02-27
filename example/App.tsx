@@ -73,7 +73,7 @@ const TokenView: React.FC<TokenViewProps> = ({
         allocation: {
           targets: [
             {
-              type: 'checking',
+              type: account_type,
               account_number,
               routing_number,
               name: 'BK BNK Checking',
