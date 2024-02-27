@@ -18,7 +18,7 @@ Changed Minimum Android SDK requirements to 22
 
 ### [3.0.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.2)
 
-Changed Minimum Android SDK requirements to 22
+Changed example app Minimum Android SDK requirements to 22
 
 ### [3.0.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.1)
 
