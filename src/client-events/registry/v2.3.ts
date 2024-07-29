@@ -114,6 +114,15 @@ export type ErrorEventPayload = {
   pendingRetry: boolean
 }
 
+export type OtherEventPayload = {
+  name: string;
+  payload: {
+    key: string;
+    value: string;
+    type: 'string' | 'boolean' | 'number';
+  }[];
+};
+
 /**
  * @deprecated - Use `ErrorEventPayload` instead.
  */
@@ -136,6 +145,7 @@ type EventPayloadAdditions = {
   dd_form_download: DdFormDownloadEventPayload
   screen_transition: ScreenTransitionEventPayload
   exit: ErrorEventPayload | ExitEventPayload
+  other_event: OtherEventPayload;
   success: SuccessEventPayload
   error: ErrorEventPayload
 }

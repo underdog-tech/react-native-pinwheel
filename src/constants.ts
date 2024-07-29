@@ -1,4 +1,4 @@
 /**
  * Importing package.json here causes a problem with the folder structure when we npm pack and publish.
  */
-export const VERSION = '3.0.4';
+export const VERSION = '3.0.5';
