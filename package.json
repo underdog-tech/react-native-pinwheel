@@ -1,24 +1,44 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "3.1.1",
+  "version": "3.2.0-rc.0",
   "type": "module",
   "description": "Pinwheel React Native SDK",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "android",
+    "ios",
+    "rtn-pinwheel.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "scripts": {
-    "build": "tsc",
-    "bump-pkg-version": "./scripts/bump-pkg-version.sh",
-    "dev": "./scripts/dev.sh"
+    "dev": "./scripts/dev_expo.sh"
   },
   "author": "Pinwheel",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.13.1 || ^17 || ^18",
-    "react-native": "*",
-    "react-native-webview": "*"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
     "@types/react-native": "^0.72.2",
     "typescript": "^4.0.3"
+  },
+  "codegenConfig": {
+    "name": "RTNPinwheelSpec",
+    "type": "all",
+    "jsSrcsDir": "./src",
+    "outputDir": {
+      "ios": "ios/generated",
+      "android": "android/generated"
+    },
+    "android": {
+      "javaPackageName": "com.rtnpinwheel"
+    }
   }
 }

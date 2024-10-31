@@ -1,50 +1,41 @@
 buildscript {
-    def kotlin_version = rootProject.ext.has('kotlinVersion') ? rootProject.ext.get('kotlinVersion') : '1.7.22'
-
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
+  ext.safeExtGet = {prop, fallback ->
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+  }
+  repositories {
+    google()
+    gradlePluginPortal()
+  }
+  dependencies {
+    classpath("com.android.tools.build:gradle:7.3.1")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
+  }
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+apply plugin: 'com.facebook.react'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 31
+  compileSdkVersion safeExtGet('compileSdkVersion', 33)
+  namespace "com.rtnpinwheel"
 
-    defaultConfig {
-        minSdkVersion 22
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
-    }
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/java'
-    }
+  defaultConfig {
+    minSdkVersion safeExtGet('minSdkVersion', 21)
+    targetSdkVersion safeExtGet('targetSdkVersion', 33)
+    buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", "true")
+  }
 }
 
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+repositories {
+  mavenCentral()
+  google()
 }
 
 def PW_ANDROID_SDK_VERSION = '3.1.1'
 
 dependencies {
     def pwVersion = rootProject.hasProperty('pwVersion') ? rootProject.pwVersion : PW_ANDROID_SDK_VERSION
-    implementation 'com.facebook.react:react-native:+'
+    implementation 'com.facebook.react:react-native'
     implementation "com.getpinwheel:pinwheel-android:$pwVersion"
 }

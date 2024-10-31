@@ -1,18 +1,22 @@
+require "json"
+
+package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+
 Pod::Spec.new do |s|
-    s.name         = "RNPinwheelSDK"
-    s.version      = "3.1.1"
-    s.summary      = "React Native plugin for Pinwheel's SDK"
-    s.description  = <<-DESC
-                     An open source React Native plugin for calling Pinwheel's native SDKs to manage payroll data.
-                     DESC
-    s.homepage     = "https://github.com/underdog-tech/react-native-pinwheel"
-    s.license      = { :file => 'LICENSE' }
-    s.author       = { 'Pinwheel' => 'info@pinwheelapi.com' }
-    s.platform     = :ios, "12.0"
-    s.source       = { :path => 'ios' }
-    s.source_files  = "ios/**/*.{h,m}"
-    s.public_header_files = 'ios/**/*.h'
-    s.requires_arc = true
-    s.dependency "React"
-    s.dependency 'PinwheelSDK', '3.1.1'
-  end
+  s.name            = "RNPinwheelSDK"
+  s.version         = package["version"]
+  s.summary         = package["description"]
+  s.description     = package["description"]
+  s.homepage        = package["homepage"]
+  s.license         = package["license"]
+  s.platforms       = { :ios => "12.0" }
+  s.author          = package["author"]
+  s.source          = { :git => package["repository"], :tag => "#{s.version}" }
+
+  s.source_files    = "ios/**/*.{h,m,mm,swift}"
+
+  install_modules_dependencies(s)
+
+  s.dependency 'PinwheelSDK', '3.0.5'
+  s.vendored_frameworks = "PinwheelLinkSDKObjC/ObjCWrapper.xcframework"
+end
