@@ -10,6 +10,7 @@
     "android",
     "ios",
     "rtn-pinwheel.podspec",
+    "PinwheelLinkSDKObjC",
     "!android/build",
     "!ios/build",
     "!**/__tests__",
@@ -40,6 +41,16 @@
     },
     "android": {
       "javaPackageName": "com.rtnpinwheel"
+    }
+  },
+  "expo": {
+    "autolinking": {
+      "android": {
+        "sourceDir": "android"
+      },
+      "ios": {
+        "sourceDir": "ios"
+      }
     }
   }
 }
