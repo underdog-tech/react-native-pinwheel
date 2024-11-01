@@ -1,8 +1,8 @@
-import React, { useEffect, useCallback } from "react";
-import { SafeAreaView } from "react-native";
-import RTNPinwheel from "./RTNPinwheelNativeComponent";
-import { PinwheelEvents } from "./PinwheelEvents";
-import { LinkOptions } from "./client-events/client";
+import React, { useEffect, useCallback } from 'react';
+import { SafeAreaView } from 'react-native';
+import RTNPinwheel from './RTNPinwheelNativeComponent';
+import { PinwheelEvents } from './PinwheelEvents';
+import { LinkOptions } from './client-events/client';
 
 const Pinwheel = ({
   linkToken,
@@ -31,23 +31,23 @@ const Pinwheel = ({
       onEvent && onEvent(normalizedName, payload);
 
       switch (normalizedName) {
-        case "exit":
+        case 'exit':
           // console.log(`case: exit, onExit: ${onExit}`);
           onExit && onExit(payload);
           break;
-        case "success":
+        case 'success':
           // console.log(`case: success, onSuccess: ${onSuccess}`);
           onSuccess && onSuccess(payload);
           break;
-        case "login":
+        case 'login':
           // console.log(`case: login, onLogin: ${onLogin}`);
           onLogin && onLogin(payload);
           break;
-        case "login_attempt":
+        case 'login_attempt':
           // console.log(`case: login_attempt, onLoginAttempt: ${onLoginAttempt}`);
           onLoginAttempt && onLoginAttempt(payload);
           break;
-        case "error":
+        case 'error':
           // console.log(`case: error, onError: ${onError}`);
           onError && onError(payload);
           break;
@@ -66,10 +66,10 @@ const Pinwheel = ({
   }, [eventsListener]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ width: '100%', height: '100%' }}>
       {linkToken && (
         <RTNPinwheel
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: '100%', height: '100%' }}
           token={linkToken}
         />
       )}

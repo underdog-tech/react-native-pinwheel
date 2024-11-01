@@ -1,18 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
+import { StyleSheet, View } from 'react-native';
 
-import Pinwheel from "@pinwheel/react-native-pinwheel"
+import Pinwheel from '@pinwheel/react-native-pinwheel';
 
-const token = ''
+const token = '';
 
 export default function App() {
   return (
-    // TODO: does not render if wrapped in a view
-    // <View style={styles.container}>
+    <View style={styles.container}>
       <Pinwheel linkToken={token}></Pinwheel>
-    // </View>
+    </View>
   );
 }
 
