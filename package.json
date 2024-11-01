@@ -3,13 +3,14 @@
   "version": "3.2.0-rc.0",
   "type": "module",
   "description": "Pinwheel React Native SDK",
+  "homepage": "https://github.com/underdog-tech/react-native-pinwheel",
   "react-native": "src/index",
   "source": "src/index",
   "files": [
     "src",
     "android",
     "ios",
-    "rtn-pinwheel.podspec",
+    "RNPinwheelSDK.podspec",
     "PinwheelLinkSDKObjC",
     "!android/build",
     "!ios/build",
@@ -41,16 +42,6 @@
     },
     "android": {
       "javaPackageName": "com.rtnpinwheel"
-    }
-  },
-  "expo": {
-    "autolinking": {
-      "android": {
-        "sourceDir": "android"
-      },
-      "ios": {
-        "sourceDir": "ios"
-      }
     }
   }
 }
