@@ -84,7 +84,7 @@ export type DdFormCreateEventPayload = {
 export type DdFormDownloadEventPayload = {}
 
 export type ScreenTransitionEventPayload = {
-  screen_name: string
+  screenName: string
   selectedEmployerId?: string
   selectedEmployerName?: string
   selectedPlatformId?: string
