@@ -1,6 +1,6 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "3.2.0-rc.0",
+  "version": "3.2.0-rc.1",
   "type": "module",
   "description": "Pinwheel React Native SDK",
   "homepage": "https://github.com/underdog-tech/react-native-pinwheel",
