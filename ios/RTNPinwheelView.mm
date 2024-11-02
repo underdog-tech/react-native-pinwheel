@@ -35,8 +35,8 @@ using namespace facebook::react;
 }
 
 - (void)initPinwheelWrapperVC {
-    if (self.token != nil && self.pinwheelWrapperVC == nil) {    
-        self.pinwheelWrapperVC = [[PinwheelVCWrapper alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.0.5"];
+    if (self.token != nil && self.pinwheelWrapperVC == nil) {
+        self.pinwheelWrapperVC = [[PinwheelVCWrapper alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.0-rc.1"];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
