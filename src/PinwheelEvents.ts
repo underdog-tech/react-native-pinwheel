@@ -1,4 +1,4 @@
-import {EmitterSubscription, Platform} from 'react-native';
+import {EmitterSubscription} from 'react-native';
 import {
   addListener,
   removeAllListeners,
