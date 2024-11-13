@@ -41,7 +41,7 @@ rootProject.allprojects {
     }
 }
 
-def PW_ANDROID_SDK_VERSION = '3.1.0'
+def PW_ANDROID_SDK_VERSION = '3.1.1'
 
 dependencies {
     def pwVersion = rootProject.hasProperty('pwVersion') ? rootProject.pwVersion : PW_ANDROID_SDK_VERSION
