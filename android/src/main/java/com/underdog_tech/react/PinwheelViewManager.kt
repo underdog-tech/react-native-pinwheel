@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReadableArray
 import com.facebook.react.bridge.WritableMap
 import com.facebook.react.bridge.WritableNativeMap
 import com.facebook.react.modules.core.DeviceEventManagerModule
+import com.facebook.react.modules.systeminfo.ReactNativeVersion
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.ViewGroupManager
 import com.facebook.react.uimanager.annotations.ReactPropGroup
@@ -149,6 +150,11 @@ class PinwheelViewManager(
     this.token = token
   }
 
+  fun getReactNativeVersion(): String {
+    val version = ReactNativeVersion.VERSION
+    return "${version["major"]}.${version["minor"]}.${version["patch"]}"
+  }
+
   /**
    * Replace your React Native view with a custom fragment
    */
@@ -158,7 +164,7 @@ class PinwheelViewManager(
 
 
     this.token?.let {
-      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.1.0")
+      val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.1.1", getReactNativeVersion())
       pinwheelFragment.pinwheelEventListener = this
       val activity = reactContext.currentActivity as FragmentActivity
       activity.supportFragmentManager
