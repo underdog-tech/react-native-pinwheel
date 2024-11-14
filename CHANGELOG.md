@@ -4,14 +4,17 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311)
 
 ---
+
+### [3.1.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.1.1)
+
+Expand internal functionality to increase conversion rate and upgrade vulnerable dependencies.
 
 ### [3.1.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.1.0)
 
 Expand internal functionality to support a broader range of platforms and increase conversion rate. Fix the casing of the `screenName` field in the exported `ScreenTransitionEventPayload` event payload type.
-
 
 ### [3.0.5](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.5)
 
