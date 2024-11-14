@@ -2,43 +2,26 @@
 
 Pinwheel SDK for React Native
 
-## Running The Example App Locally
-
-You may want to run the example app locally to get started.
-
-#### Dependencies
-
-- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm` if needed)
-- iPhone 14 simulator (open your Simulator app and check the available versions)
-- iOS 16 running on the simulator (open your Simulator app and check the available versions)
-- `pod` version 1.11.3 (check with `pod --version`)
-- Add your pinwheel secret to `example/env.js` (create this file) with `export default "<YOUR PINWHEEL SECRET>"`.
-
-#### Directions
-
-- `npm run dev`
-
-#### Troubleshooting
-
-###### An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405)
-- Click Apple > About This Mac > Storage > Manage > Developer
-- Delete Xcode cache
-- Delete Project Build and indexes
-
-###### Failed to build iOS project. We ran "xcodebuild" command but it exited with error code 65
-- Try downloading Xcode 14.2 from https://developer.apple.com/download/all/?q=xcode
-
-###### Failed to locate 'git', requesting installation of command line developer tools
-For this or other errors related to command line developer tools:
-- Make sure you have Command Line Tools for Xcode 14.2 installed
-- Open Xcode > Click Xcode in the app menu > Settings > Locations > Command Line Tools dropdown and set the correct location 
-
 ## Installation
 
 1. Install Pinwheel React Native SDK
 
 ```bash
 $ npm install --save @pinwheel/react-native-pinwheel
+```
+
+## Configuration
+Some platform integrations may require camera access for verification purposes. Ensure the necessary permissions are configured in your project:
+
+**Android:** Add the following permission to your `AndroidManifest.xml`:
+```
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
+**iOS:** Add the following key and description to your `Info.plist`:
+```
+<key>NSCameraUsageDescription</key>
+<string>We need access to your camera for verification purposes.</string>
 ```
 
 ## Usage
@@ -117,3 +100,34 @@ Callback for all significant events that happen during the modal flow. See all p
 | Type     | Required |
 | -------- | -------- |
 | function | No       |
+
+## Running The Example App Locally
+
+You may want to run the example app locally to get started.
+
+#### Dependencies
+
+- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm` if needed)
+- iPhone 14 simulator (open your Simulator app and check the available versions)
+- iOS 16 running on the simulator (open your Simulator app and check the available versions)
+- `pod` version 1.11.3 (check with `pod --version`)
+- Add your pinwheel secret to `example/env.js` (create this file) with `export default "<YOUR PINWHEEL SECRET>"`.
+
+#### Directions
+
+- `npm run dev`
+
+#### Troubleshooting
+
+###### An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405)
+- Click Apple > About This Mac > Storage > Manage > Developer
+- Delete Xcode cache
+- Delete Project Build and indexes
+
+###### Failed to build iOS project. We ran "xcodebuild" command but it exited with error code 65
+- Try downloading Xcode 14.2 from https://developer.apple.com/download/all/?q=xcode
+
+###### Failed to locate 'git', requesting installation of command line developer tools
+For this or other errors related to command line developer tools:
+- Make sure you have Command Line Tools for Xcode 14.2 installed
+- Open Xcode > Click Xcode in the app menu > Settings > Locations > Command Line Tools dropdown and set the correct location 
