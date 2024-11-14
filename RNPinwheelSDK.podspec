@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
 
   install_modules_dependencies(s)
 
-  s.dependency 'PinwheelSDK', '3.1.0'
+  s.dependency 'PinwheelSDK', '3.1.1'
   s.vendored_frameworks = "PinwheelLinkSDKObjC/ObjCWrapper.xcframework"
 end
