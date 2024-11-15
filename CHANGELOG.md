@@ -14,7 +14,23 @@ Expand internal functionality to increase conversion rate and upgrade vulnerable
 
 ### [3.1.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.1.0)
 
-Expand internal functionality to support a broader range of platforms and increase conversion rate. Fix the casing of the `screenName` field in the exported `ScreenTransitionEventPayload` event payload type.
+#### Changed
+- Introduces support for additional platforms and integrations, improving conversion rates and overall functionality.
+- Fix the casing of the `screenName` field in the exported `ScreenTransitionEventPayload` event payload type.
+
+#### Important Note:
+Some integrations may now require camera access for verification purposes. Ensure the necessary permissions are configured in your project:
+
+**Android:** Add the following permission to your `AndroidManifest.xml`:
+```
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
+**iOS:** Add the following key and description to your `Info.plist`:
+```
+<key>NSCameraUsageDescription</key>
+<string>We need access to your camera for verification purposes.</string>
+```
 
 ### [3.0.5](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.5)
 
