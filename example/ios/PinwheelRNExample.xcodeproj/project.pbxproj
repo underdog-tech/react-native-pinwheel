@@ -12,8 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A2F34EC3C535E2895A41460A /* libPods-PinwheelRNExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8B901F5B542F65B283A173 /* libPods-PinwheelRNExample.a */; };
-		E5AA9045ECA84BC2BB53BD08 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F18F1F0259337C6F5BAA01 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */; };
+		B1AACE91120F159F98BB79DC /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1064ACD14A75629404BADD8 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */; };
+		B765400933DE86651C03C12C /* libPods-PinwheelRNExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CAF295A2F38FE3128CD93C /* libPods-PinwheelRNExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +36,14 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PinwheelRNExample/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PinwheelRNExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PinwheelRNExample/main.m; sourceTree = "<group>"; };
-		1BE1E2D994C551F1B5ADB231 /* Pods-PinwheelRNExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample.release.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample.release.xcconfig"; sourceTree = "<group>"; };
-		1F588EB6E15C7F1317265561 /* Pods-PinwheelRNExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample.debug.xcconfig"; sourceTree = "<group>"; };
-		7B8B901F5B542F65B283A173 /* libPods-PinwheelRNExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29915282AA0E605835EBB61D /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		3243EEB908DD33C861F04EEC /* Pods-PinwheelRNExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PinwheelRNExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A0F18F1F0259337C6F5BAA01 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample-PinwheelRNExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEBEDB03CA58FA4B73DB76CF /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8A37EC9383196CE95B9F9C2 /* Pods-PinwheelRNExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample.release.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample.release.xcconfig"; sourceTree = "<group>"; };
+		E1064ACD14A75629404BADD8 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample-PinwheelRNExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CAF295A2F38FE3128CD93C /* libPods-PinwheelRNExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EDEB335C5201E2BBB8698A14 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB03ECE393E21098436C1A79 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5AA9045ECA84BC2BB53BD08 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a in Frameworks */,
+				B1AACE91120F159F98BB79DC /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2F34EC3C535E2895A41460A /* libPods-PinwheelRNExample.a in Frameworks */,
+				B765400933DE86651C03C12C /* libPods-PinwheelRNExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				7B8B901F5B542F65B283A173 /* libPods-PinwheelRNExample.a */,
-				A0F18F1F0259337C6F5BAA01 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */,
+				E2CAF295A2F38FE3128CD93C /* libPods-PinwheelRNExample.a */,
+				E1064ACD14A75629404BADD8 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F588EB6E15C7F1317265561 /* Pods-PinwheelRNExample.debug.xcconfig */,
-				1BE1E2D994C551F1B5ADB231 /* Pods-PinwheelRNExample.release.xcconfig */,
-				EDEB335C5201E2BBB8698A14 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */,
-				AEBEDB03CA58FA4B73DB76CF /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */,
+				3243EEB908DD33C861F04EEC /* Pods-PinwheelRNExample.debug.xcconfig */,
+				C8A37EC9383196CE95B9F9C2 /* Pods-PinwheelRNExample.release.xcconfig */,
+				FB03ECE393E21098436C1A79 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */,
+				29915282AA0E605835EBB61D /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PinwheelRNExampleTests" */;
 			buildPhases = (
-				DC1D3E861A5D500508310DB3 /* [CP] Check Pods Manifest.lock */,
+				B551A879EAB2805F7F01C474 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				70D8902B538C3CB22AB884B6 /* [CP] Embed Pods Frameworks */,
-				E1FED16095C43955465A09E3 /* [CP] Copy Pods Resources */,
+				906583B7A7DBC8C9D96DF15D /* [CP] Embed Pods Frameworks */,
+				07253C090E51D4FD21DE92AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PinwheelRNExample" */;
 			buildPhases = (
-				0160A548F39C7EBC42861069 /* [CP] Check Pods Manifest.lock */,
+				BC4141AEA556880FFAAF9FB6 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				FBA5AD5A0E6702124C03C5E9 /* [CP] Embed Pods Frameworks */,
-				472AB08907F4FD397074408C /* [CP] Copy Pods Resources */,
+				80487CA206F0817FFF00CC90 /* [CP] Embed Pods Frameworks */,
+				D0524CF85DC1B929AB124DD4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,46 +266,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0160A548F39C7EBC42861069 /* [CP] Check Pods Manifest.lock */ = {
+		07253C090E51D4FD21DE92AE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PinwheelRNExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		472AB08907F4FD397074408C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70D8902B538C3CB22AB884B6 /* [CP] Embed Pods Frameworks */ = {
+		80487CA206F0817FFF00CC90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		906583B7A7DBC8C9D96DF15D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,7 +317,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC1D3E861A5D500508310DB3 /* [CP] Check Pods Manifest.lock */ = {
+		B551A879EAB2805F7F01C474 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,38 +339,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1FED16095C43955465A09E3 /* [CP] Copy Pods Resources */ = {
+		BC4141AEA556880FFAAF9FB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PinwheelRNExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0524CF85DC1B929AB124DD4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBA5AD5A0E6702124C03C5E9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinwheelRNExample/Pods-PinwheelRNExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -430,7 +430,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDEB335C5201E2BBB8698A14 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */;
+			baseConfigurationReference = FB03ECE393E21098436C1A79 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -457,7 +457,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEBEDB03CA58FA4B73DB76CF /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */;
+			baseConfigurationReference = 29915282AA0E605835EBB61D /* Pods-PinwheelRNExample-PinwheelRNExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -481,7 +481,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F588EB6E15C7F1317265561 /* Pods-PinwheelRNExample.debug.xcconfig */;
+			baseConfigurationReference = 3243EEB908DD33C861F04EEC /* Pods-PinwheelRNExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -513,7 +513,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BE1E2D994C551F1B5ADB231 /* Pods-PinwheelRNExample.release.xcconfig */;
+			baseConfigurationReference = C8A37EC9383196CE95B9F9C2 /* Pods-PinwheelRNExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -605,14 +605,14 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-DRN_FABRIC_ENABLED",
+					" ",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					"-DRN_FABRIC_ENABLED",
+					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -683,14 +683,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = (
 					"$(inherited)",
-					"-DRN_FABRIC_ENABLED",
+					" ",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					"-DRN_FABRIC_ENABLED",
+					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
