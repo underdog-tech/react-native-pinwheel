@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import { SafeAreaView } from 'react-native';
-import RTNPinwheel from './RTNPinwheelNativeComponent';
+const RTNPinwheel = require('./RTNPinwheelNativeComponent').default;
 import { PinwheelEvents } from './PinwheelEvents';
 import { LinkOptions } from './client-events/client';
 
