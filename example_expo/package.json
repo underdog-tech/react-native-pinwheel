@@ -6,7 +6,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.2.0-rc.4.tgz",
+    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.2.0-rc.5.tgz",
     "expo": "~51.0.37",
     "expo-build-properties": "~0.12.5",
     "expo-image": "~1.13.0",
@@ -23,7 +23,7 @@
     "@babel/core": "^7.20.0"
   },
   "name": "example_expo",
-  "version": "1.0.0",
+  "version": "3.2.0",
   "private": true,
   "expo": {
     "install": {

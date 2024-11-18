@@ -1,10 +1,23 @@
+#if RCT_NEW_ARCH_ENABLED
+
 #import <React/RCTViewComponentView.h>
-#import <UIKit/UIKit.h>
+
+# endif
+
 #import <ObjCWrapper/PinwheelVCWrapper.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifdef RCT_NEW_ARCH_ENABLED
+
 @interface RTNPinwheelView : RCTViewComponentView <PinwheelVCWrapperDelegate>
+
+#else 
+
+@interface RTNPinwheelView : UIView <PinwheelVCWrapperDelegate>
+
+#endif
 
 @property (nonatomic, strong) PinwheelVCWrapper *pinwheelWrapperVC;
 @property (nonatomic, assign) NSString *token;
@@ -14,4 +27,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-

@@ -59,16 +59,20 @@ RCT_EXPORT_MODULE();
   return @[@"PINWHEEL_EVENT"]; // Add more event names here.
 }
 
+#if RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const facebook::react::ObjCTurboModule::InitParams &)params {
     return std::make_shared<facebook::react::NativePinwheelEventsSpecJSI>(params);
 }
+#endif
 
-- (void)removeListener { 
+RCT_EXPORT_METHOD(removeListener) { 
     [self stopObserving];
 }
 
-- (void)setListener { 
+RCT_EXPORT_METHOD(setListener) { 
     [self startObserving];
 }
+
+
 
 @end
