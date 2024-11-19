@@ -48,7 +48,7 @@ class Pinwheel : FrameLayout {
   private fun createFragment() {
     Handler(Looper.getMainLooper()).post {
       this.token?.let {
-        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.0-rc.5")
+        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.0")
         pinwheelEventListener?.let { listener ->
           pinwheelFragment.pinwheelEventListener = listener
         }
