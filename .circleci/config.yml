@@ -67,14 +67,14 @@ jobs:
     resource_class: large
 
 workflows:
-  test-and-publish:
-    jobs:
-#      - test:
+#  test-and-publish:
+#    jobs:
+##      - test:
+##          context: 'frontend-production'
+#      - publish:
 #          context: 'frontend-production'
-      - publish:
-          context: 'frontend-production'
-#          requires:
-#            - test
-          filters:
-            branches:
-              only: main-3.2
+##          requires:
+##            - test
+#          filters:
+#            branches:
+#              only: main-3.2
