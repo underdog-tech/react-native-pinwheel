@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		450D2F312C717B23F904F6F8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F42758F68908E3760FE38284 /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B1AACE91120F159F98BB79DC /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1064ACD14A75629404BADD8 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */; };
 		B765400933DE86651C03C12C /* libPods-PinwheelRNExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CAF295A2F38FE3128CD93C /* libPods-PinwheelRNExample.a */; };
@@ -30,7 +31,6 @@
 		00E356EE1AD99517003FC87E /* PinwheelRNExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PinwheelRNExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* PinwheelRNExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinwheelRNExampleTests.m; sourceTree = "<group>"; };
-		0B65DB6678DA42BC7EDF3A74 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* PinwheelRNExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinwheelRNExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PinwheelRNExample/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = PinwheelRNExample/AppDelegate.mm; sourceTree = "<group>"; };
@@ -44,6 +44,7 @@
 		E1064ACD14A75629404BADD8 /* libPods-PinwheelRNExample-PinwheelRNExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample-PinwheelRNExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CAF295A2F38FE3128CD93C /* libPods-PinwheelRNExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PinwheelRNExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F42758F68908E3760FE38284 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = PinwheelRNExample/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		FB03ECE393E21098436C1A79 /* Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-PinwheelRNExample-PinwheelRNExampleTests/Pods-PinwheelRNExample-PinwheelRNExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +94,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				AA07E1DBD470EF316656C35D /* PrivacyInfo.xcprivacy */,
+				F42758F68908E3760FE38284 /* PrivacyInfo.xcprivacy */,
 			);
 			name = PinwheelRNExample;
 			sourceTree = "<group>";
@@ -246,7 +247,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				72B6C67BBE1CCD94C159CD5C /* PrivacyInfo.xcprivacy in Resources */,
+				450D2F312C717B23F904F6F8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,11 +618,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					" ",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-					"-Wl -ld_classic ",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -695,11 +692,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					" ",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-					"-Wl -ld_classic ",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
