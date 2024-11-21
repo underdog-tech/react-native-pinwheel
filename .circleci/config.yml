@@ -1,16 +1,16 @@
 version: 2.1
 
 jobs:
-#  test:
-#    docker:
-#      - image: cimg/node:16.7.0
-#
-#    working_directory: ~/react-native-pinwheel/example
-#
-#    steps:
-#      - checkout:
-#          path: ~/react-native-pinwheel
-#      - run: cd ../ && npm i && npm run build && npm pack && cd -
+  test:
+    docker:
+      - image: cimg/node:22.11.0
+
+    working_directory: ~/react-native-pinwheel/example
+
+    steps:
+      - checkout:
+          path: ~/react-native-pinwheel
+      - run: cd ../ && npm i && npm pack && cd -
 #      - run:
 #          name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
 #          command: node ../scripts/remove-pkg-hash.js
@@ -69,8 +69,8 @@ jobs:
 workflows:
   test-and-publish:
     jobs:
-#      - test:
-#          context: 'frontend-production'
+      - test:
+          context: 'frontend-production'
       - publish:
           context: 'frontend-production'
 #          requires:
