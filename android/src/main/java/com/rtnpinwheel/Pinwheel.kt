@@ -14,6 +14,7 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.facebook.react.uimanager.ThemedReactContext
+import com.facebook.react.modules.systeminfo.ReactNativeVersion
 
 class Pinwheel : FrameLayout {
   private var token: String? = null
@@ -45,10 +46,15 @@ class Pinwheel : FrameLayout {
     this.token = token
   }
 
+  fun getReactNativeVersion(): String {
+    val version = ReactNativeVersion.VERSION
+    return "${version["major"]}.${version["minor"]}.${version["patch"]}"
+  }
+
   private fun createFragment() {
     Handler(Looper.getMainLooper()).post {
       this.token?.let {
-        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.0")
+        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.0", getReactNativeVersion())
         pinwheelEventListener?.let { listener ->
           pinwheelFragment.pinwheelEventListener = listener
         }
