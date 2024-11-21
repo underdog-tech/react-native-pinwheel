@@ -54,15 +54,15 @@ jobs:
           name: Authenticate with NPM registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >
             ~/react-native-pinwheel/.npmrc
-#      - run:
-#          name: NPM Install
-#          command: npm install
-#      - run:
-#          name: NPM Prepublish
-#          command: ./scripts/prepublish-test.sh
-#      - run:
-#          name: NPM Publish
-#          command: npm publish
+      - run:
+          name: NPM Install
+          command: npm install
+      - run:
+          name: NPM Prepublish
+          command: ./scripts/prepublish-test.sh
+      - run:
+          name: NPM Publish
+          command: npm publish
     # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
     resource_class: large
 
@@ -73,8 +73,8 @@ workflows:
           context: 'frontend-production'
       - publish:
           context: 'frontend-production'
-#          requires:
-#            - test
+          requires:
+            - test
           filters:
             branches:
-              only: main-3.2
+              only: main
