@@ -1,9 +1,14 @@
 import React, { useEffect, useCallback } from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 const RTNPinwheel = require('./RTNPinwheelNativeComponent').default;
 import { PinwheelEvents } from './PinwheelEvents';
 import { LinkOptions } from './client-events/client';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 const Pinwheel = ({
   linkToken,
   onLogin,
@@ -66,13 +71,8 @@ const Pinwheel = ({
   }, [eventsListener]);
 
   return (
-    <SafeAreaView style={{ width: '100%', height: '100%' }}>
-      {linkToken && (
-        <RTNPinwheel
-          style={{ width: '100%', height: '100%' }}
-          token={linkToken}
-        />
-      )}
+    <SafeAreaView style={styles.container}>
+      {linkToken && <RTNPinwheel style={{ flex: 1 }} token={linkToken} />}
     </SafeAreaView>
   );
 };
