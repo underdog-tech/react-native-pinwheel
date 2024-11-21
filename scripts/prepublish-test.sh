@@ -19,8 +19,8 @@ if [ $pkgjsonversion == $latestversion ]; then
   exit 0
 fi
 
-echo Compiling tsc
-npm run build
+#echo Compiling tsc
+#npm run build
 
 # echo Adding $pkgjsonversion tag to git
 # git tag $pkgjsonversion

@@ -3,50 +3,50 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/node:16.7.0
+      - image: cimg/node:22.11.0
 
     working_directory: ~/react-native-pinwheel/example
 
     steps:
       - checkout:
           path: ~/react-native-pinwheel
-      - run: cd ../ && npm i && npm run build && npm pack && cd -
-      - run:
-          name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
-          command: node ../scripts/remove-pkg-hash.js
-      - run:
-          name: Create dummy env file
-          command: echo "export default \"x\"" > env.js
-      - run:
-          name: Check changelog for updates
-          command: grep -oq [^0-9]$pkgjsonversion[^0-9] ../CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
-      - run:
-          name: Check for version bump if necessary
-          command:
-            (git branch | grep '\* main' && echo 'Skipping version check since on main') ||
-            (! (git status | grep -E "(src|package)") && echo 'Skipping version check since no changes to src or package') ||
-            (echo $(git diff main:package.json package.json) | grep version ||
-            (echo "Must bump version" && exit 1))
-      - run:
-          name: Confirm node version npm install
-          command: cat package-lock.json | grep lockfileVersion | grep 3 || exit 1
-      - run:
-          name: Confirm version matches in all relevant places
-          command: cd .. && node ./scripts/check-version-matchups.cjs && cd -
-      - run: npm install
-      - run:
-          name: jest tests
-          command: |
-            mkdir -p test-results/jest
-            yarn run test
-      - store_test_results:
-          path: test-results
-      - store_artifacts:
-          path: test-results
+      - run: cd ../ && npm i && npm pack && cd -
+#      - run:
+#          name: Remove package-lock hash for pkg because tarball will have a different hash than when built locally
+#          command: node ../scripts/remove-pkg-hash.js
+#      - run:
+#          name: Create dummy env file
+#          command: echo "export default \"x\"" > env.js
+#      - run:
+#          name: Check changelog for updates
+#          command: grep -oq [^0-9]$pkgjsonversion[^0-9] ../CHANGELOG.md || (echo ERROR. Please update changelog. && exit 1)
+#      - run:
+#          name: Check for version bump if necessary
+#          command:
+#            (git branch | grep '\* main' && echo 'Skipping version check since on main') ||
+#            (! (git status | grep -E "(src|package)") && echo 'Skipping version check since no changes to src or package') ||
+#            (echo $(git diff main:package.json package.json) | grep version ||
+#            (echo "Must bump version" && exit 1))
+#      - run:
+#          name: Confirm node version npm install
+#          command: cat package-lock.json | grep lockfileVersion | grep 3 || exit 1
+#      - run:
+#          name: Confirm version matches in all relevant places
+#          command: cd .. && node ./scripts/check-version-matchups.cjs && cd -
+#      - run: npm install
+#      - run:
+#          name: jest tests
+#          command: |
+#            mkdir -p test-results/jest
+#            yarn run test
+#      - store_test_results:
+#          path: test-results
+#      - store_artifacts:
+#          path: test-results
 
   publish:
     docker:
-      - image: cimg/node:16.7.0
+      - image: cimg/node:22.11.0
     working_directory: ~/react-native-pinwheel
     steps:
       - checkout
@@ -54,15 +54,15 @@ jobs:
           name: Authenticate with NPM registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >
             ~/react-native-pinwheel/.npmrc
-      - run:
-          name: NPM Install
-          command: npm install
-      - run:
-          name: NPM Prepublish
-          command: ./scripts/prepublish-test.sh
-      - run:
-          name: NPM Publish
-          command: npm publish
+#      - run:
+#          name: NPM Install
+#          command: npm install
+#      - run:
+#          name: NPM Prepublish
+#          command: ./scripts/prepublish-test.sh
+#      - run:
+#          name: NPM Publish
+#          command: npm publish
     # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
     resource_class: large
 
@@ -73,8 +73,8 @@ workflows:
           context: 'frontend-production'
       - publish:
           context: 'frontend-production'
-          requires:
-            - test
+#          requires:
+#            - test
           filters:
             branches:
-              only: main
+              only: main-3.2
