@@ -77,13 +77,15 @@ class Pinwheel : FrameLayout {
   }
 
   fun setupLayoutSizing() {
+    val left = this.left
+    val top = this.top
     val width = this.width
     val height = this.height
     this.measure(
       View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY),
       View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY))
 
-    this.layout(0, 0, width, height)
+    this.layout(left, top, left + width, top + height)
   }
 
   override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
