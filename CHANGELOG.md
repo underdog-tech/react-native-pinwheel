@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320)
 
 ---
+
+### [3.2.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.0)
+
+#### Changed
+- Introduces support for the React Native [New Architecture](https://reactnative.dev/architecture/landing-page).
+- Updates sizing/layout logic to improve overall modal responsiveness.
 
 ### [3.1.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.1.1)
 
