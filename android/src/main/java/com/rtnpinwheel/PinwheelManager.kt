@@ -12,7 +12,7 @@ import com.facebook.react.viewmanagers.RTNPinwheelManagerInterface
 import com.facebook.react.viewmanagers.RTNPinwheelManagerDelegate
 
 @ReactModule(name = PinwheelManager.NAME)
-class PinwheelManager(private val reactContext: ReactApplicationContext) : 
+class PinwheelManager(private val reactContext: ReactApplicationContext) :
     SimpleViewManager<Pinwheel>(),
     RTNPinwheelManagerInterface<Pinwheel> {
 
@@ -29,13 +29,18 @@ class PinwheelManager(private val reactContext: ReactApplicationContext) :
         (reactContext.getNativeModule(PinwheelEventsModule::class.java) as? PinwheelEventsModule)?.let { module ->
             view.setPinwheelEventListener(module)
         }
-        
+
         return view
     }
 
     @ReactProp(name = "token")
     override fun setToken(view: Pinwheel, token: String?) {
         view.setToken(token)
+    }
+
+    @ReactProp(name = "handleInsets")
+    override fun setHandleInsets(view: Pinwheel, handleInsets: Boolean) {
+        view.setHandleInsets(handleInsets)
     }
 
     @ReactPropGroup(names = ["width", "height"], customType = "Style")

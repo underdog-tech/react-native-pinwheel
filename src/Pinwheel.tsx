@@ -17,7 +17,10 @@ const Pinwheel = ({
   onError,
   onExit,
   onEvent,
-}: LinkOptions) => {
+  handleInsets,
+}: LinkOptions & {
+  handleInsets?: boolean;
+}) => {
   const eventsListener = useCallback(
     (event: any) => {
       if (!event) {
@@ -72,7 +75,13 @@ const Pinwheel = ({
 
   return (
     <SafeAreaView style={styles.container}>
-      {linkToken && <RTNPinwheel style={{ flex: 1 }} token={linkToken} />}
+      {linkToken && (
+        <RTNPinwheel
+          style={{ flex: 1 }}
+          token={linkToken}
+          handleInsets={handleInsets ?? true}
+        />
+      )}
     </SafeAreaView>
   );
 };
