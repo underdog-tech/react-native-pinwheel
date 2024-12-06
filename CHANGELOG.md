@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321)
 
 ---
+
+### [3.2.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.1)
+
+Improved [edge-to-edge](https://developer.android.com/develop/ui/views/layout/edge-to-edge) support on Android by responding to window insets.
+This behavior is enabled by default and can be customized using the new optional `handleInsets` prop added to the component.
 
 ### [3.2.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.0)
 

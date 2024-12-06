@@ -101,6 +101,14 @@ Callback for all significant events that happen during the modal flow. See all p
 | -------- | -------- |
 | function | No       |
 
+### `handleInsets`
+
+Determines whether the SDK should respond to window insets on Android. This allows the modal to adjust automatically for areas such as the display cutout and system bars when displaying content [edge-to-edge](https://developer.android.com/develop/ui/views/layout/edge-to-edge).
+
+| Type    | Required | Default |
+| ------- | -------- | ------- |
+| boolean | No       | true    |
+
 ## Running The Example App Locally
 
 You may want to run the example app locally to get started.
