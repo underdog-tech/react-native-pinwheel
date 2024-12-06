@@ -20,6 +20,7 @@ class Pinwheel : FrameLayout {
   private var token: String? = null
   private var pinwheelFragment: PinwheelFragment? = null
   private var pinwheelEventListener: PinwheelEventListener? = null
+  private var handleInsets: Boolean = true
 
   constructor(context: Context) : super(context) {
     init()
@@ -46,6 +47,10 @@ class Pinwheel : FrameLayout {
     this.token = token
   }
 
+  fun setHandleInsets(handleInsets: Boolean) {
+    this.handleInsets = handleInsets
+  }
+
   fun getReactNativeVersion(): String {
     val version = ReactNativeVersion.VERSION
     return "${version["major"]}.${version["minor"]}.${version["patch"]}"
@@ -54,7 +59,7 @@ class Pinwheel : FrameLayout {
   private fun createFragment() {
     Handler(Looper.getMainLooper()).post {
       this.token?.let {
-        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.0", getReactNativeVersion())
+        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.1", getReactNativeVersion(), this.handleInsets)
         pinwheelEventListener?.let { listener ->
           pinwheelFragment.pinwheelEventListener = listener
         }
