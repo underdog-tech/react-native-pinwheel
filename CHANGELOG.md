@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+### [3.2.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.2)
+
+Resolved a stability issue that could cause crashes on iOS 15 devices.
+
 ### [3.2.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.1)
 
 Improved [edge-to-edge](https://developer.android.com/develop/ui/views/layout/edge-to-edge) support on Android by responding to window insets.
