@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.2.2.tgz",
-    "expo": "~51.0.37",
+    "expo": "~52.0.17",
     "expo-build-properties": "~0.12.5",
     "expo-image": "~1.13.0",
     "expo-linear-gradient": "~13.0.2",
