@@ -4,22 +4,24 @@
 
 # endif
 
-#import <ObjCWrapper/PinwheelVCWrapper.h>
+#import <WebKit/WebKit.h>
+#import <PinwheelSDK/PinwheelSDK-Swift.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 #ifdef RCT_NEW_ARCH_ENABLED
 
-@interface RTNPinwheelView : RCTViewComponentView <PinwheelVCWrapperDelegate>
+@interface RTNPinwheelView : RCTViewComponentView <PinwheelWrapperDelegate>
 
-#else 
+#else
 
-@interface RTNPinwheelView : UIView <PinwheelVCWrapperDelegate>
+@interface RTNPinwheelView : UIView <PinwheelWrapperDelegate>
 
 #endif
 
-@property (nonatomic, strong) PinwheelVCWrapper *pinwheelWrapperVC;
+
+@property (nonatomic, strong) PinwheelWrapperVC *pinwheelWrapperVC;
 @property (nonatomic, assign) NSString *token;
 
 - (instancetype)initWithFrame:(CGRect)frame token:(NSString *)token;
