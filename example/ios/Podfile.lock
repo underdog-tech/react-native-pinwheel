@@ -428,7 +428,7 @@ PODS:
     - React-jsi (= 0.72.17)
     - React-logger (= 0.72.17)
     - React-perflogger (= 0.72.17)
-  - RNPinwheelSDK (3.2.0):
+  - RNPinwheelSDK (3.2.3):
     - PinwheelSDK (= 3.1.1)
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
@@ -610,7 +610,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: ff30efdf24f8ce62eb517a391ded3d99c4263bb0
   React-utils: 7959d4553163b61e01bbe83dbd80e58ca420aecb
   ReactCommon: 841449721eb2e004de2c3366844b0a03f329f2cb
-  RNPinwheelSDK: 5ca559e6f3e62e588fa3d5415731c1665d10c4da
+  RNPinwheelSDK: d77f5b08d82975f34cefe35289bf1ed7eadd8e70
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: ef534101bb891fb09bae657417f34d399c1efe38
 
