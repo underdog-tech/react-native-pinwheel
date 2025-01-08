@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 
-@property (nonatomic, strong) PinwheelWrapperVC *pinwheelWrapperVC;
-@property (nonatomic, assign) NSString *token;
+@property (nonatomic, strong, nullable) PinwheelWrapperVC *pinwheelWrapperVC;
+@property (nonatomic, strong) NSString *token;
 
 - (instancetype)initWithFrame:(CGRect)frame token:(NSString *)token;
 
