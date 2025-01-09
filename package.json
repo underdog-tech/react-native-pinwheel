@@ -1,6 +1,6 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "3.2.3",
+  "version": "3.2.4-rc.0",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",

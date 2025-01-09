@@ -41,6 +41,24 @@ class Pinwheel : FrameLayout {
   private fun init() {
     // Match background color of Link. We may want to have a loader here in the future.
     setBackgroundColor(Color.WHITE)
+    if (isAttachedToWindow) {
+      createFragment()
+    } else {
+      addOnAttachStateChangeListener(object : OnAttachStateChangeListener {
+        override fun onViewAttachedToWindow(v: View) {
+          createFragment()
+          removeOnAttachStateChangeListener(this)
+        }
+
+        override fun onViewDetachedFromWindow(v: View) {}
+      })
+
+      // Check again after adding the listener in case the the view attached before the listener
+      // was added.
+      if (isAttachedToWindow) {
+        createFragment()
+      }
+    }
   }
 
   fun setToken(token: String?) {
@@ -58,20 +76,22 @@ class Pinwheel : FrameLayout {
 
   private fun createFragment() {
     Handler(Looper.getMainLooper()).post {
-      this.token?.let {
-        val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.3", getReactNativeVersion(), this.handleInsets)
-        pinwheelEventListener?.let { listener ->
-          pinwheelFragment.pinwheelEventListener = listener
+      if (this.pinwheelFragment == null) {
+        this.token?.let {
+          val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.4", getReactNativeVersion(), this.handleInsets)
+          pinwheelEventListener?.let { listener ->
+            pinwheelFragment.pinwheelEventListener = listener
+          }
+          val reactContext = context as ThemedReactContext
+          val activity = reactContext.currentActivity as? FragmentActivity
+
+          activity?.supportFragmentManager
+            ?.beginTransaction()
+            ?.replace(id, pinwheelFragment, id.toString())
+            ?.commit()
+
+          this.pinwheelFragment = pinwheelFragment
         }
-        val reactContext = context as ThemedReactContext
-        val activity = reactContext.currentActivity as? FragmentActivity
-
-        activity?.supportFragmentManager
-          ?.beginTransaction()
-          ?.replace(id, pinwheelFragment, id.toString())
-          ?.commit()
-
-        this.pinwheelFragment = pinwheelFragment
       }
     }
 
@@ -97,14 +117,6 @@ class Pinwheel : FrameLayout {
       View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY))
 
     this.layout(left, top, left + width, top + height)
-  }
-
-  override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-    super.onLayout(changed, left, top, right, bottom)
-
-    if (changed && this.pinwheelFragment == null) {
-      createFragment()
-    }
   }
 
   fun setPinwheelEventListener(listener: PinwheelEventListener) {
