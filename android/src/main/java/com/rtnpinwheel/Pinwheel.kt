@@ -10,7 +10,6 @@ import android.view.Choreographer
 import android.view.View
 import android.widget.FrameLayout
 import androidx.fragment.app.FragmentActivity
-import com.facebook.react.bridge.ReactApplicationContext
 import com.underdog_tech.pinwheel_android.PinwheelEventListener
 import com.underdog_tech.pinwheel_android.PinwheelFragment
 import com.facebook.react.uimanager.ThemedReactContext
@@ -21,6 +20,7 @@ class Pinwheel : FrameLayout {
   private var pinwheelFragment: PinwheelFragment? = null
   private var pinwheelEventListener: PinwheelEventListener? = null
   private var handleInsets: Boolean = true
+  private var fragmentContainer: FrameLayout? = null
 
   constructor(context: Context) : super(context) {
     init()
@@ -41,6 +41,12 @@ class Pinwheel : FrameLayout {
   private fun init() {
     // Match background color of Link. We may want to have a loader here in the future.
     setBackgroundColor(Color.WHITE)
+
+    // Create a FrameLayout to act as the fragment container
+    fragmentContainer = FrameLayout(context)
+    fragmentContainer!!.id = View.generateViewId()
+    addView(fragmentContainer, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT))
+
     if (isAttachedToWindow) {
       createFragment()
     } else {
@@ -85,10 +91,11 @@ class Pinwheel : FrameLayout {
           val reactContext = context as ThemedReactContext
           val activity = reactContext.currentActivity as? FragmentActivity
 
-          activity?.supportFragmentManager
-            ?.beginTransaction()
-            ?.replace(id, pinwheelFragment, id.toString())
-            ?.commit()
+          val transaction = activity?.supportFragmentManager?.beginTransaction()
+          transaction?.runOnCommit {
+            fragmentContainer?.addView(pinwheelFragment.view)
+          }
+          transaction?.add(pinwheelFragment, pinwheelFragment.id.toString())?.commit()
 
           this.pinwheelFragment = pinwheelFragment
         }
