@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 # 3.0.x Releases
 
-- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323)
+- `3.0.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324)
 
 ---
+
+### [3.2.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.4)
+
+#### Changed
+- Prevent crash when component is wrapped around a `<Modal/>`.
+- Internal bugfixes to improve stability in the NativeLink flow. 
 
 ### [3.2.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.3)
 
