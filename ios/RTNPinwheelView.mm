@@ -43,7 +43,7 @@ using namespace facebook::react;
     }
 
     if (self.token != nil) {
-        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.4"];
+        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.5"];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
@@ -135,7 +135,7 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void)
 
 - (void)initPinwheelWrapperVC {
     if (self.token != nil && self.pinwheelWrapperVC == nil) {
-        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.4"];
+        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.5"];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
