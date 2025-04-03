@@ -71,7 +71,7 @@ Callback when a user successfully signs in to their payroll account.
 
 ### `onError`
 
-Callback whenever an error occurs during the modal flow. This does not necessarily mean that the flow cannot still complete successfully. These include such retryable events as the user inputting an incorrect password or MFA code and needs to reattempt it. Error codes can be seen [here](https://docs.pinwheelapi.com/docs/link-sdk-errors).
+Callback whenever an error occurs during the modal flow. This does not necessarily mean that the flow cannot still complete successfully. These include such retryable events as the user inputting an incorrect password or MFA code and needs to reattempt it. Error codes can be seen [here](https://docs.pinwheelapi.com/public/docs/link-errors#error-codes).
 
 | Type     | Required |
 | -------- | -------- |
