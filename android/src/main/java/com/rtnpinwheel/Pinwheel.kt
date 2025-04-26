@@ -20,6 +20,7 @@ class Pinwheel : FrameLayout {
   private var pinwheelFragment: PinwheelFragment? = null
   private var pinwheelEventListener: PinwheelEventListener? = null
   private var handleInsets: Boolean = true
+  private var useDarkMode: Boolean = false
   private var fragmentContainer: FrameLayout? = null
 
   constructor(context: Context) : super(context) {
@@ -75,6 +76,10 @@ class Pinwheel : FrameLayout {
     this.handleInsets = handleInsets
   }
 
+  fun setUseDarkMode(useDarkMode: Boolean) {
+    this.useDarkMode = useDarkMode
+  }
+
   fun getReactNativeVersion(): String {
     val version = ReactNativeVersion.VERSION
     return "${version["major"]}.${version["minor"]}.${version["patch"]}"
@@ -84,7 +89,7 @@ class Pinwheel : FrameLayout {
     Handler(Looper.getMainLooper()).post {
       if (this.pinwheelFragment == null) {
         this.token?.let {
-          val pinwheelFragment = PinwheelFragment.newInstance(it, "react native", "3.2.5", getReactNativeVersion(), this.handleInsets)
+          val pinwheelFragment = PinwheelFragment.newInstanceWithAdvancedOptions(it, "react native", "3.3.0", getReactNativeVersion(), this.handleInsets, this.useDarkMode)
           pinwheelEventListener?.let { listener ->
             pinwheelFragment.pinwheelEventListener = listener
           }
