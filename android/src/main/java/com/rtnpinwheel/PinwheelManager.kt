@@ -43,6 +43,11 @@ class PinwheelManager(private val reactContext: ReactApplicationContext) :
         view.setHandleInsets(handleInsets)
     }
 
+    @ReactProp(name = "useDarkMode")
+    override fun setUseDarkMode(view: Pinwheel, useDarkMode: Boolean) {
+        view.setUseDarkMode(useDarkMode)
+    }
+
     @ReactPropGroup(names = ["width", "height"], customType = "Style")
     fun setStyle(view: Pinwheel, index: Int, value: Int) {
         if (index == 0) propWidth = value

@@ -43,7 +43,7 @@ using namespace facebook::react;
     }
 
     if (self.token != nil) {
-        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.5"];
+        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version:@"3.3.0" useDarkMode:self.useDarkMode];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
@@ -63,6 +63,11 @@ using namespace facebook::react;
         NSString* convertedToken = [NSString stringWithUTF8String:newViewProps.token.c_str()];
         [self setToken:convertedToken];
     }
+
+    if (oldViewProps.useDarkMode != newViewProps.useDarkMode) {
+        self.useDarkMode = newViewProps.useDarkMode;
+    }
+
     // Ensures that the view is always re-initialized whenever the props change, or the React Native component is
     // re-mounted. On the new architecture, there are optimizations which causes the view to be re-used in these
     // scenarios, whereas the ideal functionality here is to have the Link modal reset to the starting state.
@@ -134,8 +139,13 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void)
 }
 
 - (void)initPinwheelWrapperVC {
-    if (self.token != nil && self.pinwheelWrapperVC == nil) {
-        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version: @"3.2.5"];
+    if (self.pinwheelWrapperVC != nil) {
+        [self.pinwheelWrapperVC.view removeFromSuperview];
+        self.pinwheelWrapperVC = nil;
+    }
+
+    if (self.token != nil) {
+        self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version:@"3.3.0" useDarkMode:self.useDarkMode];
         [self addSubview:self.pinwheelWrapperVC.view];
     }
 }
@@ -143,6 +153,13 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void)
 - (void)setToken:(NSString *)newToken {
     if (![_token isEqualToString:newToken]) {
         _token = newToken;
+        [self initPinwheelWrapperVC];
+    }
+}
+
+- (void)setUseDarkMode:(BOOL)newUseDarkMode {
+    if (_useDarkMode != newUseDarkMode) {
+        _useDarkMode = newUseDarkMode;
         [self initPinwheelWrapperVC];
     }
 }

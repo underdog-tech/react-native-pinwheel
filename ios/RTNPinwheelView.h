@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) PinwheelWrapperVC *pinwheelWrapperVC;
 @property (nonatomic, strong) NSString *token;
+@property (nonatomic, assign) BOOL useDarkMode;
 
 - (instancetype)initWithFrame:(CGRect)frame token:(NSString *)token;
 

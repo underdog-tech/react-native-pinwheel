@@ -11,14 +11,17 @@ $ npm install --save @pinwheel/react-native-pinwheel
 ```
 
 ## Configuration
-Some platform integrations may require camera access for verification purposes. Ensure the necessary permissions are configured in your project:
+Some platform integrations may require camera access for verification purposes. On Android, storage access is also required to enable direct deposit form downloads on API level 28 (Android 9) and below.
+Ensure the following permissions are configured in your project:
 
 **Android:** Add the following permission to your `AndroidManifest.xml`:
 ```
 <uses-permission android:name="android.permission.CAMERA" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
 ```
 
-**iOS:** Add the following key and description to your `Info.plist`:
+**iOS:** Add the following entry to your `Info.plist`:
 ```
 <key>NSCameraUsageDescription</key>
 <string>We need access to your camera for verification purposes.</string>
@@ -108,6 +111,14 @@ Determines whether the SDK should respond to window insets on Android. This allo
 | Type    | Required | Default |
 | ------- | -------- | ------- |
 | boolean | No       | true    |
+
+### `useDarkMode`
+
+Enables Link to run with a dark mode theme.
+
+| Type    | Required | Default |
+| ------- | -------- |---------|
+| boolean | No       | false   |
 
 ## Running The Example App Locally
 

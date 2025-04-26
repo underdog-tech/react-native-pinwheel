@@ -18,8 +18,10 @@ const Pinwheel = ({
   onExit,
   onEvent,
   handleInsets,
+  useDarkMode,
 }: LinkOptions & {
   handleInsets?: boolean;
+  useDarkMode?: boolean;
 }) => {
   const eventsListener = useCallback(
     (event: any) => {
@@ -80,6 +82,7 @@ const Pinwheel = ({
           style={{ flex: 1 }}
           token={linkToken}
           handleInsets={handleInsets ?? true}
+          useDarkMode={useDarkMode ?? false}
         />
       )}
     </SafeAreaView>

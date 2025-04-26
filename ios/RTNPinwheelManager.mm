@@ -15,10 +15,11 @@ RCT_EXPORT_MODULE(RTNPinwheel)
 #endif
 
 - (UIView *)view
-{   
+{
     return [[RTNPinwheelView alloc] init];
 }
 
 RCT_EXPORT_VIEW_PROPERTY(token, NSString);
+RCT_EXPORT_VIEW_PROPERTY(useDarkMode, BOOL);
 
 @end
