@@ -4,13 +4,22 @@ All notable changes to this project will be documented in this file.
 
 # 3.x Releases
 
-- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330)
+- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330) | [3.3.1](#331)
+
+---
+
+### [3.3.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.3.1)
+
+#### Changed
+
+- Internal security enhancements on iOS.
 
 ---
 
 ### [3.3.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.3.0)
 
 #### Changed
+
 - Introduces dark mode support for Link, which can be enabled using the `useDarkMode` prop.
 - Internal NativeLink support changes to improve conversion rates.
 
@@ -21,8 +30,9 @@ Version bump to align with backend updates and enable internal improvements.
 ### [3.2.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.4)
 
 #### Changed
+
 - Prevent crash when component is wrapped around a `<Modal/>`.
-- Internal bugfixes to improve stability in the NativeLink flow. 
+- Internal bugfixes to improve stability in the NativeLink flow.
 
 ### [3.2.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.3)
 
@@ -40,6 +50,7 @@ This behavior is enabled by default and can be customized using the new optional
 ### [3.2.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.2.0)
 
 #### Changed
+
 - Introduces support for the React Native [New Architecture](https://reactnative.dev/architecture/landing-page).
 - Updates sizing/layout logic to improve overall modal responsiveness.
 
@@ -50,18 +61,22 @@ Expand internal functionality to increase conversion rate and upgrade vulnerable
 ### [3.1.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.1.0)
 
 #### Changed
+
 - Introduces support for additional platforms and integrations, improving conversion rates and overall functionality.
 - Fix the casing of the `screenName` field in the exported `ScreenTransitionEventPayload` event payload type.
 
 #### Important Note:
+
 Some integrations may now require camera access for verification purposes. Ensure the necessary permissions are configured in your project:
 
 **Android:** Add the following permission to your `AndroidManifest.xml`:
+
 ```
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
 **iOS:** Add the following key and description to your `Info.plist`:
+
 ```
 <key>NSCameraUsageDescription</key>
 <string>We need access to your camera for verification purposes.</string>
@@ -74,6 +89,7 @@ Expand internal functionality to support a broader range of platforms and increa
 ### [3.0.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.4)
 
 ####
+
 Bugfix: Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
 
 ### [3.0.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.0.3)
@@ -93,10 +109,12 @@ Expand internal functionality to support a broader range of platforms and increa
 This new major version bump introduces an updated API to support partner-based switches.
 
 #### Changed
+
 - The `action` field in `input_allocation` event is now optional.
 - The `params` field in the `success` event uses the `input_allocation` schema with fields `action` and `allocation`.
 
 #### Removed
+
 - Removed `LinkResult` type export. This was the old `success` event payload. The new payload has the same format as the newly exported `SuccessEventPayload`.
 - Removed `EventPayload` type export. The event handler function will now be implicitly typed.
 - Removed `ScreenTransition` type export. Use `ScreenTransitionEventPayload` instead.
@@ -111,9 +129,11 @@ This new major version bump introduces an updated API to support partner-based s
 [2.5.0](#250) | [2.5.1](#251) | [2.5.2](#252) | [2.5.3](#253) | [2.5.4](#254)
 
 ---
+
 ### [2.5.4](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.4)
 
 #### Bugfix
+
 Normalize event names to lower case. Event names began firing as uppercase in versions 3.0.0 and 2.5.0.
 
 ### [2.5.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/2.5.3)
@@ -167,7 +187,6 @@ We're thrilled to announce the latest version of our SDK! While you'll find that
 
 Export `ScreenTransition` event payload type for the `screen_transition` event.
 
-
 ### 2.3.14
 
 Remove `hermes-engine` and `shell-quote` sub-dependencies from package-lock files.
@@ -179,6 +198,7 @@ Bump `hermes-engine` and `shell-quote` sub-dependency package.
 ### 2.3.12
 
 Add CircleCI scripting and local scripts.
+
 - Add `npm run dev` script.
 - Remove need for hardcoding api secret in code to run locally.
 
