@@ -1,8 +1,33 @@
-# [New Architecture Example](https://reactnative.dev/docs/the-new-architecture/landing-page)
+# Pinwheel SDK Expo Example App
 
-## 🚀 How to use
+The Pinwheel example app for our React Native SDK is provided as a playground for you to see how the component works, and test out its options, and events.
 
-> `npx create-expo-app@latest -e with-new-arch`
+## Usage
 
-- Install packages with `yarn` or `npm install`.
-- Run `npx expo run:ios` and/or `npx expo run:android`. Requires native toolchains to be installed.
+### Set up Link token
+
+Generate a Link token from the [Pinwheel Dashboard](https://dashboard.getpinwheel.com/). Then, update `const token = '<TOKEN>'` in App.tsx.
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start React Native
+
+```
+npm start
+```
+
+### Run iOS app
+
+```
+npm run ios
+```
+
+### Run Android app
+
+```
+npm run android
+```
