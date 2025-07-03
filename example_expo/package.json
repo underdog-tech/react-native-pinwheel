@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "3.3.2",
+    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.4.0.tgz",
     "expo": "~53.0.13",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
