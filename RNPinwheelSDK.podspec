@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.description     = package["description"]
   s.homepage        = package["homepage"]
   s.license         = package["license"]
-  s.platforms       = { :ios => "12.0" }
+  s.platforms       = { :ios => "13.0" }
   s.author          = package["author"]
   s.source          = { :git => package["repository"], :tag => "#{s.version}" }
 
@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
 
   install_modules_dependencies(s)
 
-  s.dependency 'PinwheelSDK', '3.2.2'
+  s.dependency 'PinwheelSDK', '3.3.2'
 end
