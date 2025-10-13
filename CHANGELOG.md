@@ -4,12 +4,18 @@ All notable changes to this project will be documented in this file.
 
 # 3.x Releases
 
-- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330) | [3.3.1](#331) | [3.3.2](#332) | [3.4.0](#340) | [3.5.0](#350)
+- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330) | [3.3.1](#331) | [3.3.2](#332) | [3.4.0](#340) | [3.5.0](#350) | [3.5.1](#351)
 
 ---
 
+### [3.5.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.5.1)
+
+- Fixes exit bug on iOS for Bill Switch products.
+- Cosmetic enhacements for Bill Switch products.
+
 ### [3.5.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.5.0)
 
+- **This version contains a bug (on iOS only) that prevents user exit from Bill Switch products. Payroll-enabled products (Deposit Switch, Verify, etc.) are unaffected and working normally.**
 - Added support for Bill Navigator events.
 
 ### [3.4.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.4.0)
