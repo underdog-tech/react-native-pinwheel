@@ -31,3 +31,9 @@ npm run ios
 ```
 npm run android
 ```
+
+### Using local dependencies
+
+If you want to use the local version of the module, change package.json to:
+
+`"@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.5.1.tgz"`
