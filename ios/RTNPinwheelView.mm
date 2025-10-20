@@ -36,15 +36,45 @@ using namespace facebook::react;
     return self;
 }
 
+// Helper to find parent VC from a UIView
+- (UIViewController *)getParentViewController {
+    UIResponder *responder = self.nextResponder;
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = responder.nextResponder;
+    }
+    return nil;
+}
+
 - (void)initPinwheelWrapperVC {
     if (self.pinwheelWrapperVC != nil) {
+        [self.pinwheelWrapperVC willMoveToParentViewController:nil];
         [self.pinwheelWrapperVC.view removeFromSuperview];
+        [self.pinwheelWrapperVC removeFromParentViewController];
         self.pinwheelWrapperVC = nil;
     }
 
     if (self.token != nil) {
+        UIViewController *parentVC = [self getParentViewController];
+        if (!parentVC) {
+            // Not yet attached to the hierarchy, skip for now and `didMoveToWindow` will retry later.
+            return;
+        }
+
         self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version:@"3.5.1" useDarkMode:self.useDarkMode useAppBoundDomains:NO useAppBoundDomainsForNativeLink:NO];
+        [parentVC addChildViewController:self.pinwheelWrapperVC];
         [self addSubview:self.pinwheelWrapperVC.view];
+        self.pinwheelWrapperVC.view.frame = self.bounds;
+        [self.pinwheelWrapperVC didMoveToParentViewController:parentVC];
+    }
+}
+
+- (void)didMoveToWindow {
+    [super didMoveToWindow];
+    if (self.window && !self.pinwheelWrapperVC) {
+        [self initPinwheelWrapperVC];
     }
 }
 
@@ -138,15 +168,45 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void)
     return self;
 }
 
+// Helper to find parent VC from a UIView
+- (UIViewController *)getParentViewController {
+    UIResponder *responder = self.nextResponder;
+    while (responder) {
+        if ([responder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)responder;
+        }
+        responder = responder.nextResponder;
+    }
+    return nil;
+}
+
 - (void)initPinwheelWrapperVC {
     if (self.pinwheelWrapperVC != nil) {
+        [self.pinwheelWrapperVC willMoveToParentViewController:nil];
         [self.pinwheelWrapperVC.view removeFromSuperview];
+        [self.pinwheelWrapperVC removeFromParentViewController];
         self.pinwheelWrapperVC = nil;
     }
 
     if (self.token != nil) {
+        UIViewController *parentVC = [self getParentViewController];
+        if (!parentVC) {
+            // Not yet attached to the hierarchy, skip for now and `didMoveToWindow` will retry later.
+            return;
+        }
+
         self.pinwheelWrapperVC = [[PinwheelWrapperVC alloc] initWithToken:self.token delegate:self sdk:@"react native" version:@"3.5.1" useDarkMode:self.useDarkMode useAppBoundDomains:NO useAppBoundDomainsForNativeLink:NO];
+        [parentVC addChildViewController:self.pinwheelWrapperVC];
         [self addSubview:self.pinwheelWrapperVC.view];
+        self.pinwheelWrapperVC.view.frame = self.bounds;
+        [self.pinwheelWrapperVC didMoveToParentViewController:parentVC];
+    }
+}
+
+- (void)didMoveToWindow {
+    [super didMoveToWindow];
+    if (self.window && !self.pinwheelWrapperVC) {
+        [self initPinwheelWrapperVC];
     }
 }
 
