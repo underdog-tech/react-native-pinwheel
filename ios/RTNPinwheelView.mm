@@ -97,8 +97,6 @@ using namespace facebook::react;
     if (!self.pinwheelWrapperVC) {
       [self initPinwheelWrapperVC];
     }
-  } else {
-    [self cleanUpPinwheelWrapperVC];
   }
 }
 
@@ -262,8 +260,6 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
     if (!self.pinwheelWrapperVC) {
       [self initPinwheelWrapperVC];
     }
-  } else {
-    [self cleanUpPinwheelWrapperVC];
   }
 }
 

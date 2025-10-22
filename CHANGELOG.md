@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 
 - Deprecates the `isGuidedSwitch` field in favor of `isIntegratedSwitch` in the Bill Switch payload.
 - Improves the Bill Switch UX.
+- Fixes exit bug on iOS for Bill Switch products.
 
 ### [3.5.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.5.2)
 
