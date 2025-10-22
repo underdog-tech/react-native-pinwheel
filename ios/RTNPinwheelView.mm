@@ -74,7 +74,7 @@ using namespace facebook::react;
       [[PinwheelWrapperVC alloc] initWithToken:self.token
                                       delegate:self
                                            sdk:@"react native"
-                                       version:@"3.5.2"
+                                       version:@"3.5.3"
                                    useDarkMode:self.useDarkMode
                             useAppBoundDomains:NO
                useAppBoundDomainsForNativeLink:NO];
@@ -97,8 +97,6 @@ using namespace facebook::react;
     if (!self.pinwheelWrapperVC) {
       [self initPinwheelWrapperVC];
     }
-  } else {
-    [self cleanUpPinwheelWrapperVC];
   }
 }
 
@@ -239,7 +237,7 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
       [[PinwheelWrapperVC alloc] initWithToken:self.token
                                       delegate:self
                                            sdk:@"react native"
-                                       version:@"3.5.2"
+                                       version:@"3.5.3"
                                    useDarkMode:self.useDarkMode
                             useAppBoundDomains:NO
                useAppBoundDomainsForNativeLink:NO];
@@ -262,8 +260,6 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
     if (!self.pinwheelWrapperVC) {
       [self initPinwheelWrapperVC];
     }
-  } else {
-    [self cleanUpPinwheelWrapperVC];
   }
 }
 
