@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
 
   install_modules_dependencies(s)
 
-  s.dependency 'PinwheelSDK', '3.4.1'
+  s.dependency 'PinwheelSDK', '3.4.2'
 end
