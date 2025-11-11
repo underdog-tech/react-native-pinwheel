@@ -3,7 +3,7 @@ PODS:
   - DoubleConversion (1.1.6)
   - EXConstants (17.1.7):
     - ExpoModulesCore
-  - Expo (53.0.13):
+  - Expo (53.0.23):
     - DoubleConversion
     - ExpoModulesCore
     - glog
@@ -32,13 +32,7 @@ PODS:
     - Yoga
   - ExpoAsset (11.1.7):
     - ExpoModulesCore
-  - ExpoFileSystem (18.1.10):
-    - ExpoModulesCore
-  - ExpoFont (13.3.1):
-    - ExpoModulesCore
-  - ExpoKeepAwake (14.1.4):
-    - ExpoModulesCore
-  - ExpoModulesCore (2.4.0):
+  - ExpoModulesCore (2.5.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1753,9 +1747,6 @@ DEPENDENCIES:
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
   - ExpoAsset (from `../node_modules/expo-asset/ios`)
-  - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
-  - ExpoFont (from `../node_modules/expo-font/ios`)
-  - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - fast_float (from `../node_modules/react-native/third-party-podspecs/fast_float.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -1845,12 +1836,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo"
   ExpoAsset:
     :path: "../node_modules/expo-asset/ios"
-  ExpoFileSystem:
-    :path: "../node_modules/expo-file-system/ios"
-  ExpoFont:
-    :path: "../node_modules/expo-font/ios"
-  ExpoKeepAwake:
-    :path: "../node_modules/expo-keep-awake/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core"
   fast_float:
@@ -1997,12 +1982,9 @@ SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   EXConstants: 98bcf0f22b820f9b28f9fee55ff2daededadd2f8
-  Expo: d8192e2b8d8df04a44affce7e908137a892933d1
+  Expo: dd7f49380001a55ea776f905f8b3c1c540160b09
   ExpoAsset: ef06e880126c375f580d4923fdd1cdf4ee6ee7d6
-  ExpoFileSystem: c36eb8155eb2381c83dda7dc210e3eec332368b6
-  ExpoFont: abbb91a911eb961652c2b0a22eef801860425ed6
-  ExpoKeepAwake: bf0811570c8da182bfb879169437d4de298376e7
-  ExpoModulesCore: d431ffe83c8673d02cb38425594a5f5480fd3061
+  ExpoModulesCore: 00a1b5c73248465bd0b93f59f8538c4573dac579
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 15c28682af535aa55b9b31e64deff54b7ed7d453
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
