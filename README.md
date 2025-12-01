@@ -122,19 +122,25 @@ Enables Link to run with a dark mode theme.
 
 ## Running The Example App Locally
 
-You may want to run the example app locally to get started.
+You may want to run the example app locally to get started. The application is located inside of the example_expo directory inside of the repository.
 
 #### Dependencies
 
-- Node 16.7.0 (check with `node -v` and upgrade versions using `nvm` if needed)
-- iPhone 14 simulator (open your Simulator app and check the available versions)
-- iOS 16 running on the simulator (open your Simulator app and check the available versions)
-- `pod` version 1.11.3 (check with `pod --version`)
-- Add your pinwheel secret to `example/env.js` (create this file) with `export default "<YOUR PINWHEEL SECRET>"`.
+- Node 22.18.0 (check with `node -v` and upgrade versions using `nvm` if needed)
+- Xcode for iOS
+- Android Studio for Android
 
 #### Directions
-
-- `npm run dev`
+**Enter the `example_expo` directory and run the following commands:**
+- Create a `.env` file with your Pinwheel API secret. An example env file is located at example_repo/.env.example.
+- Directions to run the [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- Directions to run the [Android simulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+```
+EXPO_PUBLIC_PINWHEEL_API_KEY=YOUR_API_SECRET
+```
+- `npm i`
+- `npm run ios` (for iOS)
+- `npm run android` (for Android)
 
 #### Troubleshooting
 
