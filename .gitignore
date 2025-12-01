@@ -2,6 +2,7 @@
 
 pinwheel-react-native-pinwheel-*.tgz
 .env
+!example_expo/.env
 env.js
 env.ts
 constants.d.ts

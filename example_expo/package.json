@@ -17,6 +17,9 @@
     "react": "19.0.0",
     "react-native": "0.79.4"
   },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",

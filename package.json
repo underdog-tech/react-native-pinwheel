@@ -6,6 +6,7 @@
   "types": "src/index.ts",
   "description": "Pinwheel React Native SDK",
   "react-native": "src/index",
+  
   "source": "src/index",
   "homepage": "https://github.com/underdog-tech/react-native-pinwheel",
   "files": [
