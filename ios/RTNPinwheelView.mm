@@ -9,6 +9,7 @@
 
 #import "RCTFabricComponentsPlugins.h"
 #import "RTNPinwheelEvents.h"
+#import <RNPinwheelSDK/RNPinwheelSDK-Swift.h>
 
 using namespace facebook::react;
 
@@ -71,13 +72,14 @@ using namespace facebook::react;
   }
 
   self.pinwheelWrapperVC =
-      [[PinwheelWrapperVC alloc] initWithToken:self.token
-                                      delegate:self
-                                           sdk:@"react native"
-                                       version:@"3.6.1"
-                                   useDarkMode:self.useDarkMode
-                            useAppBoundDomains:NO
-               useAppBoundDomainsForNativeLink:NO];
+      [[PWPinwheelWrapperVC alloc] initWithToken:self.token
+                                        delegate:self
+                                             sdk:@"react native"
+                                         version:@"3.7.0"
+                                  useSecureOrigin:self.useSecureOrigin
+                                      useDarkMode:self.useDarkMode
+                               useAppBoundDomains:NO
+                  useAppBoundDomainsForNativeLink:NO];
 
   // Guard against double-attachment (shouldn’t happen after cleanup, but safe).
   if (self.pinwheelWrapperVC.parentViewController == parentVC) {
@@ -125,6 +127,10 @@ using namespace facebook::react;
 
   if (oldViewProps.useDarkMode != newViewProps.useDarkMode) {
     self.useDarkMode = newViewProps.useDarkMode;
+  }
+
+  if (oldViewProps.useSecureOrigin != newViewProps.useSecureOrigin) {
+    self.useSecureOrigin = newViewProps.useSecureOrigin;
   }
 
   // Ensures that the view is always re-initialized whenever the props change,
@@ -181,6 +187,7 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
 
 #import "RTNPinwheelEvents.h"
 #import "RTNPinwheelView.h"
+#import <RNPinwheelSDK/RNPinwheelSDK-Swift.h>
 
 @implementation RTNPinwheelView
 
@@ -234,13 +241,14 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
   }
 
   self.pinwheelWrapperVC =
-      [[PinwheelWrapperVC alloc] initWithToken:self.token
-                                      delegate:self
-                                           sdk:@"react native"
-                                       version:@"3.6.1"
-                                   useDarkMode:self.useDarkMode
-                            useAppBoundDomains:NO
-               useAppBoundDomainsForNativeLink:NO];
+      [[PWPinwheelWrapperVC alloc] initWithToken:self.token
+                                        delegate:self
+                                             sdk:@"react native"
+                                         version:@"3.7.0"
+                                  useSecureOrigin:self.useSecureOrigin
+                                      useDarkMode:self.useDarkMode
+                               useAppBoundDomains:NO
+                  useAppBoundDomainsForNativeLink:NO];
 
   // Guard against double-attachment (shouldn’t happen after cleanup, but safe).
   if (self.pinwheelWrapperVC.parentViewController == parentVC) {
@@ -277,6 +285,13 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
 - (void)setUseDarkMode:(BOOL)newUseDarkMode {
   if (_useDarkMode != newUseDarkMode) {
     _useDarkMode = newUseDarkMode;
+    [self initPinwheelWrapperVC];
+  }
+}
+
+- (void)setUseSecureOrigin:(BOOL)newUseSecureOrigin {
+  if (_useSecureOrigin != newUseSecureOrigin) {
+    _useSecureOrigin = newUseSecureOrigin;
     [self initPinwheelWrapperVC];
   }
 }

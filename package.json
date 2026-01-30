@@ -1,12 +1,11 @@
 {
   "name": "@pinwheel/react-native-pinwheel",
-  "version": "3.6.1",
+  "version": "3.7.0",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "description": "Pinwheel React Native SDK",
   "react-native": "src/index",
-  
   "source": "src/index",
   "homepage": "https://github.com/underdog-tech/react-native-pinwheel",
   "files": [

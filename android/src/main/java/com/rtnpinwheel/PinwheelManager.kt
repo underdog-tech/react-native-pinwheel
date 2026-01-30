@@ -48,6 +48,11 @@ class PinwheelManager(private val reactContext: ReactApplicationContext) :
         view.setUseDarkMode(useDarkMode)
     }
 
+    @ReactProp(name = "useSecureOrigin")
+    override fun setUseSecureOrigin(view: Pinwheel, useSecureOrigin: Boolean) {
+        view.setUseSecureOrigin(useSecureOrigin)
+    }
+
     @ReactPropGroup(names = ["width", "height"], customType = "Style")
     fun setStyle(view: Pinwheel, index: Int, value: Int) {
         if (index == 0) propWidth = value

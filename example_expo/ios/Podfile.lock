@@ -64,9 +64,9 @@ PODS:
   - hermes-engine (0.79.4):
     - hermes-engine/Pre-built (= 0.79.4)
   - hermes-engine/Pre-built (0.79.4)
-  - PinwheelSDK (3.4.2):
-    - PinwheelSDK/PinwheelLinkSDK (= 3.4.2)
-  - PinwheelSDK/PinwheelLinkSDK (3.4.2)
+  - PinwheelSDK (3.5.0):
+    - PinwheelSDK/PinwheelLinkSDK (= 3.5.0)
+  - PinwheelSDK/PinwheelLinkSDK (3.5.0)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1713,11 +1713,11 @@ PODS:
     - React-logger (= 0.79.4)
     - React-perflogger (= 0.79.4)
     - React-utils (= 0.79.4)
-  - RNPinwheelSDK (3.6.0):
+  - RNPinwheelSDK (3.6.1):
     - DoubleConversion
     - glog
     - hermes-engine
-    - PinwheelSDK (= 3.4.2)
+    - PinwheelSDK (= 3.5.0)
     - RCT-Folly (= 2024.11.18.00)
     - RCTRequired
     - RCTTypeSafety
@@ -1982,15 +1982,15 @@ SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   EXConstants: 98bcf0f22b820f9b28f9fee55ff2daededadd2f8
-  Expo: dd7f49380001a55ea776f905f8b3c1c540160b09
+  Expo: c8f323f74218c45c46e27eed40d8a53ba50667c3
   ExpoAsset: ef06e880126c375f580d4923fdd1cdf4ee6ee7d6
-  ExpoModulesCore: 00a1b5c73248465bd0b93f59f8538c4573dac579
+  ExpoModulesCore: f55e7872391bae03ee5547c83152c81750d89508
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 15c28682af535aa55b9b31e64deff54b7ed7d453
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 8b5a5eb386b990287d072fd7b6f6ebd9544dd251
-  PinwheelSDK: 4c2be6cf28a16251b56dbd6fb726f45e8e9fa62f
+  PinwheelSDK: ce9d956cf1473296bdeb60e419c90ab525785374
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 0418ac97b9f53b2e37f473da1663ef3061e46beb
   RCTRequired: b9fde7f981b11aa898f03a70d3d4d36b80f1b16d
@@ -2028,14 +2028,14 @@ SPEC CHECKSUMS:
   React-performancetimeline: b88fe1a66eb86cfda608dc1de6443399e114bdec
   React-RCTActionSheet: b70e1e649fb0bce5a3bda6d014f08e66ed4f0182
   React-RCTAnimation: ffa3b39acae2c675437ccf19e868c55570b2b627
-  React-RCTAppDelegate: 58ae7b688f2fa079e7ebf6738acce913d0b74444
+  React-RCTAppDelegate: 871408153cc858af0621025dc70fb7e01716bbac
   React-RCTBlob: 6f3b35f78188d11a84fa76770d36471e3d93c588
-  React-RCTFabric: d093f6e0a5462ba2ed75aa0bc923d30f05f34569
-  React-RCTFBReactNativeSpec: faf95122eed239f0713afc91a93d1d886b85cc0e
+  React-RCTFabric: f273245201734c485c2d10db9100eb47569e1f37
+  React-RCTFBReactNativeSpec: b95954a38ae0ae0b66b60849245414e03624e208
   React-RCTImage: 017bac77e99afbc52a129b98eee6480d7586fc07
   React-RCTLinking: 998af20d4545589dd36c7281a7c6989bc4035b1e
   React-RCTNetwork: ded3e4d0368cf149677f9524605dc279d7e262a4
-  React-RCTRuntime: e2bd66c3314906dbb6b17a5405b03723b5542302
+  React-RCTRuntime: 7c3c2f2b152ef11673b39e3270167650719f6d41
   React-RCTSettings: 75f8539891bcb13764c28cc667cf6bc73d2b441b
   React-RCTText: 7c5bcaea63c64dc08f3a83144722d2448d6b3a34
   React-RCTVibration: 31ca4ab26d1316545561bf79d8832902c67cc63b
@@ -2053,7 +2053,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: bf62814e0fde923f73fc64b7e82d76c63c284da9
   ReactCodegen: f891084749d03b8af8a244cefaa492e491b763fd
   ReactCommon: c7d636ec1b9801ff4ee83cce8e0bf74a1610fc3f
-  RNPinwheelSDK: edc7932496a0566a0e5ad5f16dd9d954c0bdc203
+  RNPinwheelSDK: 2e856a11b84d47230220af5d93410e3e7763db81
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: a6cb833e04fb8c59a012b49fb1d040fcb0cbb633
 
