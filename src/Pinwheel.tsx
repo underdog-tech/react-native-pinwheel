@@ -19,6 +19,7 @@ const Pinwheel = ({
   onEvent,
   handleInsets,
   useDarkMode,
+  useSecureOrigin,
 }: LinkOptions & {
   handleInsets?: boolean;
   useDarkMode?: boolean;
@@ -83,6 +84,7 @@ const Pinwheel = ({
           token={linkToken}
           handleInsets={handleInsets ?? true}
           useDarkMode={useDarkMode ?? false}
+          useSecureOrigin={useSecureOrigin ?? false}
         />
       )}
     </SafeAreaView>

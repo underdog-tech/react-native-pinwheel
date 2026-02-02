@@ -10,6 +10,7 @@ export interface NativeProps extends ViewProps {
   token: string;
   handleInsets: boolean;
   useDarkMode: boolean;
+  useSecureOrigin: boolean;
 }
 
 export default codegenNativeComponent<NativeProps>(

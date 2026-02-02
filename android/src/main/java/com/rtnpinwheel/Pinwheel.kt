@@ -21,6 +21,7 @@ class Pinwheel : FrameLayout {
   private var pinwheelEventListener: PinwheelEventListener? = null
   private var handleInsets: Boolean = true
   private var useDarkMode: Boolean = false
+  private var useSecureOrigin: Boolean = false
   private var fragmentContainer: FrameLayout? = null
 
   constructor(context: Context) : super(context) {
@@ -80,6 +81,10 @@ class Pinwheel : FrameLayout {
     this.useDarkMode = useDarkMode
   }
 
+  fun setUseSecureOrigin(useSecureOrigin: Boolean) {
+    this.useSecureOrigin = useSecureOrigin
+  }
+
   fun getReactNativeVersion(): String {
     val version = ReactNativeVersion.VERSION
     return "${version["major"]}.${version["minor"]}.${version["patch"]}"
@@ -89,7 +94,15 @@ class Pinwheel : FrameLayout {
     Handler(Looper.getMainLooper()).post {
       if (this.pinwheelFragment == null) {
         this.token?.let {
-          val pinwheelFragment = PinwheelFragment.newInstanceWithAdvancedOptions(it, "react native", "3.6.1", getReactNativeVersion(), this.handleInsets, this.useDarkMode)
+          val pinwheelFragment = PinwheelFragment.newInstanceWithAdvancedOptions(
+            it,
+            "react native",
+            "3.7.0",
+            getReactNativeVersion(),
+            this.handleInsets,
+            this.useDarkMode,
+            this.useSecureOrigin
+          )
           pinwheelEventListener?.let { listener ->
             pinwheelFragment.pinwheelEventListener = listener
           }

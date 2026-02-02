@@ -16,41 +16,42 @@ export default function App() {
       console.log('Missing EXPO_PUBLIC_PINWHEEL_API_KEY in environment');
       return;
     }
-    
+
     setIsGenerating(true);
-    
+
     try {
-      const response = await fetch('https://sandbox.getpinwheel.com/v1/link_tokens', {
-        method: 'POST',
-        headers: {
-          "X-API-SECRET": apiKey,
-          'Content-Type': 'application/json',
-          'Pinwheel-Version': '2025-07-08',
-        },
-        body: JSON.stringify({
-          "allocation": {
-            "targets": [
-              {
-                "account_number": "000000000",
-                "routing_number": "000000000",
-                "type": "checking",
-                "name": "wefwef"
-              }
-            ],
-            "value": 900
+      const response = await fetch(
+        'https://sandbox.getpinwheel.com/v1/link_tokens',
+        {
+          method: 'POST',
+          headers: {
+            'X-API-SECRET': apiKey,
+            'Content-Type': 'application/json',
+            'Pinwheel-Version': '2025-07-08',
           },
-          "disable_direct_deposit_splitting": false,
-          "enable_self_id": false,
-          "features": [
-            "direct_deposit_switch"
-          ],
-          "language": "en",
-          "skip_intro_screen": false,
-          "solution": "Deposit Switch",
-          "org_name": "ttt",
-          "end_user_id": "ttt"
-        }),
-      });
+          body: JSON.stringify({
+            allocation: {
+              targets: [
+                {
+                  account_number: '000000000',
+                  routing_number: '000000000',
+                  type: 'checking',
+                  name: 'wefwef',
+                },
+              ],
+              value: 900,
+            },
+            disable_direct_deposit_splitting: false,
+            enable_self_id: false,
+            features: ['direct_deposit_switch'],
+            language: 'en',
+            skip_intro_screen: false,
+            solution: 'Deposit Switch',
+            org_name: 'ttt',
+            end_user_id: 'ttt',
+          }),
+        }
+      );
       const json = await response.json();
       const token: string | undefined = json?.token ?? json?.data?.token;
       if (token) {
@@ -64,7 +65,6 @@ export default function App() {
       setIsGenerating(false);
     }
   }, []);
-  
 
   return (
     <View
@@ -81,10 +81,18 @@ export default function App() {
       }
     >
       {linkToken ? (
-        <Pinwheel linkToken={linkToken} onEvent={handleEvent} ></Pinwheel>
+        <Pinwheel
+          linkToken={linkToken}
+          onEvent={handleEvent}
+          useSecureOrigin
+        ></Pinwheel>
       ) : null}
-      
-      <Button title={isGenerating ? 'Generating…' : 'Generate Link Token'} onPress={generateLinkToken} disabled={isGenerating} />
+
+      <Button
+        title={isGenerating ? 'Generating…' : 'Generate Link Token'}
+        onPress={generateLinkToken}
+        disabled={isGenerating}
+      />
     </View>
   );
 }
