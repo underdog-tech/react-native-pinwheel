@@ -22,7 +22,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "dev": "./scripts/dev_expo.sh"
+    "dev": "./scripts/dev_expo.sh",
+    "dev:bare": "./scripts/dev_bare.sh"
   },
   "author": "Pinwheel",
   "license": "MIT",
