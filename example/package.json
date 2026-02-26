@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.7.0.tgz",
+    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.7.1.tgz",
     "react": "19.0.0",
     "react-native": "0.79.4"
   },

@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+### [3.7.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.1)
+
+- Fix bug blocking react-native-sdk from compiling on the latest Mac OS / Xcode
+
+### [3.7.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.0)
+
+- Release useSecureOrigin to enforce CSP on link iframe
+
 ### [3.6.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.6.1)
 
 - We fixed an expo 54 issue blocking the PinwheelView import
