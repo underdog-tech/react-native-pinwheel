@@ -1,4 +1,4 @@
-import type { LoginEventPayload, SuccessEventPayload, EventHandler, ErrorEventPayload, LoginAttemptEventPayload } from './registry/v3';
+import type { LoginEventPayload, SuccessEventPayload, EventHandler, ErrorEventPayload, LoginAttemptEventPayload } from './registry/v4';
 export type LinkOptions = {
     linkToken: string;
     useSecureOrigin?: boolean;
