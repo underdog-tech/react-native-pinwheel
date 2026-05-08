@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "..",
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "paths": {
+      "*": ["*", "*.ios", "*.android"]
+    },
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": ["./**/*.ts"]
+}

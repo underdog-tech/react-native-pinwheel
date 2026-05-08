@@ -4,7 +4,7 @@ import type {
   EventHandler,
   ErrorEventPayload,
   LoginAttemptEventPayload,
-} from './registry/v3';
+} from './registry/v4';
 
 export type LinkOptions = {
   linkToken: string;
