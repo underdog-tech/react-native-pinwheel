@@ -2,11 +2,50 @@
 
 All notable changes to this project will be documented in this file.
 
-# 3.x Releases
+# 4.x Releases
 
-- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330) | [3.3.1](#331) | [3.3.2](#332) | [3.4.0](#340) | [3.5.0](#350) | [3.5.1](#351) | [3.5.2](#352) | [3.5.3](#353) | [3.5.4](#354) | [3.6.0](#360) | [3.6.1](#361) | [3.7.0](#370) | [3.7.1](#371)
+- `4.x` Releases - [4.0.0](#400)
 
 ---
+
+### [4.0.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.0.0)
+
+#### Notes
+
+- Upgrades the SDK to target the latest verison of Link: v4.
+- Adds support for a new set of bill and account lifecycle events.
+
+#### Breaking Changes
+
+- The `billRemoved` event handler now uses `PinwheelBillEvent` instead of `PinwheelBillSwitchEvent`.
+
+#### Non-breaking Changes
+
+- An optional `accountId` field has been added to `PinwheelBillSwitchPayload`.
+
+#### New event types
+
+- `billSwitchFailure`
+- `billAdded`
+- `billEdited`
+- `billMarkedInactive`
+- `billSwitchPlatformsAdded`
+- `billSwitchPlatformsRemoved`
+- `billCancelSuccess`
+- `billCancelFailure`
+- `calendarSync`
+- `customerTermsAccepted`
+- `userActivated`
+
+# 3.x Releases
+
+- `3.x` Releases - [3.0.0](#300) | [3.0.1](#301) | [3.0.2](#302) | [3.0.3](#303) | [3.0.4](#304) | [3.0.5](#305) | [3.1.0](#310) | [3.1.1](#311) | [3.2.0](#320) | [3.2.1](#321) | [3.2.2](#322) | [3.2.3](#323) | [3.2.4](#324) | [3.2.5](#325) | [3.3.0](#330) | [3.3.1](#331) | [3.3.2](#332) | [3.4.0](#340) | [3.5.0](#350) | [3.5.1](#351) | [3.5.2](#352) | [3.5.3](#353) | [3.5.4](#354) | [3.6.0](#360) | [3.6.1](#361) | [3.7.0](#370) | [3.7.1](#371) | [3.7.2](#372)
+
+---
+
+### [3.7.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.2)
+
+- Fix iOS build failure with Xcode 26 (Apple Clang 21+). The `fmt` library bundled with React Native uses `FMT_STRING` macros that rely on `consteval`, which Xcode 26's stricter compiler rejects. This release patches the Podfile to disable `consteval` in `fmt` for compatibility.
 
 ### [3.7.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.1)
 
@@ -15,7 +54,6 @@ All notable changes to this project will be documented in this file.
 ### [3.7.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.0)
 
 - Releases useSecureOrigin option to allow implementors to use a content security policy protected iframe
-
 
 ### [3.6.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.6.1)
 

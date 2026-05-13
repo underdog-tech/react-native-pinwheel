@@ -14,7 +14,11 @@ import com.underdog_tech.pinwheel_android.model.PinwheelEventType
 import com.underdog_tech.pinwheel_android.model.PinwheelInputAllocationPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelTarget
 import com.underdog_tech.pinwheel_android.model.PinwheelAllocation
+import com.underdog_tech.pinwheel_android.model.PinwheelBillEventPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelBillSwitchEventPayload
+import com.underdog_tech.pinwheel_android.model.PinwheelBillSwitchPlatformsAddedEventPayload
+import com.underdog_tech.pinwheel_android.model.PinwheelCalendarSyncEventPayload
+import com.underdog_tech.pinwheel_android.model.PinwheelUserActivatedEventPayload
 import com.underdog_tech.pinwheel_android.model.PinwheelParams
 import com.underdog_tech.pinwheel_android.model.PinwheelResult
 import com.underdog_tech.pinwheel_android.model.PinwheelError
@@ -171,6 +175,34 @@ fun PinwheelEventPayload.toWritableMap(): WritableMap = when (this) {
     putString("frequency", this@toWritableMap.frequency)
     putString("nextPaymentDate", this@toWritableMap.nextPaymentDate)
     putInt("amountCents", this@toWritableMap.amountCents)
+    this@toWritableMap.accountId?.let { putString("accountId", it) }
+  }
+
+  is PinwheelBillEventPayload -> Arguments.createMap().apply {
+    putString("platformId", this@toWritableMap.platformId)
+    putString("platformName", this@toWritableMap.platformName)
+    putString("frequency", this@toWritableMap.frequency)
+    putString("nextPaymentDate", this@toWritableMap.nextPaymentDate)
+    putInt("amountCents", this@toWritableMap.amountCents)
+  }
+
+  is PinwheelBillSwitchPlatformsAddedEventPayload -> Arguments.createMap().apply {
+    val platformsArray = Arguments.createArray()
+    this@toWritableMap.platforms.forEach { platform ->
+      val map = Arguments.createMap()
+      map.putString("id", platform.id)
+      map.putString("name", platform.name)
+      platformsArray.pushMap(map)
+    }
+    putArray("platforms", platformsArray)
+  }
+
+  is PinwheelCalendarSyncEventPayload -> Arguments.createMap().apply {
+    putString("calendarType", this@toWritableMap.calendarType.name.lowercase())
+  }
+
+  is PinwheelUserActivatedEventPayload -> Arguments.createMap().apply {
+    putString("solutionName", this@toWritableMap.solutionName)
   }
 
   is PinwheelExternalAccountConnectedPayload -> Arguments.createMap().apply {
