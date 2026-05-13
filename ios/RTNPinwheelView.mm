@@ -75,7 +75,7 @@ using namespace facebook::react;
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"3.7.1"
+                                         version:@"4.0.0"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
@@ -244,7 +244,7 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"3.7.1"
+                                         version:@"4.0.0"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
