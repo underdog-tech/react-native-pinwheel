@@ -10,8 +10,32 @@ All notable changes to this project will be documented in this file.
 
 ### [4.0.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.0.0)
 
-- Updates the iOS and Android Pinwheel SDK dependencies to `4.0.0`.
-- Adds support for new Bill Switch, calendar sync, customer terms, and user activation events.
+#### Notes
+
+- Upgrades the SDK to target the latest verison of Link: v4.
+- Adds support for a new set of bill and account lifecycle events.
+
+#### Breaking Changes
+
+- The `billRemoved` event handler now uses `PinwheelBillEvent` instead of `PinwheelBillSwitchEvent`.
+
+#### Non-breaking Changes
+
+- An optional `accountId` field has been added to `PinwheelBillSwitchPayload`.
+
+#### New event types
+
+- `billSwitchFailure`
+- `billAdded`
+- `billEdited`
+- `billMarkedInactive`
+- `billSwitchPlatformsAdded`
+- `billSwitchPlatformsRemoved`
+- `billCancelSuccess`
+- `billCancelFailure`
+- `calendarSync`
+- `customerTermsAccepted`
+- `userActivated`
 
 # 3.x Releases
 
@@ -30,7 +54,6 @@ All notable changes to this project will be documented in this file.
 ### [3.7.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.7.0)
 
 - Releases useSecureOrigin option to allow implementors to use a content security policy protected iframe
-
 
 ### [3.6.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/3.6.1)
 
