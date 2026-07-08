@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-3.7.1.tgz",
+    "@pinwheel/react-native-pinwheel": "file:../pinwheel-react-native-pinwheel-4.0.0.tgz",
     "expo": "~53.0.13",
     "expo-asset": "~11.1.7",
     "expo-constants": "~17.1.7",
@@ -25,5 +25,9 @@
     "@types/react": "~19.0.10",
     "typescript": "~5.8.3"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "uuid": "^11.1.1",
+    "postcss": "^8.5.10"
+  }
 }
