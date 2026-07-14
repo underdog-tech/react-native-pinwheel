@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 # 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400)
+- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401)
+
+---
+
+### [4.0.1](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.0.1)
+
+- Fix iOS build failure when CocoaPods is configured with `use_frameworks! :linkage => :static`. The Swift bridging header is now imported using `__has_include` to prefer the framework-style path when available, with a fallback to the quoted import for static-library builds.
+- Bump iOS SDK to 4.0.1.
+- Bump Android SDK to 4.1.1.
 
 ---
 
