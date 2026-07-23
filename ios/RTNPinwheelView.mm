@@ -9,7 +9,11 @@
 
 #import "RCTFabricComponentsPlugins.h"
 #import "RTNPinwheelEvents.h"
+#if __has_include(<RNPinwheelSDK/RNPinwheelSDK-Swift.h>)
+#import <RNPinwheelSDK/RNPinwheelSDK-Swift.h>
+#else
 #import "RNPinwheelSDK-Swift.h"
+#endif
 
 using namespace facebook::react;
 
@@ -75,7 +79,7 @@ using namespace facebook::react;
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"4.0.0"
+                                         version:@"4.0.1"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
@@ -187,7 +191,11 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
 
 #import "RTNPinwheelEvents.h"
 #import "RTNPinwheelView.h"
+#if __has_include(<RNPinwheelSDK/RNPinwheelSDK-Swift.h>)
+#import <RNPinwheelSDK/RNPinwheelSDK-Swift.h>
+#else
 #import "RNPinwheelSDK-Swift.h"
+#endif
 
 @implementation RTNPinwheelView
 
@@ -244,7 +252,7 @@ Class<RCTComponentViewProtocol> RTNPinwheelCls(void) {
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"4.0.0"
+                                         version:@"4.0.1"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
