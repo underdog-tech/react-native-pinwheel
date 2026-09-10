@@ -97,7 +97,7 @@ class Pinwheel : FrameLayout {
           val pinwheelFragment = PinwheelFragment.newInstanceWithAdvancedOptions(
             it,
             "react native",
-            "4.0.1",
+            "4.0.2",
             getReactNativeVersion(),
             this.handleInsets,
             this.useDarkMode,
