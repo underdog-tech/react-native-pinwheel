@@ -15,7 +15,7 @@
     "expo-constants": "~17.1.7",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
-    "react-native": "0.79.4"
+    "react-native": "0.87.1"
   },
   "engines": {
     "node": ">=22.18.0"
