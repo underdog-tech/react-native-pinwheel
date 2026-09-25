@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 # 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401)
+- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402)
+
+---
+
+### [4.0.2](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.0.2)
+
+- Upgrade modal mounting for React Native new architecture.
 
 ---
 
