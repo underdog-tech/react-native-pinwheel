@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 
 # 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402)
+- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402) | [4.0.3](#403)
+
+---
+
+### [4.0.3](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.0.3)
+
+- Bump iOS SDK to 4.0.2.
+- Bump Android SDK to 4.1.3.
 
 ---
 
