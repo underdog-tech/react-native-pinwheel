@@ -38,6 +38,9 @@
     "node": ">=18"
   },
   "overrides": {
-    "fast-xml-parser": "^5.7.0"
+    "fast-xml-parser": "^5.7.0",
+    "image-size": "2.0.4",
+    "browserslist": "4.29.3",
+    "joi": "17.13.8"
   }
 }
