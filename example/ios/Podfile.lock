@@ -8,9 +8,9 @@ PODS:
   - hermes-engine (0.79.4):
     - hermes-engine/Pre-built (= 0.79.4)
   - hermes-engine/Pre-built (0.79.4)
-  - PinwheelSDK (3.5.0):
-    - PinwheelSDK/PinwheelLinkSDK (= 3.5.0)
-  - PinwheelSDK/PinwheelLinkSDK (3.5.0)
+  - PinwheelSDK (4.0.0):
+    - PinwheelSDK/PinwheelLinkSDK (= 4.0.0)
+  - PinwheelSDK/PinwheelLinkSDK (4.0.0)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1657,11 +1657,11 @@ PODS:
     - React-logger (= 0.79.4)
     - React-perflogger (= 0.79.4)
     - React-utils (= 0.79.4)
-  - RNPinwheelSDK (3.7.0):
+  - RNPinwheelSDK (4.0.1):
     - DoubleConversion
     - glog
     - hermes-engine
-    - PinwheelSDK (= 3.5.0)
+    - PinwheelSDK (= 4.0.0)
     - RCT-Folly (= 2024.11.18.00)
     - RCTRequired
     - RCTTypeSafety
@@ -1918,7 +1918,7 @@ SPEC CHECKSUMS:
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 8b5a5eb386b990287d072fd7b6f6ebd9544dd251
-  PinwheelSDK: ce9d956cf1473296bdeb60e419c90ab525785374
+  PinwheelSDK: 10ef63a296940bf271620cf5767fb20131abeedf
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 0418ac97b9f53b2e37f473da1663ef3061e46beb
   RCTRequired: b9fde7f981b11aa898f03a70d3d4d36b80f1b16d
@@ -1981,10 +1981,10 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: bf62814e0fde923f73fc64b7e82d76c63c284da9
   ReactCodegen: f891084749d03b8af8a244cefaa492e491b763fd
   ReactCommon: c7d636ec1b9801ff4ee83cce8e0bf74a1610fc3f
-  RNPinwheelSDK: 32be57935124aae5df5156a8489ff064cc573377
+  RNPinwheelSDK: b20d57599e464f7ba16bd2a0a565a24074bf578e
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: a6cb833e04fb8c59a012b49fb1d040fcb0cbb633
 
-PODFILE CHECKSUM: 9a5ce636e40a8f517e94c999fb562d3094db9c7e
+PODFILE CHECKSUM: 9ec1cb2c0597b68c13a8e9c68e56d2805168eed4
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.17.0
