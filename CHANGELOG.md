@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 - Bump iOS SDK to 4.1.0.
 - Bump Android SDK to 4.2.0.
-- Homer logging and crash monitoring now come from those native SDKs' custom implementation, which removes Datadog.
+- Removes DataDog from the SDK, reducing bundle size.
 
 ---
 
