@@ -103,7 +103,7 @@ static BOOL PWIsPinwheelPresentedController(UIViewController *controller) {
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"4.0.2"
+                                         version:@"4.1.0"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
@@ -319,7 +319,7 @@ static BOOL PWIsPinwheelPresentedController(UIViewController *controller) {
       [[PWPinwheelWrapperVC alloc] initWithToken:self.token
                                         delegate:self
                                              sdk:@"react native"
-                                         version:@"4.0.2"
+                                         version:@"4.1.0"
                                   useSecureOrigin:self.useSecureOrigin
                                       useDarkMode:self.useDarkMode
                                useAppBoundDomains:NO
