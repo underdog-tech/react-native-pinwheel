@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 # 4.x Releases
 
-- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402) | [4.0.3](#403)
+- `4.x` Releases - [4.0.0](#400) | [4.0.1](#401) | [4.0.2](#402) | [4.0.3](#403) | [4.1.0](#410)
+
+---
+
+### [4.1.0](https://www.npmjs.com/package/@pinwheel/react-native-pinwheel/v/4.1.0)
+
+- Bump iOS SDK to 4.1.0.
+- Bump Android SDK to 4.2.0.
+- Removes DataDog from the SDK, reducing bundle size.
 
 ---
 
